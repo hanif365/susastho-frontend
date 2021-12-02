@@ -1,0 +1,9 @@
+.header-content-main{
+    background: url('../../../Assets//Images/bg-home.jpg');
+    border-radius: 0 0 0 100px;
+    margin-top: 85px;
+}
+.btn-field{
+    font-size: 20px;
+    font-weight: 700;
+}

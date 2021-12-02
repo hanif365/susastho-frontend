@@ -1,0 +1,22 @@
+.service-content-main{
+    width: 23rem;
+    transition: all 700ms;
+    cursor: pointer;
+}
+.service-content-main img{
+    height: 350px;
+    transition: all 700ms;
+}
+.service-content-main:hover img{
+    opacity: 0.1;
+}
+
+.card-body{
+    position: absolute;
+    margin: 150px 0 0 0;
+    display: none;
+    transition: all 700ms;
+}
+.service-content-main:hover .card-body{
+    display: block;
+}

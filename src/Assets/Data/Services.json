@@ -1,0 +1,52 @@
+[{
+    "id": 1,
+    "service_name": "FIND DOCTORS",
+    "service_des": "Loremfjdklgfdsgsdgsgsgfsdgfdsgsdfgsdgsdgsdgsdfsfasfsfasfasfassafasfasgfsdgsdgsdgsdgfsdgdsgsdgslfjasfjasfjksajfas",
+    "image": "https://i.ibb.co/71fDf1R/doctor1.png"
+  }, {
+    "id": 2,
+    "service_name": "EMERGENCY",
+    "service_des": "RickFFDFFASFASASDFAEAREAJFKHASKFASKLFJASFJKLAFASFKASFJKLJASFASKFJi",
+    "image": "Misti"
+  }, {
+    "id": 3,
+    "service_name": "HEALTH TIPS",
+    "service_des": "GanniFDSFDSFSAKJFLASFIJASFLKASKFLJKASLFJKLASJFKLASJFKLASJFKLSJAFKLJASLFe",
+    "image": "Yelena"
+  }, {
+    "id": 4,
+    "service_name": "VACCINATION",
+    "service_des": "Polly",
+    "image": "Mag"
+  }, {
+    "id": 5,
+    "service_name": "BLOOD BANK",
+    "service_des": "FloreFDSFSAFASFKLASJFKLASJFFJKJASFFFHANIFJFJKLJFLJnce",
+    "image": "Dominik"
+  }, {
+    "id": 6,
+    "service_name": "PATIENT CARE",
+    "service_des": "ClayFFKDSFKLJSFLKASFKASLJFLASFKLSJFLKASJFKLASJFKLSAJFHANIFborn",
+    "image": "Eugenio"
+  }, {
+    "id": 7,
+    "service_name": "HOME NURSING CARE",
+    "service_des": "VirgHANIFHANIFHANIFFJKLDJFKLDSJFKLSJFKLASJFLJSLFAJSLJFLASie",
+    "image": "Rahel"
+  }, {
+    "id": 8,
+    "service_name": "Marijn",
+    "service_des": "Adan",
+    "image": "Carmelita"
+  }, {
+    "id": 9,
+    "service_name": "Wright",
+    "service_des": "Marcella",
+    "image": "Noelle"
+  }, {
+    "id": 10,
+    "service_name": "Brynna",
+    "service_des": "Francine",
+    "image": "Agnese"
+  }]
+  
