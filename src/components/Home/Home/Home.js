@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import About from '../About/About';
 import Header from '../Header/Header';
 import Services from '../Services/Services';
 import './Home.css'
@@ -8,6 +10,8 @@ const Home = () => {
         <div>
             <Header></Header>
             <Services></Services>
+            <About></About>
+            <Footer></Footer>
         </div>
     );
 };

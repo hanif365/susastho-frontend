@@ -10,7 +10,7 @@ const Services = () => {
     console.log(ServicesData)
     return (
         <div id="services" className="pt-4">
-            <div className="container py-5 my-5 text-center" id="">
+            <div className="container pt-5 mt-5 text-center" id="">
                 <div className="row">
                     <div className="col-12">
                         <h1>OUR SERVICES</h1>

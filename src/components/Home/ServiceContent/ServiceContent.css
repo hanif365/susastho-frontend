@@ -3,7 +3,7 @@
     transition: all 500ms;
     cursor: pointer;
     color: #fff;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
 }
 
@@ -21,7 +21,10 @@
 }
 
 .service-content-main:hover {
-    background-color: #000957 !important;
+    background-color: #000957;
+}
+#bg-danger:hover{
+    background-color: red;
 }
 
 .card-body {
@@ -30,6 +33,7 @@
     display: none;
     transition: all 700ms;
 }
+
 
 .service-content-main:hover .card-body {
     display: block;
@@ -41,3 +45,4 @@
 .service-content-main:hover {
     transform: translateY(10px) !important;
 }
+
