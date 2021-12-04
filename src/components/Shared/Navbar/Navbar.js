@@ -8,15 +8,15 @@ const Navbar = () => {
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div class="container">
-                    <Link class="navbar-brand" to="/"> <img src={brandicon} alt="" className="brandicon" /> SUSASTHO</Link>
+                    <a class="navbar-brand" href="/"> <img src={brandicon} alt="" className="brandicon" /> SUSASTHO</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
-                            <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
-                            <Link class="nav-link" to="#">Features</Link>
-                            <Link class="nav-link" to="#">Pricing</Link>
+                            <a class="nav-link active" aria-current="page" href="#home">HOME</a>
+                            <a class="nav-link" href="#services">SERVICES</a>
+                            <a class="nav-link" href="/">Pricing</a>
                         </div>
                     </div>
                 </div>

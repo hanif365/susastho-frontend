@@ -4,7 +4,7 @@ import './ServiceContent.css'
 const ServiceContent = ({ service }) => {
     const { service_name, service_des, image } = service;
     return (
-        <div className="col g-4 py-3">
+        <div className="col g-4">
             <div className="card service-content-main">
                 <img src={image} className="card-img-top" alt="..." />
                 <div className="card-body text-wrap w-100 text-center">
