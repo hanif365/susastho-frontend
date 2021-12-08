@@ -1,0 +1,38 @@
+.blog-content-main {
+    width: 22rem;
+    transition: all 500ms;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.blog-content-main img {
+    height: 300px;
+    /* width: 75%; */
+    transform: scale(0.8, 0.8);
+    transition: all 700ms;
+    border-radius: 20px;
+}
+
+.blog-content-main:hover {
+    background-color: #000957;
+}
+#bg-danger:hover{
+    background-color: red;
+}
+
+.blog-card-body {
+    padding: 0 10px 50px 10px;
+    transition: all 700ms;
+}
+
+
+.blog-content-main:hover .blog-card-body {
+    color: #fff;
+
+}
+
+.blog-content-main:hover {
+    transform: translateY(10px) !important;
+}
+
