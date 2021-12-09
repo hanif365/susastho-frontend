@@ -3,3 +3,10 @@
     background-repeat: no-repeat;
     background-size:cover;
 }
+.text-header{
+    color: #84DFFF;
+}
+.text-para{
+    color: #22577E;
+    font-weight: 600;
+}

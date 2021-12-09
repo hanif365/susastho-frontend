@@ -11,8 +11,8 @@ const About = () => {
                         <img src={AboutUs} alt="" className="img-fluid" />
                     </div>
                     <div className="col-md-6 align-self-center about-content">
-                        <h1>WE CARE YOUR HEALTH</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse tenetur maxime at odio, alias voluptatum necessitatibus, placeat officiis, repellendus odit tempore eum et suscipit numquam ducimus culpa consequatur velit ullam! Culpa molestias doloremque officia necessitatibus id sapiente qui odit iure, modi autem ducimus! Vitae aliquam excepturi ducimus accusamus. Vero doloribus officia, reiciendis odit ut amet? Animi ut molestiae optio impedit qui tenetur ab laudantium vitae perspiciatis, similique quaerat placeat nisi quos corrupti sed nemo deleniti sit nihil, ipsa dolorum. Quae ipsa nostrum nisi placeat, qui iusto ab ibus. Ad dolor impedit dolores illum sint veniam, voluptates saepe nostrum cum ut dolorum, dicta omnis iusto accusamus qui quod vero, ducimus incidunt eveniet soluta ex ullam esse voluptas aliquid. Perspiciatis vitae molestias ipsam! A.</p>
+                        <h1 className="text-header">WE CARE YOUR HEALTH</h1>
+                        <p className="text-para">We are constantly working to protect your health. In this platform you can be search your favorite doctor, emergency ambulance service, Search Blood donner, Medical health tips, Home care delivery and many others services. We always try to update our service. You also know various important health related article which we published continuously. Hope you have a better experience for our platform.</p>
                     </div>
                 </div>
             </div>

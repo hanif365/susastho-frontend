@@ -9,8 +9,8 @@ const HeaderContent = () => {
         <div className="container-fluid header-content-main py-4" id="home">
             <div className="row">
                 <div className="col-md-6 align-self-center ps-5">
-                    <h1>WE CARE ABOUT YOUR HEALTH</h1>
-                    <p>Health is wealth. Everyone Should take care of their Health. You Can get a lot of health related information on our platform.</p>
+                    <h1 className="text-header">WE CARE ABOUT YOUR HEALTH</h1>
+                    <p className="text-para">Health is wealth. Everyone Should take care of their Health. You Can get a lot of health related information on our platform.</p>
                     <a className="btn btn-field" href="#services">MORE DETAILS</a>
                 </div>
                 <div className="col-md-6">
