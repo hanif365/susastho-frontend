@@ -1,44 +1,44 @@
 [{
-    "id": 1,
+    "id": "doctors",
     "service_name": "FIND DOCTORS",
-    "service_des": "Loremfjdklgfdsgsdgsgsgfsdgfdsgsdfgsdgsdgsdgsdfsfasfsfasfasfassafasfasgfsdgsdgsdgsdgfsdgdsgsdgslfjasfjasfjksajfas",
+    "service_des": "Find Your Favorite Doctor",
     "image": "https://i.ibb.co/23mVsft/Online-doctor-consultation-diagnostics-advice-or-support-of-patient-over-the-internet-video-call-on.jpg",
     "icon_img": "https://i.ibb.co/J5djKkv/doctor-icon.png"
   }, {
     "id": 2,
     "service_name": "EMERGENCY",
-    "service_des": "RickFFDFFASFASASDFAEAREAJFKHASKFASKLFJASFJKLAFASFKASFJKLJASFASKFJi",
+    "service_des": "Call 999 for Emergency Ambulance",
     "image": "https://i.ibb.co/Tbbnwt5/ambulance.jpg",
     "image1": "https://media.giphy.com/media/3og0IOa1X349KZ8E1i/giphy.gif",
     "icon_img": ""
   }, {
     "id": 3,
     "service_name": "HEALTH TIPS",
-    "service_des": "GanniFDSFDSFSAKJFLASFIJASFLKASKFLJKASLFJKLASJFKLASJFKLASJFKLSJAFKLJASLFe",
+    "service_des": "Show different health related tips",
     "image": "https://i.ibb.co/nPQJj6Z/health-tips.jpg",
     "icon_img": ""
   }, {
     "id": 4,
     "service_name": "VACCINATION",
-    "service_des": "Pollygdsfgrtrttreterrfefaesfasefeaetreraesfasfeasfasfasffa",
+    "service_des": "Complete your all vaccine",
     "image": "https://i.ibb.co/ZHksdRr/vaccination.jpg",
     "icon_img": ""
   }, {
     "id": 5,
     "service_name": "BLOOD BANK",
-    "service_des": "FloreFDSFSAFASFKLASJFKLASJFFJKJASFFFHANIFJFJKLJFLJnce",
+    "service_des": "Emergency Blood Donner Information",
     "image": "https://i.ibb.co/TYW71Sv/blood-bank.jpg",
     "icon_img": ""
   }, {
     "id": 6,
     "service_name": "PATIENT CARE",
-    "service_des": "ClayFFKDSFKLJSFLKASFKASLJFLASFKLSJFLKASJFKLASJFKLSAJFHANIFborn",
+    "service_des": "Patient Care Side",
     "image": "https://i.ibb.co/sjCxrVx/patientcare.jpg",
     "icon_img": ""
   }, {
     "id": 7,
     "service_name": "HOME NURSING CARE",
-    "service_des": "VirgHANIFHANIFHANIFFJKLDJFKLDSJFKLSJFKLASJFLJSLFAJSLJFLASie",
+    "service_des": "Contact us for Home Nursing Care",
     "image": "Rahel",
     "icon_img": ""
   }, {

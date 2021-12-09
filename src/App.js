@@ -5,9 +5,8 @@ import {
   Route
 } from "react-router-dom";
 
-// import './App.css';
 import Home from './components/Home/Home/Home';
-import Services from "./components/Home/Services/Services";
+import Doctors from "./components/ServicesDetails/Doctors/Doctors";
 import Footer from "./components/Shared/Footer/Footer";
 import Navbar from "./components/Shared/Navbar/Navbar";
 
@@ -23,7 +22,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         {/* <Route path="/services" element={<Services />} /> */}
 
-        {/* <Route path="/blogdetails/:id" element={<BlogDetails />} /> */}
+        <Route path="/doctors" element={<Doctors />} />
 
       </Routes>
       <Footer />
