@@ -1,0 +1,26 @@
+.contact-form-container{
+    /* background: #0A192F; */
+    /* height: 100vh; */
+    padding-top: 150px !important;
+}
+.contact-form-content{
+    /* margin-top: 250px !important; */
+    padding: 30px 20px 30px 20px;
+    border-radius: 10px;
+    background-color: #FFC4E1;
+}
+.btn-contact{
+    background: #FF87CA;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 500ms;
+    padding: 10px 20px;
+}
+.btn-contact:hover{
+    color: #fff;
+    background-color: #FF9999;
+    transform: translateX(10px);
+}
+.contact-img{
+    border-radius: 20px;
+}

@@ -18,6 +18,7 @@ const Navbar = () => {
                             <a class="nav-link" href="#services">SERVICES</a>
                             <a class="nav-link" href="#about-us">ABOUT US</a>
                             <a class="nav-link" href="#blogs">BLOGS</a>
+                            <a class="nav-link" href="#contact">CONTACT</a>
                         </div>
                     </div>
                 </div>
