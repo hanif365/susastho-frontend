@@ -1,63 +1,69 @@
 [{
     "id": 1,
-    "title": "title1title1title1title1title1title1",
-    "description": "kmartinie0@tinypic.comkmartinie0@tinypic.comkmartinie0@tinypic.comkmartinie0@tinypic.comkmartinie0@tinypic.comkmartinie0@tinypic.comkmartinie0@tinypic.com",
-    "image": "https://i.ibb.co/J5djKkv/doctor-icon.png",
+    "title": "Dengue: a mosquito-borne disease",
+    "description": "Dengue is a mosquito-borne viral infection causing a severe flu-like illness and, sometimes causing a potentially lethal complication called severe dengue.",
+    "image": "https://i.ibb.co/tZ9nQ2c/dengue.jpg",
     "icon_img": "kstithe0@wsj.com",
-    "date": "ktidcombe0@weibo.com",
+    "date": "9 December 2021",
     "writer_name": "kjindra0@latimes.com",
     "designation": "kcrosen0@upenn.edu",
-    "company": "koglassane0@moonfruit.com"
+    "company": "koglassane0@moonfruit.com",
+    "link": "https://medium.com/@m.a.hanif/dengue-a-mosquito-borne-disease-4f62ee01d29a"
   }, {
     "id": 2,
-    "title": "title2title2title2title2title2title2title2title2",
-    "description": "tcater1@usda.gov",
-    "image": "tapthorpe1@live.com",
+    "title": "Schizophrenia - a chronic brain disorder",
+    "description": "Schizophrenia is a chronic brain disorder. When schizophrenia is active, symptoms can include delusions, hallucinations, disorganized speech,  and lack of motivation.",
+    "image": "https://i.ibb.co/FbJ2HYQ/schizophrenia.jpg",
     "icon_img": "trawlence1@china.com.cn",
-    "date": "tgiacopelo1@amazon.com",
+    "date": "9 December 2021",
     "writer_name": "tlowdham1@wisc.edu",
     "designation": "tliggens1@discuz.net",
-    "company": "taronowitz1@sciencedirect.com"
+    "company": "taronowitz1@sciencedirect.com",
+    "link": "https://medium.com/@m.a.hanif/schizophrenia-a-chronic-brain-disorder-6131bbaf9217"
   }, {
     "id": 3,
-    "title": "title3",
-    "description": "jnoweak2@canalblog.com",
-    "image": "jshave2@japanpost.jp",
+    "title": "Covid-19: An ultimate warning",
+    "description": "COVID-19 is the disease caused by SARS-CoV-2, the coronavirus that emerged in December 2019. COVID-19 can be severe and has caused millions of deaths around the world.",
+    "image": "https://i.ibb.co/PrxBrrk/covid-19.jpg",
     "icon_img": "jtry2@storify.com",
-    "date": "jtrass2@japanpost.jp",
+    "date": "9 December 2021",
     "writer_name": "jgerge2@facebook.com",
     "designation": "jdann2@spiegel.de",
-    "company": "jilewicz2@tinypic.com"
+    "company": "jilewicz2@tinypic.com",
+    "link": "https://medium.com/@m.a.hanif/covid-19-an-ultimate-warning-5d70f9507506"
   }, {
     "id": 4,
-    "title": "title4",
-    "description": "pmanna3@sakura.ne.jp",
-    "image": "plukas3@theglobeandmail.com",
+    "title": "Gallstones (Cholelithiasis)",
+    "description": "Gallstones are pieces of solid material that form in your gallbladder, a small organ under your liver. If you have them, you might hear your doctor say you have cholelithiasis.",
+    "image": "https://i.ibb.co/RBQNLKK/Gallstones.png",
     "icon_img": "phaycraft3@prweb.com",
-    "date": "pmcalees3@moonfruit.com",
+    "date": "9 December 2021",
     "writer_name": "pbuckley3@unc.edu",
     "designation": "pmellonby3@psu.edu",
-    "company": "pcoad3@ibm.com"
+    "company": "pcoad3@ibm.com",
+    "link": "https://medium.com/@m.a.hanif/gallstones-cholelithiasis-18369ae101b7"
   }, {
     "id": 5,
-    "title": "title5",
-    "description": "kbeeby4@hostgator.com",
-    "image": "khubball4@tripadvisor.com",
+    "title": "Diabetes mellitus",
+    "description": "Diabetes mellitus refers to a group of diseases that affect how your body uses blood sugar (glucose). Glucose is vital to your health because it's an important source of energy",
+    "image": "https://i.ibb.co/kyV1fSt/diabetes.jpg",
     "icon_img": "kloft4@flavors.me",
-    "date": "kmuddle4@seattletimes.com",
+    "date": "10 December 2021",
     "writer_name": "ktodarini4@yale.edu",
     "designation": "kthoumasson4@alibaba.com",
-    "company": "kstopper4@creativecommons.org"
+    "company": "kstopper4@creativecommons.org",
+    "link": "https://medium.com/@m.a.hanif/diabetes-mellitus-2833440b77d6"
   }, {
     "id": 6,
-    "title": "title6",
-    "description": "gaberkirder5@geocities.jp",
-    "image": "gslimings5@arstechnica.com",
+    "title": "Tuberculosis(TB)",
+    "description": "Tuberculosis (TB) is a potentially serious infectious disease that mainly affects the lungs. The bacteria that cause tuberculosis are spread from person to person through",
+    "image": "https://i.ibb.co/FHKKzhL/tuberculosis.jpg",
     "icon_img": "gnarramor5@sciencedaily.com",
     "date": "gchillingsworth5@mlb.com",
     "writer_name": "greadings5@tmall.com",
     "designation": "gfuncheon5@marriott.com",
-    "company": "gmontilla5@java.com"
+    "company": "gmontilla5@java.com",
+    "link": "https://medium.com/@m.a.hanif/tuberculosis-tb-9fec921fa583"
   }, {
     "id": 7,
     "title": "Arly",
@@ -67,7 +73,8 @@
     "date": "aisack6@google.com.au",
     "writer_name": "abiggans6@hud.gov",
     "designation": "abowton6@goodreads.com",
-    "company": "aseatter6@princeton.edu"
+    "company": "aseatter6@princeton.edu",
+    "link": ""
   }, {
     "id": 8,
     "title": "Cleon",
@@ -77,7 +84,8 @@
     "date": "csatteford7@statcounter.com",
     "writer_name": "cnormandale7@yellowpages.com",
     "designation": "cfidgett7@ftc.gov",
-    "company": "csearight7@salon.com"
+    "company": "csearight7@salon.com",
+    "link": ""
   }, {
     "id": 9,
     "title": "Patrizia",
@@ -87,7 +95,8 @@
     "date": "pcorkell8@booking.com",
     "writer_name": "pbreddy8@trellian.com",
     "designation": "pbrezlaw8@sitemeter.com",
-    "company": "plindop8@artisteer.com"
+    "company": "plindop8@artisteer.com",
+    "link": ""
   }, {
     "id": 10,
     "title": "Candra",
@@ -97,5 +106,6 @@
     "date": "crosingdall9@spiegel.de",
     "writer_name": "cbithell9@buzzfeed.com",
     "designation": "ctertre9@mit.edu",
-    "company": "cfilkin9@home.pl"
+    "company": "cfilkin9@home.pl",
+    "link": ""
   }]

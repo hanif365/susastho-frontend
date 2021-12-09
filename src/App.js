@@ -4,7 +4,6 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import BlogDetails from "./components/Home/BlogDetails/BlogDetails";
 
 // import './App.css';
 import Home from './components/Home/Home/Home';
@@ -24,7 +23,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         {/* <Route path="/services" element={<Services />} /> */}
 
-        <Route path="/blogdetails/:id" element={<BlogDetails />} />
+        {/* <Route path="/blogdetails/:id" element={<BlogDetails />} /> */}
 
       </Routes>
       <Footer />

@@ -5,7 +5,7 @@ import AboutUs from '../../../Assets/Images/about-us.png'
 const About = () => {
     return (
         <div id="about-us" className="pt-4">
-            <div className="container-fluid about-main py-5 my-5">
+            <div className="container-fluid about-main pt-5 mt-5">
                 <div className="row">
                     <div className="col-md-6 about-img">
                         <img src={AboutUs} alt="" className="img-fluid" />
