@@ -1,0 +1,25 @@
+.sidebar{
+    /* background-image: linear-gradient(40deg, #19d3ae,#0fcfec); */
+    background: #5f6aec;
+    position: fixed;
+    /* z-index: 9999; */
+}
+.sidebar li{
+    margin-bottom: 2em;
+    font-weight: 700;
+    /* font-size: 20px; */
+    text-transform: uppercase;
+}
+.sidebar li:hover span{
+    /* display: inline-block; */
+    color: rgb(217, 12, 235);
+    transform: translate(5px) !important;
+    font-weight: 900;
+}
+.sidebar svg{
+    margin-right: 5px;
+}
+.sidebar-container{
+    padding-top: 95px;
+}
+

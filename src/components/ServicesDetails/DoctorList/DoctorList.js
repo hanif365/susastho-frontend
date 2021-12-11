@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { DoctorContext } from '../../../App';
 import './DoctorList.css'
 
 const DoctorList = ({ doctor }) => {
-    const { id, name, designation, image, degree, address, room, fees, offday, from } = doctor;
-    console.log("Doctor Name :", name);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [selectedDoctor, setSelectedDoctor] = useContext(DoctorContext);
+    const { Doctor_Name, Designation, imageURL, Degree, Department, Chamber, Time, Fees, OffDay, Doctor_Description } = doctor;
+    console.log("Doctor Name :", Doctor_Name);
+
+    const handleDoctor = () => {
+        const setDoctor = {
+            name: Doctor_Name,
+        }
+        setSelectedDoctor(setDoctor);
+    }
     return (
         <div className="col g-4">
             <div class="card doctorlist-card">
-                <img src={image} class="card-img-top" alt="..." />
+                <img src={imageURL} class="card-img-top" alt="..." />
                 <div class="doctorlist-card-body">
-                    <h5 class="card-title">{name}</h5>
-                    <p class="card-text">{designation}</p>
-                    <p class="card-text">Degree : {degree}</p>
-                    <p class="card-text">Chamber : {address} <span>({from})</span> <span className="text-danger"> Off-day : {offday}</span></p>
-                    {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+                    <h5 class="card-title">{Doctor_Name}</h5>
+                    <p class="card-text">{Designation}</p>
+                    <p class="card-text">{Department}</p>
+                    <p class="card-text">Degree : {Degree}</p>
+                    <p class="card-text">Chamber : {Chamber} <span>({Time})</span> <span className="text-danger"> Off-day : {OffDay}</span></p>
+                    <Link to="/addappointment" onClick={() => handleDoctor()} class="btn btn-primary">GET APPOINTMENT</Link>
+                    {/* <a href="#" onClick={() => handleDoctor()} class="btn btn-primary">GET APPOINTMENT</a> */}
                 </div>
             </div>
         </div>
