@@ -50,6 +50,8 @@ const AddAppointment = () => {
                 console.log('server side response', res)
                 // window.location.reload(false)
             })
+
+        successMsg();
     };
 
 
@@ -80,36 +82,45 @@ const AddAppointment = () => {
             <Navbar></Navbar>
             {/* {value?.toDate?.().toString()}
             {selectedDoctor.name} */}
-            <div className="col-12 py-5 my-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+            <div className="col-12 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                 <div className="order-component">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                             <div className="col-md-6">
-                                <input name="Patient_Name" className="form-control" placeholder="Add Patient Name" ref={register} />
+                                <label className='fw-bolder' htmlFor="pt-name">Add Patient Name <span className='text-danger'>*</span></label>
+                                <input name="Patient_Name" id="pt-name" className="form-control fw-bolder" placeholder="Add Patient Name" ref={register} required />
 
-                                <input name="Gender" className="form-control" placeholder="Gender" ref={register} />
+                                <label className='fw-bolder pt-3' htmlFor="pt-gender">Gender</label>
+                                <input name="Gender" id="pt-gender" className="form-control" placeholder="Gender" ref={register} />
 
-                                <input name="Age" className="form-control" placeholder="Age" ref={register} />
+                                <label className='fw-bolder pt-3' htmlFor="pt-age">Age</label>
+                                <input name="Age" id="pt-age" className="form-control" placeholder="Age" ref={register} />
 
-                                <label className='mt-5 ' htmlFor="patient-img">Patient Image (optional)</label>
-                                <input name="exampleRequired" className="form-control" type="file" onChange={handleImgUpload} />
+                                <label className='fw-bolder pt-3' htmlFor="pt-img">Patient Image</label>
+                                <input name="exampleRequired" id="pt-img" className="form-control" type="file" onChange={handleImgUpload} />
                             </div>
                             <div className="col-md-6">
-                                <input name="Address" className="form-control" placeholder="Address" ref={register} />
-                                <input name="Mobile" className="form-control" placeholder="Mobile" ref={register} />
-                                <input name="Selected_Doctor" value={selectedDoctor.name} className="form-control" placeholder="" ref={register} />
+                                <label className='fw-bolder' htmlFor="pt-address">Add Patient Address <span className='text-danger'>*</span></label>
+                                <input name="Address" id="pt-address" className="form-control" placeholder="Address" ref={register} required />
 
-                                <DatePicker value={value} format="YYYY/MM/DD" onChange={setValue} />
+                                <label className='fw-bolder pt-3' htmlFor="pt-mobile">Add Patient Mobile Number <span className='text-danger'>*</span></label>
+                                <input name="Mobile" id='pt-mobile' className="form-control" placeholder="Mobile" ref={register} required />
 
-                                {/* <input type="date"  name="date" id="" /> */}
+                                <label className='fw-bolder pt-3' htmlFor="pt-doctor">Auto Filled Doctors Name <span className='text-danger'>*</span></label>
+                                <input name="Selected_Doctor" value={selectedDoctor.name} className="form-control" placeholder="" ref={register} required disabled />
 
-                                <input name="Patient_Description" className="my-5 form-control" placeholder="Add Patient Description" ref={register} />
+                                <label className='fw-bolder pt-5 me-3' htmlFor="appointment-date">Appointment Date <span className='text-danger'>*</span></label>
+                                <DatePicker className='date-picker' value={value} id='appointment-date' format="YYYY/MM/DD" onChange={setValue} required />
+
+                                {/* <input name="Patient_Description" className="my-5 form-control" placeholder="Add Patient Description" ref={register} /> */}
 
                             </div>
+                            <textarea name="Patient_Description" className="my-3 px-5 form-control" placeholder="Add Patient Description" ref={register}> </textarea>
+
                         </div>
 
 
-                        <input onClick={() => successMsg()} className="btn btn-info ps-4 w-25" type="submit" value="Confirm" />
+                        <input className="btn btn-info btn-submit-appointment" type="submit" value="Confirm" />
                     </form>
                 </div>
             </div>

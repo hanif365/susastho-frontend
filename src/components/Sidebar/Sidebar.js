@@ -11,7 +11,7 @@ const Sidebar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('https://polar-bastion-39307.herokuapp.com/isAdmin', {
+        fetch('http://localhost:5000/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -42,11 +42,6 @@ const Sidebar = () => {
                             </Link>
                         </li>
 
-                        <li>
-                            <Link to="/appointment" className="text-white">
-                                <FontAwesomeIcon icon={faCalendarCheck} /> <span>Appointment</span>
-                            </Link>
-                        </li>
 
                         <li>
                             <Link to="/makeadmin" className="text-white">
@@ -67,6 +62,18 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faThList} /> <span>Booking Lists</span>
                         </Link>
                     </li> */}
+
+                    <li>
+                        <Link to="/appointment" className="text-white">
+                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Appointment</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/addemergencyinfo" className="text-white">
+                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Emergency Info</span>
+                        </Link>
+                    </li>
 
                     <li>
                         <Link to="/addreview" className="text-white">

@@ -17,7 +17,7 @@ const DoctorList = ({ doctor }) => {
     }
     return (
         <div className="col g-4">
-            <div class="card doctorlist-card">
+            <div class="card doctorlist-card pb-3">
                 <img src={imageURL} class="card-img-top" alt="..." />
                 <div class="doctorlist-card-body">
                     <h5 class="card-title">{Doctor_Name}</h5>
@@ -25,7 +25,7 @@ const DoctorList = ({ doctor }) => {
                     <p class="card-text">{Department}</p>
                     <p class="card-text">Degree : {Degree}</p>
                     <p class="card-text">Chamber : {Chamber} <span>({Time})</span> <span className="text-danger"> Off-day : {OffDay}</span></p>
-                    <Link to="/addappointment" onClick={() => handleDoctor()} class="btn btn-primary">GET APPOINTMENT</Link>
+                    <Link to="/addappointment" onClick={() => handleDoctor()} class="btn btn-field">GET APPOINTMENT</Link>
                     {/* <a href="#" onClick={() => handleDoctor()} class="btn btn-primary">GET APPOINTMENT</a> */}
                 </div>
             </div>

@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import AddDoctor from "./components/AdminPanel/AddDoctor/AddDoctor";
+import AddEmergencyInfo from "./components/AdminPanel/AddEmergencyInfo/AddEmergencyInfo";
+import MakeAdmin from "./components/AdminPanel/MakeAdmin/MakeAdmin";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 
 import Home from './components/Home/Home/Home';
@@ -14,6 +16,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AddAppointment from "./components/ServicesDetails/AddAppointment/AddAppointment";
 import Appointment from "./components/ServicesDetails/Appointment/Appointment";
 import Doctors from "./components/ServicesDetails/Doctors/Doctors";
+import Emergency from "./components/ServicesDetails/Emergency/Emergency";
 import Footer from "./components/Shared/Footer/Footer";
 import Navbar from "./components/Shared/Navbar/Navbar";
 
@@ -43,12 +46,12 @@ function App() {
             <Admin></Admin>
           </Route> */}
 
-            <Route path="/dashboard">
+            {/* <Route path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
-            {/* <PrivateRoute path="/dashboard">
-            <Dashboard></Dashboard>
-          </PrivateRoute> */}
+            </Route> */}
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
 
             <Route path="/appointment">
               <Appointment></Appointment>
@@ -57,9 +60,10 @@ function App() {
             <Route path="/adddoctor">
               <AddDoctor></AddDoctor>
             </Route>
-            {/* <Route path="/makeadmin">
-            <MakeAdmin></MakeAdmin>
-          </Route> */}
+
+            <Route path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
             {/* <PrivateRoute path="/manageservices">
             <ManageService></ManageService>
           </PrivateRoute> */}
@@ -71,9 +75,18 @@ function App() {
               <Doctors></Doctors>
             </Route>
 
-            <Route path="/addappointment">
-              <AddAppointment></AddAppointment>
+            <Route path="/emergency">
+              <Emergency></Emergency>
             </Route>
+
+            <PrivateRoute path="/addappointment">
+              <AddAppointment></AddAppointment>
+            </PrivateRoute>
+
+            <Route path="/addemergencyinfo">
+              <AddEmergencyInfo></AddEmergencyInfo>
+            </Route>
+
             {/* <PrivateRoute path="/doctors">
             <Doctors></Doctors>
           </PrivateRoute> */}

@@ -1,0 +1,11 @@
+/* use for datepicker */
+.rmdp-input{
+    padding: 20px 15px;
+}
+
+.btn-submit-appointment{
+    /* margin-top: 20px; */
+    padding: 10px 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
