@@ -16,19 +16,45 @@
     transform: translateX(10px);
 }
 
-.navbar-nav a {
+.nav-link {
     font-size: 20px;
     font-weight: 700;
     transition: all 600ms;
-    color: #fff;
+    color: #fff !important;
 }
-.navbar-nav a:hover{
+.nav-link:hover{
     transform: translateY(-10px);
-    color: red;
+    color: red !important;
     font-weight: 700;
 }
 
 .first-letter {
     font-size: 40px;
     color: #FF5DA2;
+}
+.sign-out-btn{
+    font-size: 20px;
+    font-weight: 700 !important;
+    background-color: red !important;
+    color: #fff;
+    text-decoration:none;
+    transition: all 500ms;
+    margin-left: 10px;
+}
+.sign-out-btn:hover{
+    color: red;
+    background-color: #fff !important;
+    transform: translateY(-10px) !important;
+}
+.user-img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.btn-login{
+    background-color: aqua;
+    padding: 8px 30px !important;
+}
+.btn-login:hover{
+    color: green !important;
 }
