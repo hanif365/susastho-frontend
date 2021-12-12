@@ -7,7 +7,7 @@ import 'firebase/compat/auth';
 // import firebase from "firebase/app";
 // import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
 
 import { UserContext } from '../../App'
 import { useHistory, useLocation } from 'react-router';
@@ -103,7 +103,9 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         if (newUser && user.email && user.password) {       // if a user is newuser and email and password is true then submit 
-            firebase.auth().createUserWithEmailAndPassword(user.email, user.password)   // the info and update also
+            const auth = getAuth();
+
+            createUserWithEmailAndPassword(auth, user.email, user.password)   // the info and update also
                 .then(res => {
                     const newUserInfo = { ...user };
                     newUserInfo.error = "";
@@ -181,68 +183,68 @@ const Login = () => {
 
     // Facebook Authentication
 
-    const handleFacebookSignIn = () => {
-        const fbProvider = new FacebookAuthProvider();
-        const auth = getAuth();
-            signInWithPopup(auth, fbProvider)
-            .then(res => {
-                const { displayName, email, photoURL } = res.user;
-                const signedInUser = {
-                    isSignedIn: true,
-                    name: displayName,
-                    email: email,
-                    photo: photoURL
-                }
-                setLoggedInUser(signedInUser);
-                history.replace(from);
-            })
-            .catch(err => {
-                const errorCode = err.code;
-                const errorMessage = err.message;
-                const email = err.email;
-                console.log(err.message);
-                const showError = {
-                    error: err.message
-                }
-                setUser(showError);
-            });
-    }
+    // const handleFacebookSignIn = () => {
+    //     const fbProvider = new FacebookAuthProvider();
+    //     const auth = getAuth();
+    //         signInWithPopup(auth, fbProvider)
+    //         .then(res => {
+    //             const { displayName, email, photoURL } = res.user;
+    //             const signedInUser = {
+    //                 isSignedIn: true,
+    //                 name: displayName,
+    //                 email: email,
+    //                 photo: photoURL
+    //             }
+    //             setLoggedInUser(signedInUser);
+    //             history.replace(from);
+    //         })
+    //         .catch(err => {
+    //             const errorCode = err.code;
+    //             const errorMessage = err.message;
+    //             const email = err.email;
+    //             console.log(err.message);
+    //             const showError = {
+    //                 error: err.message
+    //             }
+    //             setUser(showError);
+    //         });
+    // }
 
     // GitHub Authentication
 
-    const handleGithubSignIn = () => {
-        const githubProvider = new firebase.auth.GithubAuthProvider();
-        firebase
-            .auth()
-            .signInWithPopup(githubProvider)
-            .then(res => {
-                const user = res.user;
-                const { displayName, email, photoURL } = res.user;
-                const signedInUser = {
-                    isSignedIn: true,
-                    name: displayName,
-                    email: email,
-                    photo: photoURL
-                }
-                setLoggedInUser(signedInUser);
-                history.replace(from);
-            }).catch(err => {
-                var errorMessage = err.message;
-                var email = err.email;
-                console.log(err.message);
-                const showError = {
-                    error: err.message
-                }
-                setUser(showError);
-            });
-    }
+    // const handleGithubSignIn = () => {
+    //     const githubProvider = new firebase.auth.GithubAuthProvider();
+    //     firebase
+    //         .auth()
+    //         .signInWithPopup(githubProvider)
+    //         .then(res => {
+    //             const user = res.user;
+    //             const { displayName, email, photoURL } = res.user;
+    //             const signedInUser = {
+    //                 isSignedIn: true,
+    //                 name: displayName,
+    //                 email: email,
+    //                 photo: photoURL
+    //             }
+    //             setLoggedInUser(signedInUser);
+    //             history.replace(from);
+    //         }).catch(err => {
+    //             var errorMessage = err.message;
+    //             var email = err.email;
+    //             console.log(err.message);
+    //             const showError = {
+    //                 error: err.message
+    //             }
+    //             setUser(showError);
+    //         });
+    // }
 
     return (
-        <div className="main-container container-fluid">
+        <div className="main-container container-fluid py-5 my-5">
             <Navbar></Navbar>
             <div className="row">
                 <div className="col">
-                    <div className="form-container">
+                    {/* <div className="form-container">
                         <div className="form-content mt-5">
                             <form onSubmit={handleSubmit} className="">
                                 <div >
@@ -279,9 +281,9 @@ const Login = () => {
                                 <h5>{newUser ? "Already have an account?" : "Don't have an account?"}<span>{newUser ? <span className="login-btn" onClick={() => SetNewUser(!newUser)}> Login now</span> : <span className="create-btn" onClick={() => SetNewUser(!newUser)}> Create an account</span>}</span></h5>
                             </form>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="text-center divider pt-5">
-                        <h2>OR LOG IN WITH</h2>
+                        <h2>LOG IN WITH</h2>
                         <hr />
                     </div>
                     <div className="google-container text-center pt-5">
@@ -290,18 +292,18 @@ const Login = () => {
                             user.isSignedIn && <p>Welcome, {user.name}</p>
                         }
                     </div>
-                    <div className="facebook-container text-center pt-3">
+                    {/* <div className="facebook-container text-center pt-3">
                         <button className="btn btn-info btn-lg login-others" onClick={handleFacebookSignIn}><FontAwesomeIcon className="logo" icon={faFacebook} /> Continue With Facebook</button>
                         {
                             user.isSignedIn && <p>Welcome, {user.name}</p>
                         }
-                    </div>
-                    <div className="github-container text-center py-3">
+                    </div> */}
+                    {/* <div className="github-container text-center py-3">
                         <button className="btn btn-info btn-lg login-others" onClick={handleGithubSignIn}><FontAwesomeIcon className="logo" icon={faGithub} /> Continue With GitHub</button>
                         {
                             user.isSignedIn && <p>Welcome, {user.name}</p>
                         }
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
