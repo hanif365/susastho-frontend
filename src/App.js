@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AddBloodBankInfo from "./components/AdminPanel/AddBloodBankInfo/AddBloodBankInfo";
 import AddDoctor from "./components/AdminPanel/AddDoctor/AddDoctor";
 import AddEmergencyInfo from "./components/AdminPanel/AddEmergencyInfo/AddEmergencyInfo";
 import MakeAdmin from "./components/AdminPanel/MakeAdmin/MakeAdmin";
@@ -15,6 +16,7 @@ import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AddAppointment from "./components/ServicesDetails/AddAppointment/AddAppointment";
 import Appointment from "./components/ServicesDetails/Appointment/Appointment";
+import BloodBank from "./components/ServicesDetails/BloodBank/BloodBank";
 import Doctors from "./components/ServicesDetails/Doctors/Doctors";
 import Emergency from "./components/ServicesDetails/Emergency/Emergency";
 import Footer from "./components/Shared/Footer/Footer";
@@ -79,12 +81,20 @@ function App() {
               <Emergency></Emergency>
             </Route>
 
+            <Route path="/bloodbank">
+              <BloodBank></BloodBank>
+            </Route>
+
             <PrivateRoute path="/addappointment">
               <AddAppointment></AddAppointment>
             </PrivateRoute>
 
             <Route path="/addemergencyinfo">
               <AddEmergencyInfo></AddEmergencyInfo>
+            </Route>
+
+            <Route path="/addbloodbankinfo">
+              <AddBloodBankInfo></AddBloodBankInfo>
             </Route>
 
             {/* <PrivateRoute path="/doctors">

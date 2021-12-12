@@ -3,32 +3,6 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import './Emergency.css'
 
 const Emergency = () => {
-    const emergencyData = [
-        {
-            Hospital_Name:"BRB Hospital",
-            Address:"Dhaka",
-            Mobile_Number: "014",
-            Contact_For_Ambulance: "012454"
-            
-        },
-        {
-            Hospital_Name:"Applo",
-            Address:"Dhaka1",
-            Mobile_Number: "545",
-            Contact_For_Ambulance: "545445"
-            
-        },
-        {
-            Hospital_Name:"Ibn Sina",
-            Address:"Dhaka2",
-            Mobile_Number: "54524",
-            Contact_For_Ambulance: "545452445"
-            
-        },
-       
-       
-    ]
-
     const [emergencyInfo, setEmergencyInfo] = useState([]);
 
     useEffect(() => {
@@ -58,8 +32,8 @@ const Emergency = () => {
                         </thead>
                         <tbody>
                             {
-                                emergencyInfo.map((itemDetails, index) =>{
-                                    return(
+                                emergencyInfo.map((itemDetails, index) => {
+                                    return (
                                         <tr key={index}>
                                             {/* <td className='px-4'>{index + 1}</td> */}
                                             <td className='px-4'>{itemDetails.Hospital_Name}</td>
@@ -76,7 +50,7 @@ const Emergency = () => {
                     </table>
                 </div>
             </div>
-            
+
         </div>
     );
 };

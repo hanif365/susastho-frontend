@@ -21,7 +21,7 @@ const ServiceContent = ({ service }) => {
         <div className="col g-4">
             {/* <Link to={id=="doctors" ? `/doctors` :`emergency`}> */}
             <Link to={`/${id}`}>
-                <div className="card service-content-main" id={id == 5 ? "bg-danger" : ""}>
+                <div className="card service-content-main" id={id == "bloodbank" ? "bg-danger" : ""}>
                     <img src={image} className="card-img-top" alt="..." />
                     <div className="card-body text-wrap w-100 text-center">
                         <h3 className="card-title">{service_name}</h3>

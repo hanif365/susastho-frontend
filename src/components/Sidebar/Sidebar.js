@@ -76,6 +76,12 @@ const Sidebar = () => {
                     </li>
 
                     <li>
+                        <Link to="/addbloodbankinfo" className="text-white">
+                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Blood Bank Info</span>
+                        </Link>
+                    </li>
+
+                    <li>
                         <Link to="/addreview" className="text-white">
                             <FontAwesomeIcon icon={faCommentAlt} /> <span>Add Review</span>
                         </Link>

@@ -24,7 +24,7 @@
     background-color: #000957;
 }
 #bg-danger:hover{
-    background-color: red;
+    background-color: red !important;
 }
 
 .card-body {
