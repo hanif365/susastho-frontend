@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Sidebar from '../../Sidebar/Sidebar';
 import './Dashboard.css'
 
@@ -16,6 +17,7 @@ const Dashboard = () => {
                     <Sidebar></Sidebar>
                 </div>
             </div>
+            {/* <Footer></Footer> */}
         </>
     );
 };

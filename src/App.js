@@ -8,6 +8,7 @@ import {
 import AddBloodBankInfo from "./components/AdminPanel/AddBloodBankInfo/AddBloodBankInfo";
 import AddDoctor from "./components/AdminPanel/AddDoctor/AddDoctor";
 import AddEmergencyInfo from "./components/AdminPanel/AddEmergencyInfo/AddEmergencyInfo";
+import AddHealthTips from "./components/AdminPanel/AddHealthTips/AddHealthTips";
 import MakeAdmin from "./components/AdminPanel/MakeAdmin/MakeAdmin";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 
@@ -19,6 +20,7 @@ import Appointment from "./components/ServicesDetails/Appointment/Appointment";
 import BloodBank from "./components/ServicesDetails/BloodBank/BloodBank";
 import Doctors from "./components/ServicesDetails/Doctors/Doctors";
 import Emergency from "./components/ServicesDetails/Emergency/Emergency";
+import HealthTips from "./components/ServicesDetails/HealthTips/HealthTips";
 import Footer from "./components/Shared/Footer/Footer";
 import Navbar from "./components/Shared/Navbar/Navbar";
 
@@ -47,10 +49,11 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-       
-            <PrivateRoute path="/dashboard">
+
+            {/* Must be Private Dashborad */}
+            <Route path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute>
+            </Route>
 
 
             <PrivateRoute path="/adddoctor">
@@ -60,7 +63,7 @@ function App() {
             <PrivateRoute path="/makeadmin">
               <MakeAdmin></MakeAdmin>
             </PrivateRoute>
-         
+
 
             <PrivateRoute path="/addemergencyinfo">
               <AddEmergencyInfo></AddEmergencyInfo>
@@ -69,7 +72,11 @@ function App() {
             <PrivateRoute path="/addbloodbankinfo">
               <AddBloodBankInfo></AddBloodBankInfo>
             </PrivateRoute>
-            
+
+            <PrivateRoute path="/addhealthtips">
+              <AddHealthTips></AddHealthTips>
+            </PrivateRoute>
+
             <Route path="/appointment">
               <Appointment></Appointment>
             </Route>
@@ -88,6 +95,10 @@ function App() {
 
             <Route path="/bloodbank">
               <BloodBank></BloodBank>
+            </Route>
+
+            <Route path="/healthtips">
+              <HealthTips></HealthTips>
             </Route>
 
           </Switch>

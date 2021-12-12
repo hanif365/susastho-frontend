@@ -62,7 +62,15 @@ const Sidebar = () => {
                             </Link>
                         </li>
 
+                        <li>
+                            <Link to="/addhealthtips" className="text-white">
+                                <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Health Tips</span>
+                            </Link>
+                        </li>
+
                     </div>}
+
+
 
 
 
