@@ -35,7 +35,6 @@ function App() {
     <DoctorContext.Provider value={[selectedDoctor, setSelectedDoctor]}>
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
-          {/* Doctor Name : {selectedDoctor.name} */}
           {/* <Navbar></Navbar> */}
           <Switch>
             <Route exact path="/">
@@ -44,38 +43,44 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            {/* <Route path="/admin">
-            <Admin></Admin>
-          </Route> */}
-
-            {/* <Route path="/dashboard">
-              <Dashboard></Dashboard>
-            </Route> */}
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-
-            <Route path="/appointment">
-              <Appointment></Appointment>
-            </Route>
-
-            <Route path="/adddoctor">
-              <AddDoctor></AddDoctor>
-            </Route>
-
-            <Route path="/makeadmin">
-              <MakeAdmin></MakeAdmin>
-            </Route>
-            {/* <PrivateRoute path="/manageservices">
-            <ManageService></ManageService>
-          </PrivateRoute> */}
 
             <Route path="/login">
               <Login></Login>
             </Route>
+       
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+
+
+            <PrivateRoute path="/adddoctor">
+              <AddDoctor></AddDoctor>
+            </PrivateRoute>
+
+            <PrivateRoute path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
+         
+
+            <PrivateRoute path="/addemergencyinfo">
+              <AddEmergencyInfo></AddEmergencyInfo>
+            </PrivateRoute>
+
+            <PrivateRoute path="/addbloodbankinfo">
+              <AddBloodBankInfo></AddBloodBankInfo>
+            </PrivateRoute>
+            
+            <Route path="/appointment">
+              <Appointment></Appointment>
+            </Route>
+
             <Route path="/doctors">
               <Doctors></Doctors>
             </Route>
+
+            <PrivateRoute path="/addappointment">
+              <AddAppointment></AddAppointment>
+            </PrivateRoute>
 
             <Route path="/emergency">
               <Emergency></Emergency>
@@ -85,40 +90,6 @@ function App() {
               <BloodBank></BloodBank>
             </Route>
 
-            <PrivateRoute path="/addappointment">
-              <AddAppointment></AddAppointment>
-            </PrivateRoute>
-
-            <Route path="/addemergencyinfo">
-              <AddEmergencyInfo></AddEmergencyInfo>
-            </Route>
-
-            <Route path="/addbloodbankinfo">
-              <AddBloodBankInfo></AddBloodBankInfo>
-            </Route>
-
-            {/* <PrivateRoute path="/doctors">
-            <Doctors></Doctors>
-          </PrivateRoute> */}
-
-            {/* <PrivateRoute path="/service/:serviceId">
-            <Order></Order>
-          </PrivateRoute> */}
-            {/* <PrivateRoute path="/service/:serviceId">
-            <Orders></Orders>
-          </PrivateRoute> */}
-            {/* <Route path="/order">
-            <Order></Order>
-          </Route> */}
-            {/* <PrivateRoute path="/orders">
-            <Orders></Orders>
-          </PrivateRoute>
-          <Route path="/bookinglists">
-            <BookingLists></BookingLists>
-          </Route>
-          <Route path="/addreview">
-            <Review></Review>
-          </Route> */}
           </Switch>
           {/* <Footer></Footer> */}
         </Router>

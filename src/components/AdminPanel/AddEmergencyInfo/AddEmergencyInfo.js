@@ -58,43 +58,42 @@ const AddEmergencyInfo = () => {
     }
     return (
         <section className="">
-        <Sidebar></Sidebar>
-        <div className="col-9 py-5 my-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-            <div className="order-component">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <input name="Hospital_Name" className="form-control" placeholder="Add Hospital Name" ref={register} />
+            <Sidebar></Sidebar>
+            <div className="col-9 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                <div className="order-component">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <label className='fw-bolder' htmlFor="h-name">Add Hospital Name <span className='text-danger'>*</span></label>
+                                <input name="Hospital_Name" id='h-name' className="form-control" placeholder="Add Hospital Name" ref={register} required />
 
-                            <input name="Address" className="form-control" placeholder="Add Address" ref={register} />
+                                <label className='fw-bolder mt-3' htmlFor="address">Add Address <span className='text-danger'>*</span></label>
+                                <input name="Address" id='address' className="form-control" placeholder="Add Address" ref={register} required />
 
-                            <input name="Mobile_Number" className="form-control" placeholder="Add Mobile Number" ref={register} />
+                                <label className='fw-bolder mt-3' htmlFor="mobile">Add Mobile Number <span className='text-danger'>*</span></label>
+                                <input name="Mobile_Number" id='mobile' className="form-control" placeholder="Add Mobile Number" ref={register} required />
 
-                            <input name="Contact_For_Ambulance" className="form-control" placeholder="Contact For Ambulance" ref={register} />
+                                <label className='fw-bolder mt-3' htmlFor="photo">Upload Hospital Photo</label>
+                                <input name="exampleRequired" className="form-control" type="file" onChange={handleImgUpload} />
+                            </div>
+                            <div className="col-md-6">
+                                <label className='fw-bolder' htmlFor="ambu">Contact For Ambulance <span className='text-danger'>*</span></label>
+                                <input name="Contact_For_Ambulance" id='ambu' className="form-control" placeholder="Contact For Ambulance" ref={register} required/>
 
-                            <input name="Hospital_Website" className="form-control" placeholder="Hospital Website" ref={register} />
+                                <label className='fw-bolder mt-3' htmlFor="web">Hospital Website <span className='text-danger'>*</span></label>
+                                <input name="Hospital_Website" id='web' className="form-control" placeholder="Hospital Website" ref={register} required />
 
-                            <input name="Hospital_Email" className="form-control" placeholder="Hospital Email" ref={register} />
-
-                            <input name="exampleRequired" className="my-5 form-control" type="file" onChange={handleImgUpload} />
+                                <label className='fw-bolder mt-3' htmlFor="email">Add Hospital Email</label>
+                                <input name="Hospital_Email" id='email' className="form-control" placeholder="Hospital Email" ref={register} />
+                            </div>
                         </div>
-                        {/* <div className="col-md-6">
-                            <input name="Chamber" className="form-control" placeholder="Chamber" ref={register} />
-                            <input name="Time" className="form-control" placeholder="Time" ref={register} />
-                            <input name="OffDay" className="form-control" placeholder="Off Day" ref={register} />
-                            <input name="Fees" className="form-control" placeholder="Add Fees" ref={register} />
-
-                            <input name="Doctor_Description" className="my-5 form-control" placeholder="Add Doctor Description" ref={register} />
-
-                        </div> */}
-                    </div>
 
 
-                    <input className="btn btn-info ps-4 w-25" type="submit" />
-                </form>
+                        <input className="btn btn-info px-4 w-25 my-3" type="submit" />
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     );
 };
 

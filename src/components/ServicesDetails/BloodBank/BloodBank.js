@@ -16,8 +16,8 @@ const BloodBank = () => {
     return (
         <div className=''>
         <Navbar></Navbar>
-        <div className="row emergency-field">
-            <div className="col-11 m-auto ">
+        <div className="bloodBank-field">
+            <div className="col-12 m-auto">
                 <table align="center" cellPadding="15" width="80%" className='table table-success table-striped table-hover'>
                     <thead >
                         <tr>

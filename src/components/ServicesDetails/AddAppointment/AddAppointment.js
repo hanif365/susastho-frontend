@@ -6,6 +6,12 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import DatePicker from "react-multi-date-picker";
 import './AddAppointment.css';
 
+import Swal from 'sweetalert2'
+
+// CommonJS
+
+
+
 const AddAppointment = () => {
     const [selectedDoctor, setSelectedDoctor] = useContext(DoctorContext);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -51,7 +57,15 @@ const AddAppointment = () => {
                 // window.location.reload(false)
             })
 
-        successMsg();
+
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Congratulations!! Your appointment successfully reserved.',
+            showConfirmButton: false,
+            timer: 20500
+          })
     };
 
 
@@ -73,9 +87,6 @@ const AddAppointment = () => {
             });
     }
 
-    const successMsg = () => {
-        alert(`Congratulatations!! You have successfully confirmed your appointment! Your Selected Doctor Name ${selectedDoctor.name} `)
-    }
     return (
         <section className="py-5 my-5">
             {/* <Sidebar></Sidebar> */}

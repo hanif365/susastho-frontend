@@ -33,13 +33,16 @@ const MakeAdmin = () => {
     return (
         <section className="">
             <Sidebar></Sidebar>
-            <div className="col-9 my-5 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+            <div className="col-9 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                 <div className="my-3 order-component">
                     <form onSubmit={handleSubmit(onSubmitAdmin)}>
                         <div className="row">
                             <div className="col">
-                                <input name="Admin_Name" className="form-control" placeholder="Add Admin Name" ref={register} />
-                                <input name="email" className="form-control my-5" placeholder="Add Admin Email" ref={register} />
+                                <label className='fw-bolder' htmlFor="admin-name">Add Admin Name <span className='text-danger'>*</span></label>
+                                <input name="Admin_Name" id='admin-name' className="form-control" placeholder="Add Admin Name" ref={register} required />
+
+                                <label className='fw-bolder mt-4' htmlFor="email">Add Email Address <span className='text-danger'>*</span></label>
+                                <input name="email" id='email' className="form-control mb-4" placeholder="Add Admin Email" ref={register} required/>
                             </div>
                         </div>
                         <input className="btn btn-info ps-4 w-25" type="submit" />

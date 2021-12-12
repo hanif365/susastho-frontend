@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarCheck, faCommentAlt, faSignOutAlt, faUserMd, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faAmbulance, faCalendarCheck, faCommentAlt, faHandHoldingWater, faSignOutAlt, faUserMd, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import Navbar from '../Shared/Navbar/Navbar';
@@ -25,17 +25,6 @@ const Sidebar = () => {
             <div className="sidebar d-flex flex-column justify-content-between col-3 py-5 px-4" style={{ height: "100vh" }}>
                 <ul className="list-unstyled">
                     {isAdmin && <div>
-                        {/* <li>
-                            <Link to="/orderlist" className="text-white">
-                                <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
-                            </Link>
-                        </li> */}
-                        {/* <li>
-                            <Link to="/orderlist" className="text-white">
-                                <FontAwesomeIcon icon={faShoppingBag} /> <span>Order List</span>
-                            </Link>
-                        </li> */}
-
                         <li>
                             <Link to="/adddoctor" className="text-white">
                                 <FontAwesomeIcon icon={faUserMd} /> <span>Add Doctor</span>
@@ -49,19 +38,21 @@ const Sidebar = () => {
                             </Link>
                         </li>
 
-                        {/* <li>
-                            <Link to="/manageservices" className="text-white">
-                                <FontAwesomeIcon icon={faThList} /> <span>Manage Services</span>
+                        <li>
+                            <Link to="/addemergencyinfo" className="text-white">
+                                <FontAwesomeIcon icon={faAmbulance} /> <span>Add Emergency Info</span>
                             </Link>
-                        </li> */}
+                        </li>
+
+                        <li>
+                            <Link to="/addbloodbankinfo" className="text-white">
+                                <FontAwesomeIcon icon={faHandHoldingWater} /> <span>Add Blood Bank Info</span>
+                            </Link>
+                        </li>
+
                     </div>}
 
 
-                    {/* <li>
-                        <Link to="/bookinglists" className="text-white">
-                            <FontAwesomeIcon icon={faThList} /> <span>Booking Lists</span>
-                        </Link>
-                    </li> */}
 
                     <li>
                         <Link to="/appointment" className="text-white">
@@ -69,27 +60,18 @@ const Sidebar = () => {
                         </Link>
                     </li>
 
-                    <li>
-                        <Link to="/addemergencyinfo" className="text-white">
-                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Emergency Info</span>
-                        </Link>
-                    </li>
 
-                    <li>
-                        <Link to="/addbloodbankinfo" className="text-white">
-                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Blood Bank Info</span>
-                        </Link>
-                    </li>
-
-                    <li>
+                    {/* <li>
                         <Link to="/addreview" className="text-white">
                             <FontAwesomeIcon icon={faCommentAlt} /> <span>Add Review</span>
                         </Link>
-                    </li>
+                    </li> */}
+
+                    <Link to="/" onClick={() => setLoggedInUser({})} className="text-danger fw-bold"><FontAwesomeIcon icon={faSignOutAlt} /> <span>LOG OUT</span></Link>
                 </ul>
-                <div>
-                    <Link to="/" onClick={() => setLoggedInUser({})} className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
-                </div>
+                {/* <div>
+                    <Link to="/" onClick={() => setLoggedInUser({})} className="text-danger"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
+                </div> */}
             </div>
         </div>
     );

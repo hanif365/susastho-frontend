@@ -1,5 +1,74 @@
-.login-container{
+/* .login-container{
     padding-top: 250px !important;
     background: #5f6aec;
     height: 100vh;
+} */
+
+.main-container {
+    background: #a2d2ff;
+    height: 60rem;
+}
+
+.form-content {
+    background: #0095c7a9;
+    border-radius: 10px;
+    max-width: 37.5rem;
+    padding: 30px;
+    margin: auto;
+    margin-top: 120px !important;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.507);
+}
+
+.login-btn {
+    cursor: pointer;
+    color: yellow;
+}
+
+.create-btn {
+    cursor: pointer;
+    color: rgb(128, 0, 122);
+}
+
+.forgot-password {
+    margin-left: 15.65rem;
+}
+
+.login-others {
+    width: 31.25rem;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.322);
+}
+
+.divider hr {
+    border: 0;
+    border-top: 5px solid #04cbee1a;
+    max-width: 16rem;
+    margin: auto;
+}
+
+@media(max-width:768px) {
+    .forgot-password {
+        margin-left: 10rem;
+    }
+}
+
+@media(max-width:576px) {
+    .forgot-password {
+        margin-left: 0.2rem;
+        font-size: 12px;
+        display: block;
+    }
+    .form-content {
+        margin-top: 150px !important;
+    }
+    .login-others {
+        width: 20rem;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:380px) {
+    .login-others {
+        width: 12rem;
+        font-size: 12px;
+    }
 }

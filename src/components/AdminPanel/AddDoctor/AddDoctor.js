@@ -62,34 +62,47 @@ const AddDoctor = () => {
     return (
         <section className="">
             <Sidebar></Sidebar>
-            <div className="col-9 py-5 my-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+            <div className="col-9 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                 <div className="order-component">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                             <div className="col-md-6">
-                                <input name="Doctor_Name" className="form-control" placeholder="Add Doctor Name" ref={register} />
+                                <label className='fw-bolder' htmlFor="dt-name">Add Doctor Name <span className='text-danger'>*</span></label>
+                                <input name="Doctor_Name" id='dt-name' className="form-control" placeholder="Add Doctor Name" ref={register} required />
 
-                                <input name="Designation" className="form-control" placeholder="Add Designation" ref={register} />
+                                <label className='fw-bolder pt-3' htmlFor="designation">Add Designation <span className='text-danger'>*</span></label>
+                                <input name="Designation" id='designation' className="form-control" placeholder="Add Designation" ref={register} required />
 
-                                <input name="Degree" className="form-control" placeholder="Add Degree" ref={register} />
+                                <label className='fw-bolder pt-3' htmlFor="degree">Add Degree <span className='text-danger'>*</span></label>
+                                <input name="Degree" id='degree' className="form-control" placeholder="Add Degree" ref={register} required />
 
-                                <input name="Department" className="form-control" placeholder="Add Department" ref={register} />
+                                <label className='fw-bolder pt-3' htmlFor="department">Add Department</label>
+                                <input name="Department" id='department' className="form-control" placeholder="Add Department" ref={register} />
 
-                                <input name="exampleRequired" className="my-5 form-control" type="file" onChange={handleImgUpload} />
+                                <label className='fw-bolder pt-3' htmlFor="doc-img">Doctor Image Upload</label>
+                                <input name="exampleRequired" className="form-control" type="file" onChange={handleImgUpload} />
                             </div>
                             <div className="col-md-6">
-                                <input name="Chamber" className="form-control" placeholder="Chamber" ref={register} />
-                                <input name="Time" className="form-control" placeholder="Time" ref={register} />
-                                <input name="OffDay" className="form-control" placeholder="Off Day" ref={register} />
-                                <input name="Fees" className="form-control" placeholder="Add Fees" ref={register} />
+                                <label className='fw-bolder' htmlFor="chamber">Add Chamber Location <span className='text-danger'>*</span></label>
+                                <input name="Chamber" id='chamber' className="form-control" placeholder="Chamber" ref={register} required />
 
-                                <input name="Doctor_Description" className="my-5 form-control" placeholder="Add Doctor Description" ref={register} />
+                                <label className='fw-bolder pt-3' htmlFor="ch-time">Add Chamber Time <span className='text-danger'>*</span></label>
+                                <input name="Time" id='ch-time' className="form-control" placeholder="Time" ref={register} required />
+
+                                <label className='fw-bolder pt-3' htmlFor="offday">Add Chamber Off Day <span className='text-danger'>*</span></label>
+                                <input name="OffDay" id='offday' className="form-control" placeholder="Off Day" ref={register} required />
+
+                                <label className='fw-bolder pt-3' htmlFor="fee">Add Doctor Fees</label>
+                                <input name="Fees" id='fee' className="form-control" placeholder="Add Fees" ref={register} />
+
+                                <label className='fw-bolder pt-3' htmlFor="description">Add Doctor Description</label>
+                                <input name="Doctor_Description" id='description' className="form-control" placeholder="Add Doctor Description" ref={register} />
 
                             </div>
                         </div>
 
 
-                        <input className="btn btn-info ps-4 w-25" type="submit" />
+                        <input className="btn btn-info ps-4 w-25 mt-4" type="submit" />
                     </form>
                 </div>
             </div>
