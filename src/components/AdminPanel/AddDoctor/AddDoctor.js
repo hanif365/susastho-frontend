@@ -23,7 +23,7 @@ const AddDoctor = () => {
         };
 
         // const url = `https://polar-bastion-39307.herokuapp.com/addService`
-        const url = `http://localhost:5000/addDoctor`
+        const url = `https://sleepy-fjord-79948.herokuapp.com/addDoctor`
         // console.log(data)
 
         console.log(doctorData);

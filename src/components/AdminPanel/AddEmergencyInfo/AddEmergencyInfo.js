@@ -20,7 +20,7 @@ const AddEmergencyInfo = () => {
         };
 
         // const url = `https://polar-bastion-39307.herokuapp.com/addService`
-        const url = `http://localhost:5000/addemergencyinfo`
+        const url = `https://sleepy-fjord-79948.herokuapp.com/addemergencyinfo`
         // console.log(data)
 
         console.log(emergencyInfo);

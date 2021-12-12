@@ -12,7 +12,7 @@ const MakeAdmin = () => {
             Admin_Added_Date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear())
         };
 
-        const adminURL = `http://localhost:5000/addAdmin`
+        const adminURL = `https://sleepy-fjord-79948.herokuapp.com/addAdmin`
 
         // console.log(adminData);
 

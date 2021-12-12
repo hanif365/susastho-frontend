@@ -8,7 +8,7 @@ const AppointmentList = ({ appointment }) => {
     const cancelAppointment = (id) =>{
         console.log(id)
 
-        fetch(`http://localhost:5000/cancelAppointment/${id}`, {
+        fetch(`https://sleepy-fjord-79948.herokuapp.com/cancelAppointment/${id}`, {
             method: 'DELETE',
         })
             .then(res => {

@@ -6,7 +6,7 @@ const Emergency = () => {
     const [emergencyInfo, setEmergencyInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/emergencyInfo')
+        fetch('https://sleepy-fjord-79948.herokuapp.com/emergencyInfo')
             .then(res => res.json())
             .then(data => {
                 console.log("Emergency Info from DB : ", data);

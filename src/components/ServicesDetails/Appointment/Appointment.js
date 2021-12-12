@@ -7,7 +7,7 @@ const Appointment = () => {
     const [appointments, setAppointments] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appointment`)
+        fetch(`https://sleepy-fjord-79948.herokuapp.com/appointment`)
             .then(res => res.json())
             .then(data => {
                 console.log("Appointment Data from DB : ", data);

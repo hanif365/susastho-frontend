@@ -40,7 +40,7 @@ const AddAppointment = () => {
         };
 
         // const url = `https://polar-bastion-39307.herokuapp.com/addService`
-        const url = `http://localhost:5000/addAppointment`
+        const url = `https://sleepy-fjord-79948.herokuapp.com/addAppointment`
         // console.log(data)
 
         console.log(patientData);

@@ -22,8 +22,7 @@ const AddBloodBankInfo = () => {
             Last_BloodDonation_Date: value?.toDate?.().toString(),
         };
 
-        // const url = `https://polar-bastion-39307.herokuapp.com/addService`
-        const url = `http://localhost:5000/addbloodbankinfo`
+        const url = `https://sleepy-fjord-79948.herokuapp.com/addbloodbankinfo`
         // console.log(data)
 
         console.log(bloodBankInfo);
