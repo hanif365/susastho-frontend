@@ -1,11 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import brandicon from '../../../Assets/Images/brandicon.png'
 import { UserContext } from '../../../App';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faOilCan, faUserMd } from '@fortawesome/free-solid-svg-icons';
+
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsAdmin(data));
+    }, [])
+    
+    const showNotification = () => {
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'You are Logged Out!.',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+        })
+    }
     return (
         <div>
             <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
@@ -25,11 +51,11 @@ const Navbar = () => {
                             <Link class="nav-link" to="/">BLOOD BANK</Link>
                             <Link class="nav-link" to="/">HEALTH TIPS</Link> */}
                             {
-                                loggedInUser.email ? loggedInUser.photo ? <Link className="nav-link"><img className='user-img' src={loggedInUser.photo} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
+                                loggedInUser.email ? loggedInUser.photo ? <Link className="nav-link"><img className='user-img' src={loggedInUser.photo} id={isAdmin ? "admin" : ""} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
                             }
 
                             {
-                                loggedInUser.email ? <Link className="sign-out-btn btn-lg" onClick={() => setLoggedInUser({})}>LOG OUT</Link> : ''
+                                loggedInUser.email ? <Link className="sign-out-btn btn-lg" onClick={() => { showNotification(); setLoggedInUser({}) }}>LOG OUT</Link> : ''
                             }
                         </div>
                     </div>

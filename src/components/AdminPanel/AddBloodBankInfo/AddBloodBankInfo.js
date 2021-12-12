@@ -39,6 +39,14 @@ const AddBloodBankInfo = () => {
                 // window.location.reload(false)
             })
 
+            const Swal = require('sweetalert2')
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Wow!! Blood Donor Info Successfully inserted into the Database.',
+                showConfirmButton: false,
+                timer: 1500
+            })
     };
 
     const handleImgUpload = (e) => {

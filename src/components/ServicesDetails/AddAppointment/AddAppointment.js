@@ -64,8 +64,8 @@ const AddAppointment = () => {
             icon: 'success',
             title: 'Congratulations!! Your appointment successfully reserved.',
             showConfirmButton: false,
-            timer: 20500
-          })
+            timer: 1500
+        })
     };
 
 

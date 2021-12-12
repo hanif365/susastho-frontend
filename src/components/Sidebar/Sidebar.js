@@ -19,6 +19,18 @@ const Sidebar = () => {
             .then(res => res.json())
             .then(data => setIsAdmin(data));
     }, [])
+
+    const showNotification = () => {
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'You are Logged Out!.',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+        })
+    }
     return (
         <div className="sidebar-container">
             <Navbar></Navbar>
@@ -67,7 +79,9 @@ const Sidebar = () => {
                         </Link>
                     </li> */}
 
-                    <Link to="/" onClick={() => setLoggedInUser({})} className="text-danger fw-bold"><FontAwesomeIcon icon={faSignOutAlt} /> <span>LOG OUT</span></Link>
+                    <li>
+                        <Link to="/" onClick={() => { showNotification(); setLoggedInUser({}) }} className="logout text-danger fw-bold"><FontAwesomeIcon icon={faSignOutAlt} /> <span>LOG OUT</span></Link>
+                    </li>
                 </ul>
                 {/* <div>
                     <Link to="/" onClick={() => setLoggedInUser({})} className="text-danger"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>

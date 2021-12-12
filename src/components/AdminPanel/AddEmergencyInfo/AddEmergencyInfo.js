@@ -37,6 +37,14 @@ const AddEmergencyInfo = () => {
                 // window.location.reload(false)
             })
 
+            const Swal = require('sweetalert2')
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Congratulations!! Emergency Info Successfully inserted into the Database.',
+                showConfirmButton: false,
+                timer: 1500
+            })
     };
 
     const handleImgUpload = (e) => {

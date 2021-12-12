@@ -22,9 +22,7 @@ const AddDoctor = () => {
             Doctor_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear())
         };
 
-        // const url = `https://polar-bastion-39307.herokuapp.com/addService`
         const url = `https://sleepy-fjord-79948.herokuapp.com/addDoctor`
-        // console.log(data)
 
         console.log(doctorData);
 
@@ -38,6 +36,15 @@ const AddDoctor = () => {
             .then(res => {
                 console.log('server side response', res)
                 // window.location.reload(false)
+            })
+
+            const Swal = require('sweetalert2')
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Congratulations!! A doctors Info Successfully inserted into Database.',
+                showConfirmButton: false,
+                timer: 1500
             })
 
     };

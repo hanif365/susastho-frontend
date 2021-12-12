@@ -28,6 +28,14 @@ const MakeAdmin = () => {
                 // window.location.reload(false)
             })
 
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Amazing!! Admin created Successfully and save in the Database.',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     return (
@@ -42,7 +50,7 @@ const MakeAdmin = () => {
                                 <input name="Admin_Name" id='admin-name' className="form-control" placeholder="Add Admin Name" ref={register} required />
 
                                 <label className='fw-bolder mt-4' htmlFor="email">Add Email Address <span className='text-danger'>*</span></label>
-                                <input name="email" id='email' className="form-control mb-4" placeholder="Add Admin Email" ref={register} required/>
+                                <input name="email" id='email' className="form-control mb-4" placeholder="Add Admin Email" ref={register} required />
                             </div>
                         </div>
                         <input className="btn btn-info ps-4 w-25" type="submit" />
