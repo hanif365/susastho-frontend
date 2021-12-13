@@ -70,7 +70,7 @@ const AddBloodBankInfo = () => {
         <section className="">
             <Sidebar></Sidebar>
             <div className="col-9 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-                <div className="order-component">
+                <div className="order-component py-5">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                             <div className="col-md-6">
@@ -80,7 +80,7 @@ const AddBloodBankInfo = () => {
                                 <label className='fw-bolder mt-3' htmlFor="address">Add Address <span className='text-danger'>*</span></label>
                                 <input name="Address" id='address' className="form-control" placeholder="Add Address" ref={register} required />
 
-                                <label className='fw-bolder me-3 mt-5' htmlFor="lbd-date">Last Blood Donation Date <span className='text-danger'>*</span></label>
+                                <label className='fw-bolder pt-5 me-3 mt-5' htmlFor="lbd-date">Last Blood Donation Date <span className='text-danger'>*</span></label>
                                 <DatePicker className='date-picker' value={value} id='lbd-date' format="YYYY/MM/DD" onChange={setValue} required />
 
                             </div>

@@ -1,13 +1,13 @@
 [{
     "id": "doctors",
     "service_name": "FIND DOCTORS",
-    "service_des": "Find Your Favorite Doctor",
+    "service_des": "Find Your Favorite Doctor and get appointment",
     "image": "https://i.ibb.co/23mVsft/Online-doctor-consultation-diagnostics-advice-or-support-of-patient-over-the-internet-video-call-on.jpg",
     "icon_img": "https://i.ibb.co/J5djKkv/doctor-icon.png"
   }, {
     "id": "emergency",
     "service_name": "EMERGENCY",
-    "service_des": "Call 999 for Emergency Ambulance",
+    "service_des": "Find Hospital Emergency Number and Ambulance service",
     "image": "https://i.ibb.co/Tbbnwt5/ambulance.jpg",
     "image1": "https://media.giphy.com/media/3og0IOa1X349KZ8E1i/giphy.gif",
     "icon_img": ""
@@ -26,7 +26,7 @@
   }, {
     "id": "bloodbank",
     "service_name": "BLOOD BANK",
-    "service_des": "Emergency Blood Donner Information",
+    "service_des": "Emergency Blood Donor Information",
     "image": "https://i.ibb.co/TYW71Sv/blood-bank.jpg",
     "icon_img": ""
   }, {
