@@ -54,6 +54,7 @@
 .btn-login{
     background-color: aqua;
     padding: 8px 30px !important;
+    color: #F2789F !important;
 }
 .btn-login:hover{
     color: green !important;
