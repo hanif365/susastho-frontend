@@ -6,7 +6,7 @@ import './DoctorList.css'
 const DoctorList = ({ doctor }) => {
     // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDoctor, setSelectedDoctor] = useContext(DoctorContext);
-    const { Doctor_Name, Designation, imageURL, Degree, Department, Chamber, Time, Fees, OffDay, Doctor_Description } = doctor;
+    const {_id, Doctor_Name, Designation, imageURL, Degree, Department, Chamber, Time, Fees, OffDay, Doctor_Description } = doctor;
     console.log("Doctor Name :", Doctor_Name);
 
     const handleDoctor = () => {

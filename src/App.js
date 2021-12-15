@@ -23,6 +23,8 @@ import Emergency from "./components/ServicesDetails/Emergency/Emergency";
 import HealthTips from "./components/ServicesDetails/HealthTips/HealthTips";
 import Footer from "./components/Shared/Footer/Footer";
 import Navbar from "./components/Shared/Navbar/Navbar";
+import ConfirmedDoctor from "./components/SuperAdminPanel/ConfirmedDoctor/ConfirmedDoctor";
+import MakeSuperAdmin from "./components/SuperAdminPanel/MakeSuperAdmin/MakeSuperAdmin";
 
 export const UserContext = createContext();
 export const DoctorContext = createContext();
@@ -63,6 +65,14 @@ function App() {
             <PrivateRoute path="/makeadmin">
               <MakeAdmin></MakeAdmin>
             </PrivateRoute>
+
+            <Route path="/makesuperadmin">
+              <MakeSuperAdmin></MakeSuperAdmin>
+            </Route>
+
+            <Route path="/confirmeddoctor">
+              <ConfirmedDoctor></ConfirmedDoctor>
+            </Route>
 
 
             <PrivateRoute path="/addemergencyinfo">

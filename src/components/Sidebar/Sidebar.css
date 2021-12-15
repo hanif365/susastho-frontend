@@ -24,3 +24,10 @@
     color: #9A0680 !important;
 }
 
+.super-admin-panel li{
+    padding-left: 50px;
+    /* margin-top: -8px !important; */
+}
+.admin-panel li{
+    padding-left: 50px;
+}

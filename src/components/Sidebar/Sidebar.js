@@ -9,6 +9,7 @@ import Navbar from '../Shared/Navbar/Navbar';
 const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [isSuperAdmin, setIsSuperAdmin] = useState(false);
 
     useEffect(() => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
@@ -18,6 +19,16 @@ const Sidebar = () => {
         })
             .then(res => res.json())
             .then(data => setIsAdmin(data));
+    }, [])
+
+    useEffect(() => {
+        fetch('https://sleepy-fjord-79948.herokuapp.com/isSuperAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsSuperAdmin(data));
     }, [])
 
     const showNotification = () => {
@@ -36,37 +47,64 @@ const Sidebar = () => {
             <Navbar></Navbar>
             <div className="sidebar d-flex flex-column justify-content-between col-3 py-5 px-4" style={{ height: "100vh" }}>
                 <ul className="list-unstyled">
-                    {isAdmin && <div>
-                        <li>
-                            <Link to="/adddoctor" className="text-white">
-                                <FontAwesomeIcon icon={faUserMd} /> <span>Add Doctor</span>
-                            </Link>
-                        </li>
+                    {(isAdmin || isSuperAdmin) && <div>
+                        {isSuperAdmin && <div className='super-admin-panel'>
+                            <h4 className='text-white'>
+                                <FontAwesomeIcon icon={faUserPlus} /> <span>Super Admin Panel</span>
+                            </h4>
+
+                            <li>
+                                <Link to="/makesuperadmin" className="text-white">
+                                    <FontAwesomeIcon icon={faUserPlus} /> <span>Make Super Admin</span>
+                                </Link>
+                            </li>
 
 
-                        <li>
-                            <Link to="/makeadmin" className="text-white">
-                                <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
-                            </Link>
-                        </li>
+                            <li>
+                                <Link to="/makeadmin" className="text-white">
+                                    <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
+                                </Link>
+                            </li>
 
-                        <li>
-                            <Link to="/addemergencyinfo" className="text-white">
-                                <FontAwesomeIcon icon={faAmbulance} /> <span>Add Emergency Info</span>
-                            </Link>
-                        </li>
+                            <li>
+                                <Link to="/confirmeddoctor" className="text-white">
+                                    <FontAwesomeIcon icon={faUserPlus} /> <span>Confirmed Doctor</span>
+                                </Link>
+                            </li>
 
-                        <li>
-                            <Link to="/addbloodbankinfo" className="text-white">
-                                <FontAwesomeIcon icon={faHandHoldingWater} /> <span>Add Blood Bank Info</span>
-                            </Link>
-                        </li>
+                        </div>}
 
-                        <li>
-                            <Link to="/addhealthtips" className="text-white">
-                                <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Health Tips</span>
-                            </Link>
-                        </li>
+                        <div className='admin-panel'>
+                        <h4 className='text-white'>
+                                <FontAwesomeIcon icon={faUserPlus} /> <span>Admin Panel</span>
+                            </h4>
+                            <li>
+                                <Link to="/adddoctor" className="text-white">
+                                    <FontAwesomeIcon icon={faUserMd} /> <span>Add Doctor</span>
+                                </Link>
+                            </li>
+
+
+                            <li>
+                                <Link to="/addemergencyinfo" className="text-white">
+                                    <FontAwesomeIcon icon={faAmbulance} /> <span>Add Emergency Info</span>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/addbloodbankinfo" className="text-white">
+                                    <FontAwesomeIcon icon={faHandHoldingWater} /> <span>Add Blood Bank Info</span>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/addhealthtips" className="text-white">
+                                    <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Health Tips</span>
+                                </Link>
+                            </li>
+                        </div>
+
+
 
                     </div>}
 

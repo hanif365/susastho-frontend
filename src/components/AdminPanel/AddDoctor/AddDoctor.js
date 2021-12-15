@@ -19,7 +19,8 @@ const AddDoctor = () => {
             OffDay: data.OffDay,
             Fees: data.Fees,
             Doctor_Description: data.Doctor_Description,
-            Doctor_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear())
+            Doctor_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear()),
+            status: "pending",
         };
 
         const url = `https://sleepy-fjord-79948.herokuapp.com/addDoctor`
