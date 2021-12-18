@@ -1,6 +1,9 @@
 .sidebar{
     background: #5f6aec;
     position: fixed;
+    height: 100vh !important;
+    overflow: auto;
+    padding: 30px 0 100px 20px;
 }
 .sidebar li{
     margin-bottom: 2em;
@@ -30,4 +33,21 @@
 }
 .admin-panel li{
     padding-left: 50px;
+}
+
+/* Scrollbar design */
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #495295; 
 }

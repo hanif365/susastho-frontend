@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './ConfirmedDoctor.css'
 import DoctorPhoto from '../../../Assets/Images/doctor-icon.png'
+import Sidebar from '../../Sidebar/Sidebar';
 
 const ConfirmedDoctor = () => {
     const [doctors, setDoctors] = useState([]);
@@ -21,7 +22,7 @@ const ConfirmedDoctor = () => {
         const inputStatus = 'Confirmed';
         const status = {inputStatus};
         console.log("confirmed : ", id);
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/confirmed/${id}`, {
+        fetch(`https://sleepy-fjord-79948.herokuapp.com/doctorConfirmed/${id}`, {
             method: 'PATCH',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify(status)
@@ -52,7 +53,7 @@ const ConfirmedDoctor = () => {
         const inputStatus = 'Pending';
         const status = {inputStatus};
         console.log("pending : ", id);
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/pending/${id}`, {
+        fetch(`https://sleepy-fjord-79948.herokuapp.com/doctorPending/${id}`, {
             method: 'PATCH',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify(status)
@@ -66,9 +67,10 @@ const ConfirmedDoctor = () => {
 
     return (
         <div className=''>
-            <Navbar></Navbar>
-            <div className="bloodBank-field">
-                <div className="col-12 m-auto">
+            {/* <Navbar></Navbar> */}
+            <Sidebar></Sidebar>
+            <div className="">
+                <div className="col-9 py-3 p-2 pr-5 m-auto" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                     <table align="center" cellPadding="15" width="80%" className='table table-success table-striped table-hover'>
                         <thead >
                             <tr>
@@ -76,7 +78,7 @@ const ConfirmedDoctor = () => {
                                 <th className='px-4'>DoctorName</th>
                                 <th className='px-4'>Designation</th>
                                 <th className='px-4'>Degree</th>
-                                <th className='px-4'>Department</th>
+                                {/* <th className='px-4'>Department</th> */}
                                 <th className='px-4'>Chamber</th>
                                 <th className='px-4'>Time</th>
                                 <th className='px-4'>OffDay</th>
@@ -93,7 +95,7 @@ const ConfirmedDoctor = () => {
                                             <td className='px-4'>{doctorsInfo.Doctor_Name}</td>
                                             <td className='px-4'>{doctorsInfo.Designation}</td>
                                             <td className='px-4'>{doctorsInfo.Degree}</td>
-                                            <td className='px-4'>{doctorsInfo.Department}</td>
+                                            {/* <td className='px-4'>{doctorsInfo.Department}</td> */}
                                             <td className='px-4'>{doctorsInfo.Chamber}</td>
                                             <td className='px-4'>{doctorsInfo.Time}</td>
                                             <td className='px-4'>{doctorsInfo.OffDay}</td>
@@ -103,7 +105,7 @@ const ConfirmedDoctor = () => {
 
                                                 <button onClick={() => statusPending(doctorsInfo._id)} className="btn btn-warning">PENDING</button>
                                                 {/* <button onClick={() => statusOngoing(doctorsInfo._id)} className="btn btn-info my-2">ONGOING</button> */}
-                                                <button onClick={() => statusconfirmed(doctorsInfo._id)} className="btn btn-success mt-2 px-4">CONFIRM</button>
+                                                <button onClick={() => statusconfirmed(doctorsInfo._id)} className="btn btn-success mt-2 px-3">CONFIRM</button>
 
                                             </td>
                                         </tr>

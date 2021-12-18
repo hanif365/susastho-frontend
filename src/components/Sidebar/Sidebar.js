@@ -45,7 +45,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar-container">
             <Navbar></Navbar>
-            <div className="sidebar d-flex flex-column justify-content-between col-3 py-5 px-4" style={{ height: "100vh" }}>
+            <div className="sidebar d-flex flex-column justify-content-between col-3">
                 <ul className="list-unstyled">
                     {(isAdmin || isSuperAdmin) && <div>
                         {isSuperAdmin && <div className='super-admin-panel'>
