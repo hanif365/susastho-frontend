@@ -10,6 +10,7 @@ import { faOilCan, faUserMd } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [isSuperAdmin, setIsSuperAdmin] = useState(false);
 
     useEffect(() => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
@@ -19,6 +20,17 @@ const Navbar = () => {
         })
             .then(res => res.json())
             .then(data => setIsAdmin(data));
+    }, [])
+
+    // Check admin super-admin or not
+    useEffect(() => {
+        fetch('https://sleepy-fjord-79948.herokuapp.com/isSuperAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsSuperAdmin(data));
     }, [])
     
     const showNotification = () => {
@@ -51,7 +63,7 @@ const Navbar = () => {
                             <Link class="nav-link" to="/">BLOOD BANK</Link>
                             <Link class="nav-link" to="/">HEALTH TIPS</Link> */}
                             {
-                                loggedInUser.email ? loggedInUser.photo ? <Link className="nav-link"><img className='user-img' src={loggedInUser.photo} id={isAdmin ? "admin" : ""} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
+                                loggedInUser.email ? loggedInUser.photo ? <Link className="nav-link"><img className='user-img' src={loggedInUser.photo} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
                             }
 
                             {
