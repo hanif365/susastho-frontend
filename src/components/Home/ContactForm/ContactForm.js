@@ -15,6 +15,17 @@ const ContactForm = () => {
                 console.log(error.text);
             });
         e.target.reset();
+        
+        // Notification for successfully message send
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Congratulations!! Your Message Successfully send!',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+        })
     }
     return (
         <div className="contact-form-container py-5 text-light" id="contact" >
