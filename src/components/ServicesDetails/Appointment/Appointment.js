@@ -1,19 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Sidebar/Sidebar';
 import AppointmentList from '../AppointmentList/AppointmentList';
 import './Appointment.css'
 
 const Appointment = () => {
-    const [appointments, setAppointments] = useState([])
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/appointment`)
+        fetch('https://sleepy-fjord-79948.herokuapp.com/appointment?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 console.log("Appointment Data from DB : ", data);
-                setAppointments(data)
+                // setAppointments(data);
+                (data.length <= 0) ? showNotificationForAppointmentNone() : setAppointments(data)
             })
     }, [])
+
+    const showNotificationForAppointmentNone = () => {
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'info',
+            title: 'You have no Appointment!! At first get an Appointment.',
+            showConfirmButton: false,
+            timer: 3500,
+            timerProgressBar: true,
+        })
+    }
     return (
         <section className="">
             <Sidebar></Sidebar>

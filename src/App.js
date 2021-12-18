@@ -87,9 +87,9 @@ function App() {
               <AddHealthTips></AddHealthTips>
             </PrivateRoute>
 
-            <Route path="/appointment">
+            <PrivateRoute path="/appointment">
               <Appointment></Appointment>
-            </Route>
+            </PrivateRoute>
 
             <Route path="/doctors">
               <Doctors></Doctors>
