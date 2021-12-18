@@ -103,9 +103,9 @@ const ConfirmedDoctor = () => {
 
                                             <td>
 
-                                                <button onClick={() => statusPending(doctorsInfo._id)} className="btn btn-warning">PENDING</button>
-                                                {/* <button onClick={() => statusOngoing(doctorsInfo._id)} className="btn btn-info my-2">ONGOING</button> */}
-                                                <button onClick={() => statusconfirmed(doctorsInfo._id)} className="btn btn-success mt-2 px-3">CONFIRM</button>
+                                                {doctorsInfo.status === "Confirmed" ? <button onClick={() => statusPending(doctorsInfo._id)} className="btn btn-warning">PENDING</button> :
+                                            
+                                                <button onClick={() => statusconfirmed(doctorsInfo._id)} className="btn btn-success mt-2 px-3">CONFIRM</button>}
 
                                             </td>
                                         </tr>
