@@ -7,7 +7,7 @@ const ConfirmedDoctor = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/doctors')
+        fetch('https://sleepy-fjord-79948.herokuapp.com/doctorsForConfirmation')
             .then(res => res.json())
             .then(data => {
                 console.log("Doctors Data from DB : ", data);
@@ -17,10 +17,11 @@ const ConfirmedDoctor = () => {
 
 
     // new code
-    const statusDone = (id) =>{
-        const inputStatus = 'Done';
+    const statusconfirmed = (id) =>{
+        const inputStatus = 'Confirmed';
         const status = {inputStatus};
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/done/${id}`, {
+        console.log("confirmed : ", id);
+        fetch(`https://sleepy-fjord-79948.herokuapp.com/confirmed/${id}`, {
             method: 'PATCH',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify(status)
@@ -50,6 +51,7 @@ const ConfirmedDoctor = () => {
     const statusPending = (id) =>{
         const inputStatus = 'Pending';
         const status = {inputStatus};
+        console.log("pending : ", id);
         fetch(`https://sleepy-fjord-79948.herokuapp.com/pending/${id}`, {
             method: 'PATCH',
             headers:{'Content-Type': 'application/json'},
@@ -101,7 +103,7 @@ const ConfirmedDoctor = () => {
 
                                                 <button onClick={() => statusPending(doctorsInfo._id)} className="btn btn-warning">PENDING</button>
                                                 {/* <button onClick={() => statusOngoing(doctorsInfo._id)} className="btn btn-info my-2">ONGOING</button> */}
-                                                <button onClick={() => statusDone(doctorsInfo._id)} className="btn btn-success mt-2 px-4">DONE</button>
+                                                <button onClick={() => statusconfirmed(doctorsInfo._id)} className="btn btn-success mt-2 px-4">CONFIRM</button>
 
                                             </td>
                                         </tr>

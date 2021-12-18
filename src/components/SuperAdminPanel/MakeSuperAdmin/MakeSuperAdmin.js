@@ -46,7 +46,7 @@ const MakeSuperAdmin = () => {
                     <form onSubmit={handleSubmit(onSubmitAdmin)}>
                         <div className="row">
                             <div className="col">
-                                <label className='fw-bolder' htmlFor="super-admin-name">Add Admin Name <span className='text-danger'>*</span></label>
+                                <label className='fw-bolder' htmlFor="super-admin-name">Add Super Admin Name <span className='text-danger'>*</span></label>
                                 <input name="Super_Admin_Name" id='super-admin-name' className="form-control" placeholder="Add Super Admin Name" ref={register} required />
 
                                 <label className='fw-bolder mt-4' htmlFor="email">Add Email Address <span className='text-danger'>*</span></label>
