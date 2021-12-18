@@ -13,12 +13,12 @@ const AppointmentList = ({ appointment }) => {
         })
             .then(res => {
                 res.json();
-                window.location.reload();
+                // window.location.reload();
             })
             .then(result => {
                 console.log('Deleted successfully')
             })
-        window.location.reload();
+        // window.location.reload();
     }
     return (
         <div className="col g-4 mx-5">
@@ -26,6 +26,7 @@ const AppointmentList = ({ appointment }) => {
                 <img src={Patient_Image} class="card-img-top" alt="..." />
                 <div class="appointment-card-body pb-4">
                     <h5 class="card-title">Patient Name : {Patient_Name}</h5>
+                    <p class="card-text">Selected Doctor : {Selected_Doctor}</p>
                     <p class="card-text">Gender : {Gender} <span> , Age : {Age}</span></p>
                     <p class="card-text">Address : {Address}</p>
                     <p class="card-text">Mobile : {Mobile}</p>

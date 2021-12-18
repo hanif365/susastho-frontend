@@ -23,6 +23,7 @@ import Emergency from "./components/ServicesDetails/Emergency/Emergency";
 import HealthTips from "./components/ServicesDetails/HealthTips/HealthTips";
 import Footer from "./components/Shared/Footer/Footer";
 import Navbar from "./components/Shared/Navbar/Navbar";
+import AllAppointment from "./components/SuperAdminPanel/AllAppointment/AllAppointment";
 import ConfirmedDoctor from "./components/SuperAdminPanel/ConfirmedDoctor/ConfirmedDoctor";
 import MakeSuperAdmin from "./components/SuperAdminPanel/MakeSuperAdmin/MakeSuperAdmin";
 
@@ -73,6 +74,12 @@ function App() {
             <PrivateRoute path="/confirmeddoctor">
               <ConfirmedDoctor></ConfirmedDoctor>
             </PrivateRoute>
+
+            <PrivateRoute path="/allAppointment">
+              <AllAppointment></AllAppointment>
+            </PrivateRoute>
+
+
 
 
             <PrivateRoute path="/addemergencyinfo">

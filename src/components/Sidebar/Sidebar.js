@@ -72,6 +72,12 @@ const Sidebar = () => {
                                 </Link>
                             </li>
 
+                            <li>
+                                <Link to="/allAppointment" className="text-white">
+                                    <FontAwesomeIcon icon={faCalendarCheck} /> <span>All Appointment</span>
+                                </Link>
+                            </li>
+
                         </div>}
 
                         <div className='admin-panel'>

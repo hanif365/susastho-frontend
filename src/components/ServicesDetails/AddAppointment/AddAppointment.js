@@ -21,7 +21,7 @@ const AddAppointment = () => {
 
     const [value, setValue] = useState(new Date());
     const date = value?.toDate?.().toString();
-    console.log(date)
+    // console.log(date)
 
     const onSubmit = data => {
         const patientData = {
@@ -32,7 +32,7 @@ const AddAppointment = () => {
             Patient_Description: data.Patient_Description,
             Address: data.Address,
             Mobile: data.Mobile,
-            Selected_Doctor: data.Selected_Doctor,
+            Selected_Doctor: selectedDoctor.name,
             Appointment_Date: value?.toDate?.().toString(),
             User_Name: loggedInUser?.name,
             User_Email: loggedInUser?.email,
@@ -43,7 +43,7 @@ const AddAppointment = () => {
         const url = `https://sleepy-fjord-79948.herokuapp.com/addAppointment`
         // console.log(data)
 
-        console.log(patientData);
+        console.log("Patient Data : ", patientData);
 
         fetch(url, {
             method: 'POST',
@@ -118,10 +118,10 @@ const AddAppointment = () => {
                                 <input name="Mobile" id='pt-mobile' className="form-control" placeholder="Mobile" ref={register} required />
 
                                 <label className='fw-bolder pt-3' htmlFor="pt-doctor">Auto Filled Doctors Name <span className='text-danger'>*</span></label>
-                                <input name="Selected_Doctor" value={selectedDoctor.name} className="form-control" placeholder="" ref={register} required disabled />
+                                <input name="Selected_Doctor_Just_Used" value={selectedDoctor.name} className="form-control" placeholder="" ref={register} required disabled />
 
                                 <label className='fw-bolder pt-5 me-3' htmlFor="appointment-date">Appointment Date <span className='text-danger'>*</span></label>
-                                <DatePicker className='date-picker' value={value} id='appointment-date' format="YYYY/MM/DD" onChange={setValue} required />
+                                <DatePicker className='date-picker' value={value} id='appointment-date' format="YYYY/MM/DD" onChange={setValue}  />
 
                                 {/* <input name="Patient_Description" className="my-5 form-control" placeholder="Add Patient Description" ref={register} /> */}
 
