@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAmbulance, faCalendarCheck, faCommentAlt, faHandHoldingWater, faSignOutAlt, faUserMd, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faAmbulance, faCalendarCheck, faCheckDouble, faCommentAlt, faHandHoldingWater, faSignOutAlt, faUserMd, faUserPlus, faUsersCog, faUserShield } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import Navbar from '../Shared/Navbar/Navbar';
@@ -49,13 +49,13 @@ const Sidebar = () => {
                 <ul className="list-unstyled">
                     {(isAdmin || isSuperAdmin) && <div>
                         {isSuperAdmin && <div className='super-admin-panel'>
-                            <h4 className='text-white'>
-                                <FontAwesomeIcon icon={faUserPlus} /> <span>Super Admin Panel</span>
+                            <h4 className='super-admin-panel-inner'>
+                                <FontAwesomeIcon icon={faUserShield} /> <span>Super Admin Panel</span>
                             </h4>
 
                             <li>
                                 <Link to="/makesuperadmin" className="text-white">
-                                    <FontAwesomeIcon icon={faUserPlus} /> <span>Make Super Admin</span>
+                                    <FontAwesomeIcon icon={faUserShield} /> <span>Make Super Admin</span>
                                 </Link>
                             </li>
 
@@ -68,15 +68,15 @@ const Sidebar = () => {
 
                             <li>
                                 <Link to="/confirmeddoctor" className="text-white">
-                                    <FontAwesomeIcon icon={faUserPlus} /> <span>Confirmed Doctor</span>
+                                    <FontAwesomeIcon icon={faCheckDouble} /> <span>Confirmed Doctor</span>
                                 </Link>
                             </li>
 
                         </div>}
 
                         <div className='admin-panel'>
-                        <h4 className='text-white'>
-                                <FontAwesomeIcon icon={faUserPlus} /> <span>Admin Panel</span>
+                            <h4 className='admin-panel-inner'>
+                                <FontAwesomeIcon icon={faUsersCog} /> <span>Admin Panel</span>
                             </h4>
                             <li>
                                 <Link to="/adddoctor" className="text-white">

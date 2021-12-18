@@ -66,9 +66,9 @@ function App() {
               <MakeAdmin></MakeAdmin>
             </PrivateRoute>
 
-            <Route path="/makesuperadmin">
+            <PrivateRoute path="/makesuperadmin">
               <MakeSuperAdmin></MakeSuperAdmin>
-            </Route>
+            </PrivateRoute>
 
             <PrivateRoute path="/confirmeddoctor">
               <ConfirmedDoctor></ConfirmedDoctor>

@@ -34,6 +34,17 @@
 .admin-panel li{
     padding-left: 50px;
 }
+.super-admin-panel-inner{
+    color: #781D42;
+}
+.admin-panel-inner{
+    color: #06FF00;
+}
+
+
+
+
+
 
 /* Scrollbar design */
 ::-webkit-scrollbar {
