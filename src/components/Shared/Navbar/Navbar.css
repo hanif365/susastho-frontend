@@ -1,5 +1,6 @@
 .navbar{
-    background-color: #000c6bb6;
+    /* background-color: #000c6bb6; */
+    background-color: #07f5f575;
 }
 .brandicon {
     height: 60px;
@@ -9,7 +10,7 @@
 .navbar-brand {
     font-size: 30px;
     font-weight: 700;
-    color: #FF0000 !important;
+    color: #000B49 !important;
     transition: all 600ms;
 }
 .navbar-brand:hover{
@@ -20,17 +21,17 @@
     font-size: 20px;
     font-weight: 700;
     transition: all 600ms;
-    color: #fff !important;
+    color: #000957 !important;
 }
 .nav-link:hover{
     transform: translateY(-10px);
-    color: red !important;
+    color: #4d3f91d3 !important;
     font-weight: 700;
 }
 
 .first-letter {
     font-size: 40px;
-    color: #FF5DA2;
+    /* color: #370665; */
 }
 .sign-out-btn{
     font-size: 20px;
@@ -40,6 +41,7 @@
     text-decoration:none;
     transition: all 500ms;
     margin-left: 10px;
+    padding: 10px 30px !important;
 }
 .sign-out-btn:hover{
     color: red;
@@ -52,12 +54,13 @@
     height: 35px;
 }
 .btn-login{
-    background-color: aqua;
+    background-color: #000b49d5;
     padding: 8px 30px !important;
-    color: #F2789F !important;
+    color: #fff !important;
 }
 .btn-login:hover{
     color: green !important;
+    background: #000B49;
 }
 
 #admin{
