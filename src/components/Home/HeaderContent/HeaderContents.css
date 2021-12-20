@@ -83,6 +83,7 @@
     color: #111;
     letter-spacing: 2px;
     transition: 400ms;
+    border-radius: 5px;
 }
 
 .text a:hover {

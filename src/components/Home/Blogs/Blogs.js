@@ -8,10 +8,10 @@ const Blogs = () => {
     return (
         <div id="blogs" className="pt-5">
             <div id="blogs" className="">
-                <div className="container pt-5 mt-5 text-center" id="">
+                <div className="container pt-5 mt-5 " id="">
                     <div className="row">
                         <div className="col-12">
-                            <h1>OUR BLOGS</h1>
+                            <h1 className='text-center'>OUR BLOGS</h1>
                             <hr className="horizontal-line" />
                             <div className="row row-cols-1 row-cols-md-3 pt-4">
                                 {

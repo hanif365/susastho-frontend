@@ -17,3 +17,18 @@
 .doctorlist-card-body {
     padding: 10px;
 }
+
+.btn-field{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 7px 25px;
+    border-radius: 5px;
+    background-color: #FF87CA;
+    border: none;
+    transition: all 500ms;
+}
+.btn-field:hover{
+    color: #fff;
+    background-color: #D47AE8;
+    transform: translateX(10px);
+}

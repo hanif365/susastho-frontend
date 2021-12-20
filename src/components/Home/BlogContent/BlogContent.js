@@ -9,9 +9,9 @@ const BlogContent = ({ blog }) => {
                 <div className="card blog-content-main">
                     <img src={image} className="card-img-top" alt="..." />
 
-                    <div className="blog-card-body text-wrap w-100 text-center">
+                    <div className="blog-card-body text-wrap w-100">
                         <h3 className="card-title">{title}</h3>
-                        <p className="card-text text-center">{description}</p>
+                        <p className="card-text">{description}</p>
                         <p className="text-end">Published : {date}</p>
                         <a  target="_blank" href={link} className="btn btn-field">Read More</a>
                     </div>
