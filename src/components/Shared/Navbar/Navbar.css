@@ -5,7 +5,8 @@
     transition: all 500ms;
 }
 .showNavbar{
-    background-color: #07f5f5 !important;
+    /* background-color: #07f5f5 !important; */
+    background-color: #5F6AEC !important;
     opacity: 0.9 !important;
 }
 .brandicon {

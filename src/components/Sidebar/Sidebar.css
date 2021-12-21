@@ -1,5 +1,6 @@
 .sidebar{
-    background: #5f6aec;
+    /* background: #46ABF5; */
+    background: #5F6AEC;
     position: fixed;
     height: 100vh !important;
     overflow: auto;
@@ -21,7 +22,7 @@
     margin-right: 5px;
 }
 .sidebar-container{
-    padding-top: 95px;
+    padding-top: 92px;
 }
 .logout{
     color: #9A0680 !important;

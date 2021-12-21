@@ -14,7 +14,7 @@ const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(false);
 
     // Change Navbar background color conditionally
-    const [navBg, setNavBg] = useState("transparent");
+    const [navBg, setNavBg] = useState("#36A9F0");
 
     const location = useLocation();
     console.log("Location is : ", location);
@@ -23,7 +23,8 @@ const Navbar = () => {
         if ((window.location.pathname === "/") || (window.location.pathname === "/home")) {
             setNavBg("transparent");
           } else {
-            setNavBg('#07f5f575');
+            setNavBg('#36A9F0');
+            // setNavBg('#07f5f575');
           }
     },[])
 
