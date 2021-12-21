@@ -128,7 +128,7 @@ const AddDoctor = () => {
                                 <input name="exampleRequired" className="form-control" type="file" onChange={handleDoctorImgUpload} />
 
                                 <label className='fw-bolder pt-3' htmlFor="doc-img">Doctor NID Photo Upload <span className='text-danger'>*</span></label>
-                                <input name="exampleRequired" className="form-control" type="file" onChange={handleDoctorNIDImgUpload} />
+                                <input name="exampleRequired" className="form-control" type="file" onChange={handleDoctorNIDImgUpload} required/>
                             </div>
                             <div className="col-md-6">
                                 <label className='fw-bolder' htmlFor="chamber">Add Chamber Location <span className='text-danger'>*</span></label>

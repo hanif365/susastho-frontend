@@ -121,12 +121,12 @@ const AddAppointment = () => {
                                 <input name="Selected_Doctor_Just_Used" value={selectedDoctor.name} className="form-control" placeholder="" ref={register} required disabled />
 
                                 <label className='fw-bolder pt-5 me-3' htmlFor="appointment-date">Appointment Date <span className='text-danger'>*</span></label>
-                                <DatePicker className='date-picker' value={value} id='appointment-date' format="YYYY/MM/DD" onChange={setValue}  />
+                                <DatePicker className='date-picker' value={value} id='appointment-date' format="YYYY/MM/DD" onChange={setValue} />
 
                                 {/* <input name="Patient_Description" className="my-5 form-control" placeholder="Add Patient Description" ref={register} /> */}
 
                             </div>
-                            <textarea name="Patient_Description" className="my-3 px-5 form-control" placeholder="Add Patient Description" ref={register}> </textarea>
+                            <textarea name="Patient_Description" className="my-3 px-3 form-control" placeholder="Add Patient Description" ref={register}></textarea>
 
                         </div>
 

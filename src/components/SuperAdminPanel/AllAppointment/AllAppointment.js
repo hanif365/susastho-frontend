@@ -56,7 +56,7 @@ const AllAppointment = () => {
                             <tr>
                                 {/* <th className='px-4'>item index</th> */}
                                 <th className='px-4'>PatientName</th>
-                                <th className='px-4'>Gender</th>
+                                {/* <th className='px-4'>Gender</th> */}
                                 {/* <th className='px-4'>Age</th> */}
                                 {/* <th className='px-4'>Description</th> */}
                                 <th className='px-4'>Address</th>
@@ -75,8 +75,8 @@ const AllAppointment = () => {
                                     return (
                                         <tr key={index}>
                                             {/* <td className='px-4'>{index + 1}</td> */}
-                                            <td className='px-4'><span className='text-primary fw-bolder'>{patientInfo.Patient_Name}</span></td>
-                                            <td className='px-4'>{patientInfo.Gender} ({patientInfo.Age})</td>
+                                            <td className='px-4'><span className='text-primary fw-bolder'>{patientInfo.Patient_Name}</span><br /><span>{patientInfo.Gender} ({patientInfo.Age})</span></td>
+                                            {/* <td className='px-4'>{patientInfo.Gender} ({patientInfo.Age})</td> */}
                                             {/* <td className='px-4'>{patientInfo.Age}</td> */}
                                             {/* <td className='px-4'>{patientInfo.Patient_Description}</td> */}
                                             <td className='px-4'>{patientInfo.Address} <br /><span className='text-danger bg-light fw-bolder px-2'>{patientInfo.Mobile}</span></td>
