@@ -5,7 +5,8 @@
     transition: all 500ms;
 }
 .showNavbar{
-    background-color: #07f5f5;
+    background-color: #07f5f5 !important;
+    opacity: 0.9 !important;
 }
 .brandicon {
     height: 60px;
@@ -74,3 +75,10 @@
 #super-admin{
     border: 5px solid #781D42;
 }
+
+/* @media (max-width: 991px){
+    .navbar{
+        background: #07f5f5;
+        opacity: 0.6;
+    }
+} */

@@ -24,9 +24,9 @@
     z-index: 2;
 }
 
-.header-content-inner.active {
+/* .header-content-inner.active {
     right: 300px;
-}
+} */
 
 .header-content-inner video {
     position: absolute;
@@ -115,10 +115,14 @@
     transform: scale(0.9) translateY(-15px);
 }
 
+
+
+
 @media (max-width: 991px) {
 
     .header-content-inner {
         padding: 40px;
+        /* padding: 30px 10px 100px 50px; */
     }
 
     .text h2 {
@@ -133,5 +137,11 @@
 @media (max-width: 768px) {
     .social {
         bottom: 0px;
+    }
+}
+
+@media (max-width: 350px){
+    .header-content-inner{
+        padding: 30px 10px 100px 50px;
     }
 }
