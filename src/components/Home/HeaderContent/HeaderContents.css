@@ -16,8 +16,7 @@
     right: 0;
     width: 100%;
     min-height: 100vh;
-    /* padding: 100px; */
-    padding: 0px 100px 130px 100px;
+    padding: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
