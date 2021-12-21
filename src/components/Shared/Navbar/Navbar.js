@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 import brandicon from '../../../Assets/Images/brandicon.png'
 import { UserContext } from '../../../App';
@@ -12,6 +12,20 @@ const Navbar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
+
+    // Change Navbar background color conditionally
+    const [navBg, setNavBg] = useState("transparent");
+
+    const location = useLocation();
+    console.log("Location is : ", location);
+
+    useEffect(() =>{
+        if ((window.location.pathname === "/") || (window.location.pathname === "/home")) {
+            setNavBg("transparent");
+          } else {
+            setNavBg('#07f5f575');
+          }
+    },[])
 
     useEffect(() => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
@@ -79,7 +93,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg fixed-top navbar-dark" className={showNavbar ? 'navbar showNavbar navbar-expand-lg fixed-top navbar-light' : 'navbar navbar-expand-lg fixed-top navbar-light'} >
+            <nav className="navbar navbar-expand-lg fixed-top navbar-dark" className={showNavbar ? 'navbar showNavbar navbar-expand-lg fixed-top navbar-light' : 'navbar navbar-expand-lg fixed-top navbar-light'} style={{ backgroundColor: navBg }}>
                 <div className="container">
                     <Link className="navbar-brand" to="/"> <img src={brandicon} alt="" className="brandicon" /> <span className="first-letter">S</span>USASTHO</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,6 +106,8 @@ const Navbar = () => {
                             <Link to="/dashboard" className="nav-link">DASHBOARD</Link>
 
                             <Link className="nav-link" to="/doctors">DOCTORS</Link>
+
+                            <Link className="nav-link" to="covid-19">COVID-19</Link>
 
                             {
                                 loggedInUser.email ? loggedInUser.photo ? <Link onClick={() => showNotificationForIdentification()} className="nav-link photo-link"><img className='user-img' src={loggedInUser.photo} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
