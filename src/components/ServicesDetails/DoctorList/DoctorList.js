@@ -22,7 +22,7 @@ const DoctorList = ({ doctor }) => {
                 <div class="doctorlist-card-body">
                     <h5 class="card-title">{Doctor_Name}</h5>
                     <p class="card-text">{Designation} ({Doctor_BMDC_Reg})</p>
-                    <p class="card-text">{Department}</p>
+                    <p class="card-text">Department : {Department}</p>
                     <p class="card-text">Degree : {Degree}</p>
                     <p class="card-text">Chamber : {Chamber} <span>({Time})</span> <span className="text-danger"> Off-day : {OffDay}</span></p>
                     <Link to="/addappointment" onClick={() => handleDoctor()} class="btn btn-field">GET APPOINTMENT</Link>
