@@ -13,7 +13,7 @@ const HeaderContents = () => {
                 <div className="overlay"></div>
                 <div className="text">
                     <h2>WE CARE ABOUT YOUR HEALTH </h2>
-                    <p>Health is wealth. Everyone Should take care of their Health. You Can get a lot of health related information on our platform.</p>
+                    <p>Health is wealth. Everyone Should take care of their Health. You Can get a lot of health related Services on our platform.</p>
                     <a href="#" href="#services">MORE DETAILS</a>
                 </div>
 

@@ -64,11 +64,11 @@ const Navbar = () => {
         })
     }
 
-    const changeBackgroundNavbar = () =>{
-        
-        if(window.scrollY >= 600){
+    const changeBackgroundNavbar = () => {
+
+        if (window.scrollY >= 600) {
             setShowNavbar(true);
-        } else{
+        } else {
             setShowNavbar(false);
         }
         // console.log(showNavbar);
@@ -76,6 +76,7 @@ const Navbar = () => {
     }
 
     window.addEventListener("scroll", changeBackgroundNavbar);
+    
     return (
         <div>
             <nav className="navbar navbar-expand-lg fixed-top navbar-dark" className={showNavbar ? 'navbar showNavbar navbar-expand-lg fixed-top navbar-dark' : 'navbar navbar-expand-lg fixed-top navbar-dark'}>

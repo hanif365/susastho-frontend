@@ -21,7 +21,8 @@
 }
 
 .service-content-main:hover {
-    background-color: #000957;
+    /* background-color: #000957; */
+    background-color: #5CBEE4;
 }
 #bg-danger:hover{
     background-color: red !important;
