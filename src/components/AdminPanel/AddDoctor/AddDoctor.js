@@ -1,11 +1,28 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useEffect } from 'react/cjs/react.development';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Sidebar/Sidebar';
 
 const AddDoctor = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [isSuperAdmin, setIsSuperAdmin] = useState(false);
     const { register, handleSubmit, watch, errors } = useForm();
-    const [imageURL, setImageURL] = useState(null);
+    const [doctorImageURL, setDoctorImageURL] = useState(null);
+    const [doctorNidURL, setDoctorNidURL] = useState(null);
+
+    // Check admin super-admin or not
+    useEffect(() => {
+        fetch('https://sleepy-fjord-79948.herokuapp.com/isSuperAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsSuperAdmin(data));
+    }, [])
+
 
     const onSubmit = data => {
         const doctorData = {
@@ -13,12 +30,15 @@ const AddDoctor = () => {
             Designation: data.Designation,
             Degree: data.Degree,
             Department: data.Department,
-            imageURL: imageURL,
+            doctorImageURL: doctorImageURL,
+            doctorNidURL: doctorNidURL,
+            Doctor_BMDC_Reg: data.Doctor_BMDC_Reg,
             Chamber: data.Chamber,
             Time: data.Time,
             OffDay: data.OffDay,
             Fees: data.Fees,
             Doctor_Description: data.Doctor_Description,
+            Doctor_Added_by: loggedInUser.name,
             Doctor_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear()),
             status: "pending",
         };
@@ -39,18 +59,18 @@ const AddDoctor = () => {
                 // window.location.reload(false)
             })
 
-            const Swal = require('sweetalert2')
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Congratulations!! A doctors Info Successfully inserted into Database.',
-                showConfirmButton: false,
-                timer: 1500
-            })
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: isSuperAdmin ? `Congratulations ${loggedInUser.name}!! Please confirm to add doctor information in your Panel, Thank You!!` : `Congratulations ${loggedInUser.name}!! A request is send to the Super Admin to add doctor information to the website!`,
+            showConfirmButton: false,
+            timer: 4500
+        })
 
     };
 
-    const handleImgUpload = (e) => {
+    const handleDoctorImgUpload = (e) => {
         console.log(e.target.files[0]);
         const imageData = new FormData();
         // imageData.set('key', 'eba329da20b6c8d81d975a91b47e61ab');
@@ -61,7 +81,25 @@ const AddDoctor = () => {
             .then(function (response) {
                 // console.log(response);
                 console.log(response.data.data.display_url);
-                setImageURL(response.data.data.display_url);
+                setDoctorImageURL(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    const handleDoctorNIDImgUpload = (e) => {
+        console.log(e.target.files[0]);
+        const imageData = new FormData();
+        // imageData.set('key', 'eba329da20b6c8d81d975a91b47e61ab');
+        imageData.set('key', '6f873b434b5debc1f50d236f35571a75');
+        imageData.append('image', e.target.files[0])
+
+        axios.post('https://api.imgbb.com/1/upload', imageData)
+            .then(function (response) {
+                // console.log(response);
+                console.log(response.data.data.display_url);
+                setDoctorNidURL(response.data.data.display_url);
             })
             .catch(function (error) {
                 console.log(error);
@@ -88,7 +126,10 @@ const AddDoctor = () => {
                                 <input name="Department" id='department' className="form-control" placeholder="Add Department" ref={register} />
 
                                 <label className='fw-bolder pt-3' htmlFor="doc-img">Doctor Image Upload</label>
-                                <input name="exampleRequired" className="form-control" type="file" onChange={handleImgUpload} />
+                                <input name="exampleRequired" className="form-control" type="file" onChange={handleDoctorImgUpload} />
+
+                                <label className='fw-bolder pt-3' htmlFor="doc-img">Doctor NID Photo Upload <span className='text-danger'>*</span></label>
+                                <input name="exampleRequired" className="form-control" type="file" onChange={handleDoctorNIDImgUpload} />
                             </div>
                             <div className="col-md-6">
                                 <label className='fw-bolder' htmlFor="chamber">Add Chamber Location <span className='text-danger'>*</span></label>
@@ -105,6 +146,9 @@ const AddDoctor = () => {
 
                                 <label className='fw-bolder pt-3' htmlFor="description">Add Doctor Description</label>
                                 <input name="Doctor_Description" id='description' className="form-control" placeholder="Add Doctor Description" ref={register} />
+
+                                <label className='fw-bolder pt-3' htmlFor="docor-bmdc-reg">Add Doctor BMDC Registration <span className='text-danger'>*</span></label>
+                                <input name="Doctor_BMDC_Reg" id='docor-bmdc-reg' className="form-control" placeholder="Add Doctor BMDC Registration" ref={register} />
 
                             </div>
                         </div>

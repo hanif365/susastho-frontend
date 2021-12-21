@@ -1,0 +1,15 @@
+.confirmed-doctor-container {
+    /* transform: scale3d(0.9, 0.9, 0.3); */
+}
+
+.doctor-nid-img, .doctor-img {
+    width: 50px;
+    height: 50px;
+    transition: all 500ms;
+    border-radius: 10px;
+}
+
+.doctor-nid-img:hover, .doctor-img:hover{
+    width: 250px;
+    height: 200px;
+}

@@ -75,11 +75,11 @@ const AllAppointment = () => {
                                     return (
                                         <tr key={index}>
                                             {/* <td className='px-4'>{index + 1}</td> */}
-                                            <td className='px-4'>{patientInfo.Patient_Name}</td>
+                                            <td className='px-4'><span className='text-primary fw-bolder'>{patientInfo.Patient_Name}</span></td>
                                             <td className='px-4'>{patientInfo.Gender} ({patientInfo.Age})</td>
                                             {/* <td className='px-4'>{patientInfo.Age}</td> */}
                                             {/* <td className='px-4'>{patientInfo.Patient_Description}</td> */}
-                                            <td className='px-4'>{patientInfo.Address} <br />{patientInfo.Mobile}</td>
+                                            <td className='px-4'>{patientInfo.Address} <br /><span className='text-danger bg-light fw-bolder px-2'>{patientInfo.Mobile}</span></td>
                                             {/* <td className='px-4'>{patientInfo.Mobile}</td> */}
                                             <td className='px-4'>{patientInfo.Selected_Doctor}</td>
                                             <td className='px-4'>{patientInfo.Appointment_Date}</td>
