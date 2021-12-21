@@ -11,6 +11,7 @@ const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(false);
 
     useEffect(() => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
@@ -62,21 +63,34 @@ const Navbar = () => {
             color: '#FF1700',
         })
     }
+
+    const changeBackgroundNavbar = () =>{
+        
+        if(window.scrollY >= 600){
+            setShowNavbar(true);
+        } else{
+            setShowNavbar(false);
+        }
+        // console.log(showNavbar);
+        // console.log(window.scrollY);
+    }
+
+    window.addEventListener("scroll", changeBackgroundNavbar);
     return (
         <div>
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-                <div class="container">
-                    <Link class="navbar-brand" to="/"> <img src={brandicon} alt="" className="brandicon" /> <span className="first-letter">S</span>USASTHO</Link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg fixed-top navbar-dark" className={showNavbar ? 'navbar showNavbar navbar-expand-lg fixed-top navbar-dark' : 'navbar navbar-expand-lg fixed-top navbar-dark'}>
+                <div className="container">
+                    <Link className="navbar-brand" to="/"> <img src={brandicon} alt="" className="brandicon" /> <span className="first-letter">S</span>USASTHO</Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ms-auto">
-                            <Link class="nav-link active" aria-current="page" to="/home">HOME</Link>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav ms-auto">
+                            <Link className="nav-link active" aria-current="page" to="/home">HOME</Link>
 
-                            <Link to="/dashboard" class="nav-link">DASHBOARD</Link>
+                            <Link to="/dashboard" className="nav-link">DASHBOARD</Link>
 
-                            <Link class="nav-link" to="/doctors">DOCTORS</Link>
+                            <Link className="nav-link" to="/doctors">DOCTORS</Link>
 
                             {
                                 loggedInUser.email ? loggedInUser.photo ? <Link onClick={() => showNotificationForIdentification()} className="nav-link photo-link"><img className='user-img' src={loggedInUser.photo} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
