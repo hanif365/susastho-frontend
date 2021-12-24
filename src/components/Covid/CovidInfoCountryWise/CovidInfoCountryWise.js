@@ -6,6 +6,8 @@ const CovidInfoCountryWise = () => {
     const [countryData, setCountryData] = useState('');
     const [defaultCountryData, setDefaultCountryData] = useState('');
     const { register, handleSubmit, watch, errors, reset } = useForm();
+    const [time, setTime] = useState('');
+
     const onSubmit = (data) => {
         console.log(data);
         // console.log(data.countryName);
@@ -18,11 +20,11 @@ const CovidInfoCountryWise = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.message == null){
+                if (data.message == null) {
                     setCountryData(data);
                 }
                 // setCountryData(data);
-                else{
+                else {
                     const Swal = require('sweetalert2')
                     Swal.fire({
                         position: 'center',
@@ -46,6 +48,13 @@ const CovidInfoCountryWise = () => {
             })
     }, [])
     console.log("CountryWiseData: ", defaultCountryData);
+
+    useEffect(() => {
+        var today = new Date();
+        var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+        setTime(date);
+
+    }, [])
     return (
         <div className='covid-info-country-wise container-fluid py-5' id='covid-19-dashboard'>
             <div className="row text-center py-5">
@@ -62,13 +71,17 @@ const CovidInfoCountryWise = () => {
                 <div className="col-12">
                     <form className='d-flex country-input input-group input-group-lg' onSubmit={handleSubmit(onSubmit)}>
                         <input className="form-control" name="countryName" placeholder='Show Covid-19 Status by Country Name' ref={register({ required: true })} />
-                        <input type="submit" className='px-5 ms-2 covid-submit'/>
+                        <input type="submit" value="SEARCH" className='px-5 ms-2 covid-submit' />
                     </form>
                 </div>
             </div>
 
+            <div className='row container ms-4 pt-5'>
+                <p><span className='fw-bold'>Last Update : </span><span className='text-info fw-bold'>{time}</span> <span className='ms-3'> Source : worldometers</span></p>
+            </div>
+
             <div className='d-flex flex-wrap justify-content-center covid-card-outer'>
-                <div className="py-5 me-4">
+                <div className="py-2 me-4">
                     <div className="card covid-card infected-card">
                         {/* <img src={countryData ? countryData?.countryInfo?.flag : defaultCountryData?.countryInfo?.flag} class="card-img-top" alt="..." /> */}
                         <div className="text-center">
@@ -87,7 +100,7 @@ const CovidInfoCountryWise = () => {
                     </div>
                 </div>
 
-                <div className="py-5 me-4">
+                <div className="py-2 me-4">
                     <div className="card covid-card deaths-card">
                         <div className="text-center">
                             <h5 className="card-title py-5 covid-title deaths-title">Deaths</h5>
@@ -105,7 +118,7 @@ const CovidInfoCountryWise = () => {
                     </div>
                 </div>
 
-                <div className="py-5 me-4">
+                <div className="py-2 me-4">
                     <div className="card covid-card recovered-card">
                         <div className="text-center">
                             <h5 className="card-title py-5 covid-title recovered-title">Recovered</h5>
@@ -123,12 +136,12 @@ const CovidInfoCountryWise = () => {
                     </div>
                 </div>
 
-                <div className="py-5 me-3">
+                <div className="py-2 me-3">
                     <div className="card covid-card test-card">
                         <div className="text-center">
                             <h5 className="card-title py-5 covid-title test-title">Tests</h5>
                             <div className='d-flex justify-content-around pt-5'>
-                                <p className='card-text'>In 24 Hours</p>
+                                <p className='card-text'>Total</p>
                                 <p className="card-text">{countryData ? countryData?.tests : defaultCountryData?.tests}</p>
                             </div>
                             <hr />

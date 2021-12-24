@@ -35,6 +35,9 @@
     color: #4d3f91d3 !important;
     font-weight: 700;
 }
+.txt-danger{
+    color: #b90b0be1 !important;
+}
 
 .first-letter {
     font-size: 40px;

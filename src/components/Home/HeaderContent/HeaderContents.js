@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './HeaderContents.css';
 import CovidVideo from '../../../Assets/Videos/virus.mp4';
-import NatureVideo from '../../../Assets/Videos/nature.mp4';
 import InjectionVideo from '../../../Assets/Videos/injection.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
@@ -17,10 +16,10 @@ const HeaderContents = () => {
 
     useEffect(() =>{
         if ((window.location.pathname === "/covid-19")) {
-            setHeaderVideo(CovidVideo);
+            setHeaderVideo(InjectionVideo);
             setCovid(true);
           } else{
-            setHeaderVideo(InjectionVideo);
+            setHeaderVideo(CovidVideo);
             setCovid(false);
           }
     },[])
