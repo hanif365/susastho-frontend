@@ -63,6 +63,14 @@
     text-transform: uppercase;
 }
 
+.text h3 {
+    font-size: 4em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
 .text p {
     font-size: 1.1em;
     color: #fff;

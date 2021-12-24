@@ -20,7 +20,7 @@ const Navbar = () => {
     console.log("Location is : ", location);
 
     useEffect(() =>{
-        if ((window.location.pathname === "/") || (window.location.pathname === "/home")) {
+        if ((window.location.pathname === "/") || (window.location.pathname === "/home") || (window.location.pathname === "/covid-19")) {
             setNavBg("transparent");
           } else {
             setNavBg('#36A9F0');

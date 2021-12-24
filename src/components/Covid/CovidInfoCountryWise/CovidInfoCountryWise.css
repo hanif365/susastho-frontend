@@ -1,0 +1,83 @@
+.covid-info-country-wise {
+    /* margin-top: 50px; */
+}
+
+.covid-submit {
+    border: none;
+    background-color: blueviolet;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 5px !important;
+}
+
+.covid-card-outer {
+    margin: auto !important;
+}
+.flag-img{
+    width: 70px;
+    height: 30px;
+}
+
+.covid-hr {
+    border: 5px solid red;
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.country-input {
+    max-width: 900px !important;
+    margin: auto;
+}
+
+.covid-title {
+    border-radius: 10px;
+}
+
+.covid-card {
+    width: 18rem;
+    transition: all 500ms;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.covid-card:hover {
+    transform: translateY(10px);
+}
+
+/* Infected Card Style */
+.infected-card {
+    background-color: #DBFFFD;
+}
+
+.infected-title {
+    background-color: #9DEDF9;
+}
+
+/* Deaths Card Style */
+.deaths-card {
+    background-color: #FFDBDB;
+}
+
+.deaths-title {
+    background-color: #F99D9D;
+}
+
+/* Recovered Card Style */
+.recovered-card {
+    background-color: #D4FBE7;
+}
+
+.recovered-title {
+    background-color: #59F3A6;
+}
+
+/* Test Card Style */
+.test-card {
+    background-color: #FFF4DB;
+}
+
+.test-title {
+    background-color: #F8C592;
+}

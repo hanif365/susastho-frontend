@@ -10,6 +10,7 @@ import AddDoctor from "./components/AdminPanel/AddDoctor/AddDoctor";
 import AddEmergencyInfo from "./components/AdminPanel/AddEmergencyInfo/AddEmergencyInfo";
 import AddHealthTips from "./components/AdminPanel/AddHealthTips/AddHealthTips";
 import MakeAdmin from "./components/AdminPanel/MakeAdmin/MakeAdmin";
+import Covid from "./components/Covid/Covid/Covid";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 
 import Home from './components/Home/Home/Home';
@@ -116,6 +117,10 @@ function App() {
 
             <Route path="/healthtips">
               <HealthTips></HealthTips>
+            </Route>
+
+            <Route path="/covid-19">
+              <Covid></Covid>
             </Route>
 
           </Switch>
