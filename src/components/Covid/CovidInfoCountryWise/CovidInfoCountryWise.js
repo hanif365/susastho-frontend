@@ -70,7 +70,7 @@ const CovidInfoCountryWise = () => {
             <div className="row">
                 <div className="col-12">
                     <form className='d-flex country-input input-group input-group-lg' onSubmit={handleSubmit(onSubmit)}>
-                        <input className="form-control" name="countryName" placeholder='Show Covid-19 Status by Country Name' ref={register({ required: true })} />
+                        <input className="form-control" name="countryName" placeholder='Country Name' ref={register({ required: true })} />
                         <input type="submit" value="SEARCH" className='px-5 ms-2 covid-submit' />
                     </form>
                 </div>
