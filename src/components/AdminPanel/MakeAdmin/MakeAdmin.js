@@ -41,7 +41,7 @@ const MakeAdmin = () => {
     return (
         <section className="">
             <Sidebar></Sidebar>
-            <div className="col-9 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+            <div className="col-sm-7 col-md-9 col-7 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                 <div className="my-3 order-component">
                     <form onSubmit={handleSubmit(onSubmitAdmin)}>
                         <div className="row">
@@ -53,7 +53,7 @@ const MakeAdmin = () => {
                                 <input name="email" id='email' className="form-control mb-4" placeholder="Add Admin Email" ref={register} required />
                             </div>
                         </div>
-                        <input className="btn btn-info ps-4 w-25" type="submit" />
+                        <input className="btn btn-info px-4" type="submit" />
                     </form>
                 </div>
 

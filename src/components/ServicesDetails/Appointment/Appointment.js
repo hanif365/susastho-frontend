@@ -32,7 +32,7 @@ const Appointment = () => {
     return (
         <section className="">
             <Sidebar></Sidebar>
-            <div className="col-9 py-5 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+            <div className="col-sm-7 col-md-9 col-7 py-5 p-md-4 pr-md-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                 <div className="order-component">
                     <div className="row row-cols-1 row-cols-md-3">
                         {

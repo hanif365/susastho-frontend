@@ -1,14 +1,16 @@
 .appointment-card {
-    width: 22rem;
+    max-width: 22rem;
     cursor: pointer;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     transition: all 500ms;
 }
-.appointment-card:hover{
+
+.appointment-card:hover {
     transform: translateY(10px) !important;
 }
-.appointment-card img{
+
+.appointment-card img {
     height: 250px;
     border-radius: 15px 15px 15px 15px;
 

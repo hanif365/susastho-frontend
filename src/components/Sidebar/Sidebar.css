@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box !important;
+}
 .sidebar{
     /* background: #46ABF5; */
     background: #5F6AEC;
@@ -62,4 +65,13 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: #495295; 
+}
+
+@media(max-width:576px){
+    .super-admin-panel li{
+        padding-left: 0px;
+    }
+    .admin-panel li{
+        padding-left: 0px;
+    }
 }

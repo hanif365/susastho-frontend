@@ -72,9 +72,9 @@ const ConfirmedDoctor = () => {
             {/* <Navbar></Navbar> */}
             <Sidebar></Sidebar>
             <div className="confirmed-doctor-container">
-                <div className="col-9 py-3 p-2 pr-5 m-auto" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                <div className="col-sm-7 col-md-9 col-7 py-3 p-2 pr-5 m-auto table-responsive-lg" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
                     <table align="center" cellPadding="15" width="80%" className='table table-success table-striped table-hover'>
-                        <thead >
+                        <thead className='table-info'>
                             <tr>
                                 {/* <th className='px-4'>item index</th> */}
                                 <th className='px-4'>DoctorDetails</th>
