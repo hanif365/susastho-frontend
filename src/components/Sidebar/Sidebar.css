@@ -46,7 +46,14 @@
 }
 
 
-
+@media(max-width:576px){
+    .super-admin-panel h4, .admin-panel h4{
+        font-size: 14px;
+    }
+    .sidebar li{
+        font-size: 9px;
+    }
+}
 
 
 
