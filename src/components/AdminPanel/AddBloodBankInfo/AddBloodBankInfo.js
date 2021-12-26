@@ -20,6 +20,7 @@ const AddBloodBankInfo = () => {
             Donor_Email: data.Donor_Email,
             Donor_Photo: imageURL,
             Last_BloodDonation_Date: value?.toDate?.().toString(),
+            Blood_Group: data.Blood_Group,
         };
 
         const url = `https://sleepy-fjord-79948.herokuapp.com/addbloodbankinfo`
@@ -79,6 +80,9 @@ const AddBloodBankInfo = () => {
 
                                 <label className='fw-bolder mt-3' htmlFor="address">Add Address <span className='text-danger'>*</span></label>
                                 <input name="Address" id='address' className="form-control" placeholder="Add Address" ref={register} required />
+
+                                <label className='fw-bolder mt-3' htmlFor="blood-group">Add Blood Group <span className='text-danger'>*</span></label>
+                                <input name="Blood_Group" id='blood-group' className="form-control" placeholder="Add Blood Group" ref={register} required />
 
                                 <label className='fw-bolder pt-5 me-3 mt-5' htmlFor="lbd-date">Last Blood Donation Date <span className='text-danger'>*</span></label>
                                 <DatePicker className='date-picker' value={value} id='lbd-date' format="YYYY/MM/DD" onChange={setValue} required />

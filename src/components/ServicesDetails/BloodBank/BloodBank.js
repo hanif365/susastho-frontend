@@ -24,8 +24,9 @@ const BloodBank = () => {
                         <tr>
                             {/* <th className='px-4'>item index</th> */}
                             <th className='px-4'>DonorName</th>
-                            <th className='px-4'>Donor Address</th>
+                            <th className='px-4'>DonorAddress</th>
                             <th className='px-4'>ContactNumber</th>
+                            <th className='px-4'>BloodGroup</th>
                             <th className='px-4'>Donor Email</th>
                             <th className='px-4'>Last Blood Donation Date (LBDB)</th>
                             <th className='px-4'>DonorPhoto</th>
@@ -40,6 +41,7 @@ const BloodBank = () => {
                                         <td className='px-4'>{itemDetails.BloodDonor_Name}</td>
                                         <td className='px-4'>{itemDetails.Address}</td>
                                         <td className='px-4'>{itemDetails.Mobile_Number}</td>
+                                        <td className='px-4'>{itemDetails.Blood_Group}</td>
                                         <td className='px-4'>{itemDetails.Donor_Email}</td>
                                         <td className='px-4'>{itemDetails.Last_BloodDonation_Date}</td>
                                         <td className='px-4'><img src={itemDetails.Donor_Photo ? itemDetails.Donor_Photo : BloodDonorPhoto} className='donor-img' alt="" /></td>
