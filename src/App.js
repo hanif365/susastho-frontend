@@ -55,9 +55,9 @@ function App() {
             </Route>
 
             {/* Must be Private Dashborad */}
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
 
 
             <PrivateRoute path="/adddoctor">
