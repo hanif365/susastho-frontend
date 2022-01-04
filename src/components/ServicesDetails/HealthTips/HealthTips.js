@@ -10,7 +10,7 @@ const HealthTips = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/healthTipsData')
             .then(res => res.json())
             .then(data => {
-                console.log("healthTipsData from DB : ", data);
+                // console.log("healthTipsData from DB : ", data);
                 setHealthTipsData(data)
             })
     }, [])

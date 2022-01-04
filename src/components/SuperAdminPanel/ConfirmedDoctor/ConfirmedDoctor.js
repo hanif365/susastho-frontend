@@ -13,7 +13,7 @@ const ConfirmedDoctor = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/doctorsForConfirmation')
             .then(res => res.json())
             .then(data => {
-                console.log("Doctors Data from DB : ", data);
+                // console.log("Doctors Data from DB : ", data);
                 setDoctors(data)
             })
     }, [])
@@ -23,7 +23,7 @@ const ConfirmedDoctor = () => {
     const statusconfirmed = (id) => {
         const inputStatus = 'Confirmed';
         const status = { inputStatus };
-        console.log("confirmed : ", id);
+        // console.log("confirmed : ", id);
         fetch(`https://sleepy-fjord-79948.herokuapp.com/doctorConfirmed/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -32,7 +32,7 @@ const ConfirmedDoctor = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Updated');
+                // console.log('Updated');
             })
     }
 
@@ -54,7 +54,7 @@ const ConfirmedDoctor = () => {
     const statusPending = (id) => {
         const inputStatus = 'Pending';
         const status = { inputStatus };
-        console.log("pending : ", id);
+        // console.log("pending : ", id);
         fetch(`https://sleepy-fjord-79948.herokuapp.com/doctorPending/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
@@ -63,7 +63,7 @@ const ConfirmedDoctor = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Updated');
+                // console.log('Updated');
             })
     }
 

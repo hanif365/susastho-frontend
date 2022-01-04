@@ -12,7 +12,7 @@ const AllAppointment = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/allAppointment')
             .then(res => res.json())
             .then(data => {
-                console.log("All Appointment Data from DB : ", data);
+                // console.log("All Appointment Data from DB : ", data);
                 // setAllAppointments(data);
                 (data.length <= 0) ? showNotificationForAppointmentNone() : setAllAppointments(data)
             })
@@ -42,7 +42,7 @@ const AllAppointment = () => {
                 // window.location.reload();
             })
             .then(result => {
-                console.log('Deleted successfully')
+                // console.log('Deleted successfully');
             })
     }
     return (

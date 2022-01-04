@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 
 const HeaderContents = () => {
     const location = useLocation();
-    console.log("Location is now: ", location);
+    // console.log("Location is now: ", location);
 
     const [headerVideo, setHeaderVideo] = useState('');
     const [covid, setCovid] = useState(false);

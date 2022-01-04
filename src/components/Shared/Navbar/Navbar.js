@@ -17,7 +17,7 @@ const Navbar = () => {
     const [navBg, setNavBg] = useState("#36A9F0");
 
     const location = useLocation();
-    console.log("Location is : ", location);
+    // console.log("Location is : ", location);
 
     useEffect(() =>{
         if ((window.location.pathname === "/") || (window.location.pathname === "/home") || (window.location.pathname === "/covid-19")) {
@@ -62,7 +62,7 @@ const Navbar = () => {
     }
 
     const showNotificationForIdentification = () => {
-        console.log(loggedInUser)
+        // console.log(loggedInUser);
         const Swal = require('sweetalert2')
         Swal.fire({
             position: 'top',

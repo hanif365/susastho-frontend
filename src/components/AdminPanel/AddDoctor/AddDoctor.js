@@ -44,7 +44,7 @@ const AddDoctor = () => {
 
         const url = `https://sleepy-fjord-79948.herokuapp.com/addDoctor`
 
-        console.log(doctorData);
+        // console.log(doctorData);
 
         fetch(url, {
             method: 'POST',
@@ -54,7 +54,7 @@ const AddDoctor = () => {
             body: JSON.stringify(doctorData)
         })
             .then(res => {
-                console.log('server side response', res)
+                // console.log('server side response', res)
                 // window.location.reload(false)
             })
 
@@ -70,7 +70,7 @@ const AddDoctor = () => {
     };
 
     const handleDoctorImgUpload = (e) => {
-        console.log(e.target.files[0]);
+        // console.log(e.target.files[0]);
         const imageData = new FormData();
         // imageData.set('key', 'eba329da20b6c8d81d975a91b47e61ab');
         imageData.set('key', '6f873b434b5debc1f50d236f35571a75');
@@ -79,16 +79,16 @@ const AddDoctor = () => {
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
                 // console.log(response);
-                console.log(response.data.data.display_url);
+                // console.log(response.data.data.display_url);
                 setDoctorImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
-                console.log(error);
+                // console.log(error);
             });
     }
 
     const handleDoctorNIDImgUpload = (e) => {
-        console.log(e.target.files[0]);
+        // console.log(e.target.files[0]);
         const imageData = new FormData();
         // imageData.set('key', 'eba329da20b6c8d81d975a91b47e61ab');
         imageData.set('key', '6f873b434b5debc1f50d236f35571a75');
@@ -97,11 +97,11 @@ const AddDoctor = () => {
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
                 // console.log(response);
-                console.log(response.data.data.display_url);
+                // console.log(response.data.data.display_url);
                 setDoctorNidURL(response.data.data.display_url);
             })
             .catch(function (error) {
-                console.log(error);
+                // console.log(error);
             });
     }
     return (

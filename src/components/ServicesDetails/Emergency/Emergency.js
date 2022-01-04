@@ -9,7 +9,7 @@ const Emergency = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/emergencyInfo')
             .then(res => res.json())
             .then(data => {
-                console.log("Emergency Info from DB : ", data);
+                // console.log("Emergency Info from DB : ", data);
                 setEmergencyInfo(data)
             })
     }, [])

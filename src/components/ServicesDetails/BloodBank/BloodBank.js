@@ -10,7 +10,7 @@ const BloodBank = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/bloodBankInfo')
             .then(res => res.json())
             .then(data => {
-                console.log("Emergency Info from DB : ", data);
+                // console.log("Emergency Info from DB : ", data);
                 setBloodBankInfo(data)
             })
     }, [])

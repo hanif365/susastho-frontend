@@ -3,10 +3,10 @@ import './AppointmentList.css'
 
 const AppointmentList = ({ appointment }) => {
     const {_id, Patient_Name, Gender, Age, Patient_Image, Patient_Description, Address, Mobile, Selected_Doctor, Appointment_Date, User_Name, User_Email } = appointment;
-    console.log(appointment);
+    // console.log(appointment);
 
     const cancelAppointment = (id) =>{
-        console.log(id)
+        // console.log(id)
 
         fetch(`https://sleepy-fjord-79948.herokuapp.com/cancelAppointment/${id}`, {
             method: 'DELETE',
@@ -16,7 +16,7 @@ const AppointmentList = ({ appointment }) => {
                 // window.location.reload();
             })
             .then(result => {
-                console.log('Deleted successfully')
+                // console.log('Deleted successfully');
             })
         // window.location.reload();
     }

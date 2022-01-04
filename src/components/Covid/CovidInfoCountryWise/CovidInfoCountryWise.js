@@ -9,17 +9,17 @@ const CovidInfoCountryWise = () => {
     const [time, setTime] = useState('');
 
     const onSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
         // console.log(data.countryName);
         setCountryData(data.countryName);
         reset();
 
-        const covidCountryURL = `https://disease.sh/v3/covid-19/countries/${data.countryName}`
-        console.log(covidCountryURL);
+        const covidCountryURL = `/countries/${data.countryName}`
+        // console.log(covidCountryURL);
         fetch(covidCountryURL)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.message == null) {
                     setCountryData(data);
                 }
@@ -40,14 +40,14 @@ const CovidInfoCountryWise = () => {
 
     // Get Default country Info(BD)
     useEffect(() => {
-        fetch(`https://disease.sh/v3/covid-19/countries/bd`)
+        fetch(`/countries/bd`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setDefaultCountryData(data)
             })
     }, [])
-    console.log("CountryWiseData: ", defaultCountryData);
+    // console.log("CountryWiseData: ", defaultCountryData);
 
     useEffect(() => {
         var today = new Date();

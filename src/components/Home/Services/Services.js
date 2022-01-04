@@ -4,10 +4,10 @@ import AllServicesData from '../../../Assets/Data/Services.json'
 import ServiceContent from '../ServiceContent/ServiceContent';
 
 const Services = () => {
-    console.log(typeof AllServicesData)
+    // console.log(typeof AllServicesData)
 
     const ServicesData = AllServicesData.slice(0, 6);
-    console.log(ServicesData)
+    // console.log(ServicesData)
     return (
         <div className='' id="services">
             <div id="" className="service-container">

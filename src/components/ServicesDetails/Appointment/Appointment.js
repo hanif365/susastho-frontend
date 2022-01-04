@@ -12,7 +12,7 @@ const Appointment = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/appointment?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
-                console.log("Appointment Data from DB : ", data);
+                // console.log("Appointment Data from DB : ", data);
                 // setAppointments(data);
                 (data.length <= 0) ? showNotificationForAppointmentNone() : setAppointments(data)
             })

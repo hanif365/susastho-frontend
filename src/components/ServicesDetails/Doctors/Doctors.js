@@ -11,7 +11,7 @@ const Doctors = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/doctors')
             .then(res => res.json())
             .then(data => {
-                console.log("Doctors Data from DB : ", data);
+                // console.log("Doctors Data from DB : ", data);
                 setDoctors(data)
             })
     }, [])

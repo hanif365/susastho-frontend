@@ -30,7 +30,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then((res) => {
                 const {displayName, email, photoURL} = res.user;
-                console.log(displayName, email, photoURL);
+                // console.log(displayName, email, photoURL);
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,
@@ -41,7 +41,7 @@ const Login = () => {
                 history.replace(from);
             }).catch((err) => {
                 const errorMessage = err.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
             });
 
     }

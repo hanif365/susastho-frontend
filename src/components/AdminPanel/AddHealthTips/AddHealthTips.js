@@ -21,7 +21,7 @@ const AddHealthTips = () => {
 
         const url = `https://sleepy-fjord-79948.herokuapp.com/addhealthtips`
 
-        console.log(healthTipsData);
+        // console.log(healthTipsData);
 
         fetch(url, {
             method: 'POST',
@@ -31,7 +31,7 @@ const AddHealthTips = () => {
             body: JSON.stringify(healthTipsData)
         })
             .then(res => {
-                console.log('server side response', res)
+                // console.log('server side response', res)
                 // window.location.reload(false)
             })
 
@@ -47,7 +47,7 @@ const AddHealthTips = () => {
     };
 
     const handleImgUpload = (e) => {
-        console.log(e.target.files[0]);
+        // console.log(e.target.files[0]);
         const imageData = new FormData();
         // imageData.set('key', 'eba329da20b6c8d81d975a91b47e61ab');
         imageData.set('key', '6f873b434b5debc1f50d236f35571a75');
@@ -56,11 +56,11 @@ const AddHealthTips = () => {
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
                 // console.log(response);
-                console.log(response.data.data.display_url);
+                // console.log(response.data.data.display_url);
                 setImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
-                console.log(error);
+                // console.log(error);
             });
     }
     return (
