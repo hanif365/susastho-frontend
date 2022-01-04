@@ -19,7 +19,7 @@ const CovidInfoCountryWise = () => {
         fetch(covidCountryURL)
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 if (data.message == null) {
                     setCountryData(data);
                 }
@@ -43,7 +43,7 @@ const CovidInfoCountryWise = () => {
         fetch(`/countries/bd`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 setDefaultCountryData(data)
             })
     }, [])
