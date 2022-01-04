@@ -14,13 +14,14 @@ const CovidInfoCountryWise = () => {
         setCountryData(data.countryName);
         reset();
 
-        // const covidCountryURL = `/countries/${data.countryName}`
+        // const covidCountryURL = `https://disease.sh/v3/covid-19/countries/${data.countryName}`;
+
         const covidCountryURL = `https://corona.lmao.ninja/v2/countries/${data.countryName}`
         // console.log(covidCountryURL);
         fetch(covidCountryURL)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.message == null) {
                     setCountryData(data);
                 }
@@ -41,11 +42,11 @@ const CovidInfoCountryWise = () => {
 
     // Get Default country Info(BD)
     useEffect(() => {
-        // fetch(`/countries/bd`)
+        // fetch(`https://disease.sh/v3/covid-19/countries/bd`)
         fetch(`https://corona.lmao.ninja/v2/countries/bd`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setDefaultCountryData(data)
             })
     }, [])
