@@ -43,6 +43,7 @@ const CovidInfoCountryWise = () => {
     // Get Default country Info(BD)
     useEffect(() => {
         // fetch(`https://disease.sh/v3/covid-19/countries/bd`)
+        // fetch(`https://corona.lmao.ninja/v2/countries/bd?yesterday=true`)
         fetch(`https://corona.lmao.ninja/v2/countries/bd`)
             .then(res => res.json())
             .then(data => {
@@ -65,7 +66,7 @@ const CovidInfoCountryWise = () => {
                 <hr className='covid-hr' />
             </div>
 
-            <div className="row container py-4 ms-4">
+            <div className="row container py-4 ms-md-4">
                 <h4>{countryData ? countryData?.country : defaultCountryData?.country}</h4>
                 <img className='flag-img' src={countryData ? countryData?.countryInfo?.flag : defaultCountryData?.countryInfo?.flag} alt="" />
             </div>
@@ -79,7 +80,7 @@ const CovidInfoCountryWise = () => {
                 </div>
             </div>
 
-            <div className='row container ms-4 pt-5'>
+            <div className='row container ms-md-4 pt-5'>
                 <p><span className='fw-bold'>Last Update : </span><span className='text-info fw-bold'>{time}</span> <span className='ms-3'> Source : worldometers</span></p>
             </div>
 
