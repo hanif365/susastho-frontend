@@ -19,7 +19,7 @@ const Footer = () => {
             
                     <div className=" d-flex justify-content-center flex-wrap text-light">
                         <div>
-                            @2021 <span className="project-name mx-2"> SUSASTHO </span> - All Rights reserved.
+                            &copy; {new Date().getFullYear()} <span className="project-name mx-2"> SUSASTHO </span> - All Rights reserved.
                         </div>
                         <div className='ps-md-2'>
                             Created By <span className="creator-name mx-2"> <a href="https://hanif.netlify.app/" target="_blank">M.A.HANIF</a> </span>
