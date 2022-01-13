@@ -13,13 +13,13 @@ const AppointmentPatients = () => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/appointmentpatients?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
-                // console.log("Appointment Patients Data from DB : ", data);
+                console.log("Appointment Patients Data from DB : ", data);
                 // setAppointmentpatients(data);
-                (data.length <= 0) ? showNotificationForAppointmentNone() : setAppointmentpatients(data)
+                (data.length <= 0) ? showNotificationForAppointmentPatientNone() : setAppointmentpatients(data)
             })
     }, [])
 
-    const showNotificationForAppointmentNone = () => {
+    const showNotificationForAppointmentPatientNone = () => {
         const Swal = require('sweetalert2')
         Swal.fire({
             position: 'center',
