@@ -125,11 +125,16 @@ const Sidebar = () => {
 
                     </div>}
 
-                    {isDoctor && <li>
-                        <Link to="/appointmentpatients" className="text-white">
-                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Appointment Patients</span>
-                        </Link>
-                    </li>}
+                    {isDoctor && <div className='super-admin-panel'>
+                        <h4 className='super-admin-panel-inner'>
+                            <FontAwesomeIcon icon={faUserMd} /> <span>Doctor Panel</span>
+                        </h4>
+                        <li>
+                            <Link to="/appointmentpatients" className="text-white">
+                                <FontAwesomeIcon icon={faCalendarCheck} /> <span>Appointment Patients</span>
+                            </Link>
+                        </li>
+                    </div>}
 
 
 
