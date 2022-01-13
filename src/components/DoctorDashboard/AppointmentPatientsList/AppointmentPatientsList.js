@@ -33,7 +33,7 @@ const AppointmentPatientsList = ({appointmentpatient}) => {
                     <p class="card-text">Appointment_Date : {Appointment_Date}</p>
                     <p class="card-text">Problem Details : {Patient_Description}</p>
                     <p class="card-text">Appointment By : {User_Name}</p>
-                    <button className='btn btn-field' onClick={() => cancelAppointment(_id)}>Cancel Appointment</button>
+                    <button className='btn btn-field' onClick={() => cancelAppointment(_id)}>Prescribe Done</button>
                     
                     {/* <Link to="/addappointment" onClick={() => handleDoctor()} class="btn btn-primary">GET APPOINTMENT</Link> */}
                     {/* <a href="#" onClick={() => handleDoctor()} class="btn btn-primary">GET APPOINTMENT</a> */}
