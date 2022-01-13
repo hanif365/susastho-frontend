@@ -6,12 +6,13 @@ import './DoctorList.css'
 const DoctorList = ({ doctor }) => {
     // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDoctor, setSelectedDoctor] = useContext(DoctorContext);
-    const {_id, Doctor_Name, Designation, doctorImageURL, doctorNidURL, Doctor_BMDC_Reg,  Degree, Department, Chamber, Time, Fees, OffDay, Doctor_Description } = doctor;
+    const {_id, Doctor_Name, Doctor_Email, Designation, doctorImageURL, doctorNidURL, Doctor_BMDC_Reg,  Degree, Department, Chamber, Time, Fees, OffDay, Doctor_Description } = doctor;
     // console.log("Doctor Name :", Doctor_Name);
 
     const handleDoctor = () => {
         const setDoctor = {
             name: Doctor_Name,
+            email: Doctor_Email,
         }
         setSelectedDoctor(setDoctor);
     }

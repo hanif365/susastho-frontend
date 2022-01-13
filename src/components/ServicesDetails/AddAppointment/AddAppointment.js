@@ -33,6 +33,7 @@ const AddAppointment = () => {
             Address: data.Address,
             Mobile: data.Mobile,
             Selected_Doctor: selectedDoctor.name,
+            Doctor_Email: selectedDoctor.email,
             Appointment_Date: value?.toDate?.().toString(),
             User_Name: loggedInUser?.name,
             User_Email: loggedInUser?.email,
@@ -119,6 +120,9 @@ const AddAppointment = () => {
 
                                 <label className='fw-bolder pt-3' htmlFor="pt-doctor">Auto Filled Doctors Name <span className='text-danger'>*</span></label>
                                 <input name="Selected_Doctor_Just_Used" value={selectedDoctor.name} className="form-control" placeholder="" ref={register} required disabled />
+
+                                <label className='fw-bolder pt-3' htmlFor="pt-doctor-email">Auto Filled Doctors Email <span className='text-danger'>*</span></label>
+                                <input name="Selected_Doctor_Just_Used" value={selectedDoctor.email} className="form-control" placeholder="" ref={register} required disabled />
 
                                 <label className='fw-bolder pt-5 me-3' htmlFor="appointment-date">Appointment Date <span className='text-danger'>*</span></label>
                                 <DatePicker className='date-picker' value={value} id='appointment-date' format="YYYY/MM/DD" onChange={setValue} />

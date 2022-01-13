@@ -32,6 +32,7 @@ const AddDoctor = () => {
             doctorImageURL: doctorImageURL,
             doctorNidURL: doctorNidURL,
             Doctor_BMDC_Reg: data.Doctor_BMDC_Reg,
+            Doctor_Email: data.Doctor_Email,
             Chamber: data.Chamber,
             Time: data.Time,
             OffDay: data.OffDay,
@@ -129,6 +130,9 @@ const AddDoctor = () => {
 
                                 <label className='fw-bolder pt-3' htmlFor="doc-img">Doctor NID Photo Upload <span className='text-danger'>*</span></label>
                                 <input name="exampleRequired" className="form-control" type="file" onChange={handleDoctorNIDImgUpload} required/>
+
+                                <label className='fw-bolder pt-3' htmlFor="email">Add Email Address <span className='text-danger'>*</span></label>
+                                <input name="Doctor_Email" id='email' className="form-control" placeholder="Add Email Address" ref={register} required/>
                             </div>
                             <div className="col-md-6">
                                 <label className='fw-bolder' htmlFor="chamber">Add Chamber Location <span className='text-danger'>*</span></label>

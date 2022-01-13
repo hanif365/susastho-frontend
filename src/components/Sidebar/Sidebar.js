@@ -10,6 +10,7 @@ const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
+    const [isDoctor, setIsDoctor] = useState(false);
 
     useEffect(() => {
         fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
@@ -29,6 +30,16 @@ const Sidebar = () => {
         })
             .then(res => res.json())
             .then(data => setIsSuperAdmin(data));
+    }, [])
+
+    useEffect(() => {
+        fetch('https://sleepy-fjord-79948.herokuapp.com/isDoctor', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsDoctor(data));
     }, [])
 
     const showNotification = () => {
@@ -114,15 +125,19 @@ const Sidebar = () => {
 
                     </div>}
 
+                    {isDoctor && <li>
+                        <Link to="/appointmentpatients" className="text-white">
+                            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Appointment Patients</span>
+                        </Link>
+                    </li>}
 
 
 
-
-                    <li>
+                    {!isDoctor && <li>
                         <Link to="/appointment" className="text-white">
                             <FontAwesomeIcon icon={faCalendarCheck} /> <span>Appointment</span>
                         </Link>
-                    </li>
+                    </li>}
 
 
                     {/* <li>

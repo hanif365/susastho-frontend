@@ -1,0 +1,21 @@
+.appointment-patient-card {
+    max-width: 22rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: all 500ms;
+}
+
+.appointment-patient-card:hover {
+    transform: translateY(10px) !important;
+}
+
+.appointment-patient-card img {
+    height: 250px;
+    border-radius: 15px 15px 15px 15px;
+
+}
+
+.appointment-patient-card-body {
+    padding: 10px;
+}

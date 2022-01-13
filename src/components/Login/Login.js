@@ -29,7 +29,7 @@ const Login = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
             .then((res) => {
-                const {displayName, email, photoURL} = res.user;
+                const { displayName, email, photoURL } = res.user;
                 // console.log(displayName, email, photoURL);
                 const signedInUser = {
                     isSignedIn: true,
@@ -48,8 +48,12 @@ const Login = () => {
     return (
         <div className=" py-5 text-center login-container">
             <Navbar></Navbar>
-            <button onClick={handleGoogleSignIn} className="btn btn-info px-5">Sign In with Google</button>
-
+            <div>
+                <button onClick={handleGoogleSignIn} className="btn btn-info px-5">Sign In with Google</button>
+            </div>
+            <div className='pt-5'>
+                <button onClick={handleGoogleSignIn} className="btn btn-warning px-5">Sign In as Doctor</button>
+            </div>
         </div>
     );
 };

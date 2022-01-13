@@ -12,6 +12,7 @@ import AddHealthTips from "./components/AdminPanel/AddHealthTips/AddHealthTips";
 import MakeAdmin from "./components/AdminPanel/MakeAdmin/MakeAdmin";
 import Covid from "./components/Covid/Covid/Covid";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import AppointmentPatients from "./components/DoctorDashboard/AppointmentPatients/AppointmentPatients";
 
 import Home from './components/Home/Home/Home';
 import Login from "./components/Login/Login";
@@ -98,6 +99,11 @@ function App() {
             <PrivateRoute path="/appointment">
               <Appointment></Appointment>
             </PrivateRoute>
+
+            {/* For Doctor Dashboard */}
+            <Route path="/appointmentpatients">
+              <AppointmentPatients></AppointmentPatients>
+            </Route>
 
             <Route path="/doctors">
               <Doctors></Doctors>
