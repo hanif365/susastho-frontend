@@ -5,13 +5,14 @@
 }
 .contact-form-content{
     /* margin-top: 250px !important; */
-    padding: 30px 20px 30px 20px;
+    padding: 30px 20px;
     border-radius: 10px;
     /* background-color: #5CBEE4; */
-    background-color: #4e8ba3;
+    background-color: #84b2c4;
 }
 .btn-contact{
-    background: #FF87CA;
+    background: #46abf5;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.377);
     font-size: 18px;
     font-weight: 700;
     transition: all 500ms;
@@ -19,8 +20,8 @@
 }
 .btn-contact:hover{
     color: #fff;
-    background-color: #FF9999;
-    transform: translateX(10px);
+    background-color: #1974b5;
+    /* transform: translateX(10px); */
 }
 .contact-img{
     border-radius: 20px;

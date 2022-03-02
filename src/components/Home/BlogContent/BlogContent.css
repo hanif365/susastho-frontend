@@ -19,10 +19,6 @@
     border-radius: 20px;
 }
 
-.blog-content-main:hover {
-    /* background-color: #46abf5; */
-}
-
 #bg-danger:hover {
     background-color: red;
 }
@@ -41,7 +37,7 @@
     transform: translateY(10px) !important;
 }
 
-.blog-content-main:hover img{
+.blog-content-main:hover img {
     transform: scale(1, 1) !important;
     border-radius: 0px !important;
     padding-bottom: 10px;
@@ -53,10 +49,7 @@
     transition: all 500ms;
 }
 
-.blog-content-main:hover .text-end{
-    /* color: #fff; */
-}
-.btn-field{
+.btn-field {
     font-size: 20px;
     font-weight: 700;
     padding: 7px 25px;
@@ -65,7 +58,8 @@
     border: none;
     transition: all 500ms;
 }
-.btn-field:hover{
+
+.btn-field:hover {
     color: #fff;
     background-color: #D47AE8;
     transform: translateX(10px);

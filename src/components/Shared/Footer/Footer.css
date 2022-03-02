@@ -5,9 +5,7 @@
 }
 
 .footer-main {
-    /* background: #000957; */
-    background: #199bf7;
-    /* background: #04b1f5ad; */
+    background: #46abf5;
 }
 
 .project-name {
@@ -17,7 +15,7 @@
 .creator-name a {
     text-decoration: none;
     color: #EC255A;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .creator-name a:hover {
@@ -29,8 +27,9 @@
     position: fixed;
     bottom: 20px;
     right: 10px;
-    background: #6E3CBC;
-    color: #fff;
+    /* background: #6E3CBC; */
+    background-color: transparent;
+    color: #1974b5;
     padding: 5px 8px;
     border-radius: 5px;
     transition: all 500ms;
@@ -39,6 +38,6 @@
 }
 
 .bottom-to-top:hover {
-    background: #7267CB;
+    background: #1974b5;
     color: #fff;
 }
