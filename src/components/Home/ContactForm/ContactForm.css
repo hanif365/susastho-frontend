@@ -1,24 +1,13 @@
 .contact-form-container{
-    /* background: #0A192F; */
-    /* height: 100vh; */
-    /* padding-top: 150px !important; */
     margin-top: 150px;
     background: #dedfe0bd;
 }
 .contact-form-content{
-    /* margin-top: 250px !important; */
     padding: 30px 20px;
     border-radius: 10px;
-    /* background-color: #5CBEE4; */
-    /* background-color: #84b2c4; */
-    /* background: rgb(248, 249, 250); */
-    /* background: url("../../../Assets/Images/bg-about-right.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
 }
 .btn-contact{
-    background: #46abf5;
+    background: #dedfe0;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.377);
     font-size: 18px;
     font-weight: 700;
@@ -26,8 +15,8 @@
     padding: 10px 20px;
 }
 .btn-contact:hover{
-    color: #fff;
-    background-color: #1974b5;
+    /* color: #fff; */
+    background-color: #e5edf5bd;
     /* transform: translateX(10px); */
 }
 .contact-img{

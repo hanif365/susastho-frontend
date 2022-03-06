@@ -32,6 +32,7 @@ const Doctors = () => {
                             doctors.map(doctor => <DoctorList doctor={doctor}></DoctorList>)
                         }
                     </div>
+                    <p className='text-end pt-3 text-danger'>*Only for Illustration</p>
                 </div>
             </div>
 
