@@ -28,7 +28,7 @@ const ContactForm = () => {
         })
     }
     return (
-        <div className="contact-form-container py-5 text-light" id="contact" >
+        <div className="contact-form-container py-5" id="contact" >
             <div className="container contact-form-content">
                 <div className="row d-flex">
                     <div className="col-md-6 align-self-center">

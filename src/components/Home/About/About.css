@@ -1,7 +1,8 @@
-.about-content{
-    background: url("../../../Assets/Images/bg-about-img.png");
+.about-main{
+    background: url("../../../Assets/Images/bg-about-right.png");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
+    background-position: center;
 }
 .text-header{
     color: #84DFFF;

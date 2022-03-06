@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useLocation } from 'react-router-dom';
+import heartBeat from '../../../Assets/Images/heartbeat-pulse.gif';
 
 const HeaderContents = () => {
     const location = useLocation();
@@ -33,7 +34,7 @@ const HeaderContents = () => {
                 <div className="text">
                     {/* <h2>WE CARE ABOUT YOUR HEALTH</h2> */}
                     {
-                        covid ? <h3>Stay at home, save lives!</h3> : <h2>WE CARE ABOUT YOUR HEALTH</h2>
+                        covid ? <h3>Stay at home, save lives!</h3> : <h2>WE CARE ABOUT YOUR HEALTH <img src={heartBeat} alt="heartBeat" className='heartBeat'/></h2>
                     }
 
                     {/* <p>Health is wealth. We Should take care of our Health. You Can get a lot of health-related Services and information on our platform.</p> */}
