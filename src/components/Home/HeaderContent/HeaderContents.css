@@ -144,6 +144,10 @@
     .text h3 {
         font-size: 2em;
     }
+    .heartBeat{
+        width: 60px;
+        height: 40px;
+    }
 }
 
 @media (max-width: 768px) {

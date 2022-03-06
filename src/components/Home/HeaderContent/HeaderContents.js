@@ -15,15 +15,15 @@ const HeaderContents = () => {
     const [headerVideo, setHeaderVideo] = useState('');
     const [covid, setCovid] = useState(false);
 
-    useEffect(() =>{
+    useEffect(() => {
         if ((window.location.pathname === "/covid-19")) {
             setHeaderVideo(InjectionVideo);
             setCovid(true);
-          } else{
+        } else {
             setHeaderVideo(CovidVideo);
             setCovid(false);
-          }
-    },[])
+        }
+    }, [])
 
 
     return (
@@ -34,7 +34,7 @@ const HeaderContents = () => {
                 <div className="text">
                     {/* <h2>WE CARE ABOUT YOUR HEALTH</h2> */}
                     {
-                        covid ? <h3>Stay at home, save lives!</h3> : <h2>WE CARE ABOUT YOUR HEALTH <img src={heartBeat} alt="heartBeat" className='heartBeat'/></h2>
+                        covid ? <h3>Stay at home, save lives!</h3> : <h2>WE CARE ABOUT YOUR HEALTH <img src={heartBeat} alt="heartBeat" className='heartBeat' /></h2>
                     }
 
                     {/* <p>Health is wealth. We Should take care of our Health. You Can get a lot of health-related Services and information on our platform.</p> */}
@@ -43,7 +43,7 @@ const HeaderContents = () => {
                     }
                     {/* <a href="#" href="#services">MORE DETAILS</a> */}
                     {
-                        covid ? <a href="#covid-19-dashboard">Covid-19 Dashboard</a> : <a href="#" href="#services">MORE DETAILS</a>
+                        covid ? <a href="#covid-19-dashboard">Covid-19 Dashboard</a> : <a href="#services">MORE DETAILS</a>
                     }
                 </div>
 
