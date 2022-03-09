@@ -72,7 +72,7 @@ const AddAppointment = () => {
         })
 
         // Redirect to appointment page
-        setTimeout(() => history.push('/appointment'), 2000);
+        setTimeout(() => history.push('/appointment'), 1500);
     };
 
 
