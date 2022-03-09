@@ -1,10 +1,12 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import './App.css'
+import { BeatLoader, BounceLoader, HashLoader, PulseLoader } from "react-spinners";
 import AddBloodBankInfo from "./components/AdminPanel/AddBloodBankInfo/AddBloodBankInfo";
 import AddDoctor from "./components/AdminPanel/AddDoctor/AddDoctor";
 import AddEmergencyInfo from "./components/AdminPanel/AddEmergencyInfo/AddEmergencyInfo";
@@ -36,106 +38,126 @@ export const DoctorContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [selectedDoctor, setSelectedDoctor] = useState({});
+  const [loading, setLoading] = useState(false);
+  let [color, setColor] = useState("#79BCF7");
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
+  }, [])
 
 
   return (
-    <DoctorContext.Provider value={[selectedDoctor, setSelectedDoctor]}>
-      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-        <Router>
-          {/* <Navbar></Navbar> */}
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
+    <>
+      {
+        loading ?
+          <div className="preLoader">
+            <BounceLoader color={color} loading={loading} size={150} />
+            {/* <HashLoader color={color} loading={loading} size={150} /> */}
+            {/* <PulseLoader color={color} loading={loading} size={40} /> */}
+            {/* <BeatLoader color={color} loading={loading} size={30} /> */}
+          </div> :
+          <DoctorContext.Provider value={[selectedDoctor, setSelectedDoctor]}>
+            <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+              <Router>
+                {/* <Navbar></Navbar> */}
+                <Switch>
+                  <Route exact path="/">
+                    <Home></Home>
+                  </Route>
+                  <Route path="/home">
+                    <Home></Home>
+                  </Route>
 
-            <Route path="/login">
-              <Login></Login>
-            </Route>
+                  <Route path="/login">
+                    <Login></Login>
+                  </Route>
 
-            {/* Must be Private Dashborad */}
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-
-
-            <PrivateRoute path="/adddoctor">
-              <AddDoctor></AddDoctor>
-            </PrivateRoute>
-
-            <PrivateRoute path="/makeadmin">
-              <MakeAdmin></MakeAdmin>
-            </PrivateRoute>
-
-            <PrivateRoute path="/makesuperadmin">
-              <MakeSuperAdmin></MakeSuperAdmin>
-            </PrivateRoute>
-
-            <PrivateRoute path="/confirmeddoctor">
-              <ConfirmedDoctor></ConfirmedDoctor>
-            </PrivateRoute>
-
-            <PrivateRoute path="/allAppointment">
-              <AllAppointment></AllAppointment>
-            </PrivateRoute>
+                  {/* Must be Private Dashborad */}
+                  <PrivateRoute path="/dashboard">
+                    <Dashboard></Dashboard>
+                  </PrivateRoute>
 
 
+                  <PrivateRoute path="/adddoctor">
+                    <AddDoctor></AddDoctor>
+                  </PrivateRoute>
+
+                  <PrivateRoute path="/makeadmin">
+                    <MakeAdmin></MakeAdmin>
+                  </PrivateRoute>
+
+                  <PrivateRoute path="/makesuperadmin">
+                    <MakeSuperAdmin></MakeSuperAdmin>
+                  </PrivateRoute>
+
+                  <PrivateRoute path="/confirmeddoctor">
+                    <ConfirmedDoctor></ConfirmedDoctor>
+                  </PrivateRoute>
+
+                  <PrivateRoute path="/allAppointment">
+                    <AllAppointment></AllAppointment>
+                  </PrivateRoute>
 
 
-            <PrivateRoute path="/addemergencyinfo">
-              <AddEmergencyInfo></AddEmergencyInfo>
-            </PrivateRoute>
 
-            <PrivateRoute path="/addbloodbankinfo">
-              <AddBloodBankInfo></AddBloodBankInfo>
-            </PrivateRoute>
 
-            <PrivateRoute path="/addhealthtips">
-              <AddHealthTips></AddHealthTips>
-            </PrivateRoute>
+                  <PrivateRoute path="/addemergencyinfo">
+                    <AddEmergencyInfo></AddEmergencyInfo>
+                  </PrivateRoute>
 
-            <PrivateRoute path="/appointment">
-              <Appointment></Appointment>
-            </PrivateRoute>
+                  <PrivateRoute path="/addbloodbankinfo">
+                    <AddBloodBankInfo></AddBloodBankInfo>
+                  </PrivateRoute>
 
-            {/* For Doctor Dashboard */}
-            <Route path="/appointmentpatients">
-              <AppointmentPatients></AppointmentPatients>
-            </Route>
+                  <PrivateRoute path="/addhealthtips">
+                    <AddHealthTips></AddHealthTips>
+                  </PrivateRoute>
 
-            <Route path="/doctors">
-              <Doctors></Doctors>
-            </Route>
+                  <PrivateRoute path="/appointment">
+                    <Appointment></Appointment>
+                  </PrivateRoute>
 
-            <PrivateRoute path="/addappointment">
-              <AddAppointment></AddAppointment>
-            </PrivateRoute>
+                  {/* For Doctor Dashboard */}
+                  <Route path="/appointmentpatients">
+                    <AppointmentPatients></AppointmentPatients>
+                  </Route>
 
-            <Route path="/emergency">
-              <Emergency></Emergency>
-            </Route>
+                  <Route path="/doctors">
+                    <Doctors></Doctors>
+                  </Route>
 
-            <Route path="/bloodbank">
-              <BloodBank></BloodBank>
-            </Route>
+                  <PrivateRoute path="/addappointment">
+                    <AddAppointment></AddAppointment>
+                  </PrivateRoute>
 
-            <Route path="/healthtips">
-              <HealthTips></HealthTips>
-            </Route>
+                  <Route path="/emergency">
+                    <Emergency></Emergency>
+                  </Route>
 
-            <Route path="/covid-19">
-              <Covid></Covid>
-            </Route>
+                  <Route path="/bloodbank">
+                    <BloodBank></BloodBank>
+                  </Route>
 
-          </Switch>
-          {/* <Footer></Footer> */}
-        </Router>
-      </UserContext.Provider >
-    </DoctorContext.Provider>
+                  <Route path="/healthtips">
+                    <HealthTips></HealthTips>
+                  </Route>
+
+                  <Route path="/covid-19">
+                    <Covid></Covid>
+                  </Route>
+
+                </Switch>
+                {/* <Footer></Footer> */}
+              </Router>
+            </UserContext.Provider >
+          </DoctorContext.Provider>}
+    </>
   );
 }
+
 
 
 
