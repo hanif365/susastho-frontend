@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { DoctorContext, UserContext } from '../../../App';
 import Navbar from '../../Shared/Navbar/Navbar';
@@ -7,6 +7,7 @@ import DatePicker from "react-multi-date-picker";
 import './AddAppointment.css';
 
 import Swal from 'sweetalert2'
+import { useHistory } from 'react-router-dom';
 
 // CommonJS
 
@@ -22,6 +23,8 @@ const AddAppointment = () => {
     const [value, setValue] = useState(new Date());
     const date = value?.toDate?.().toString();
     // console.log(date)
+
+    let history = useHistory();
 
     const onSubmit = data => {
         const patientData = {
@@ -67,6 +70,9 @@ const AddAppointment = () => {
             showConfirmButton: false,
             timer: 1500
         })
+
+        // Redirect to appointment page
+        setTimeout(() => history.push('/appointment'), 2000);
     };
 
 
