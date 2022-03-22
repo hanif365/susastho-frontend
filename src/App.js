@@ -30,6 +30,8 @@ import Navbar from "./components/Shared/Navbar/Navbar";
 import AllAppointment from "./components/SuperAdminPanel/AllAppointment/AllAppointment";
 import ConfirmedDoctor from "./components/SuperAdminPanel/ConfirmedDoctor/ConfirmedDoctor";
 import MakeSuperAdmin from "./components/SuperAdminPanel/MakeSuperAdmin/MakeSuperAdmin";
+import Vaccination from "./components/ServicesDetails/Vaccination/Vaccination";
+import PatientCare from "./components/ServicesDetails/PatientCare/PatientCare";
 
 export const UserContext = createContext();
 export const DoctorContext = createContext();
@@ -143,6 +145,14 @@ function App() {
 
                   <Route path="/healthtips">
                     <HealthTips></HealthTips>
+                  </Route>
+
+                  <Route path="/vaccination">
+                    <Vaccination></Vaccination>
+                  </Route>
+
+                  <Route path="/patientcare">
+                    <PatientCare></PatientCare>
                   </Route>
 
                   <Route path="/covid-19">
