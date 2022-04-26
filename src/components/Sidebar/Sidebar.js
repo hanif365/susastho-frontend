@@ -13,7 +13,8 @@ const Sidebar = () => {
     const [isDoctor, setIsDoctor] = useState(false);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/isAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -23,7 +24,8 @@ const Sidebar = () => {
     }, [])
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/isSuperAdmin', {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/isSuperAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -33,7 +35,8 @@ const Sidebar = () => {
     }, [])
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/isDoctor', {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/isDoctor`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

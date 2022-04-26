@@ -9,6 +9,7 @@ import { faAlignRight, faOilCan, faUserMd } from '@fortawesome/free-solid-svg-ic
 
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
@@ -19,17 +20,18 @@ const Navbar = () => {
     const location = useLocation();
     // console.log("Location is : ", location);
 
-    useEffect(() =>{
+    useEffect(() => {
         if ((window.location.pathname === "/") || (window.location.pathname === "/home") || (window.location.pathname === "/covid-19")) {
             setNavBg("transparent");
-          } else {
+        } else {
             setNavBg('#36A9F0');
             // setNavBg('#07f5f575');
-          }
-    },[])
+        }
+    }, [])
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/isAdmin', {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/isAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -40,7 +42,8 @@ const Navbar = () => {
 
     // Check admin super-admin or not
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/isSuperAdmin', {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/isSuperAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

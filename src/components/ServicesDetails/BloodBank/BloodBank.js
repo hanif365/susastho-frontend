@@ -7,7 +7,8 @@ const BloodBank = () => {
     const [bloodBankInfo, setBloodBankInfo] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/bloodBankInfo')
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/bloodBankInfo`)
             .then(res => res.json())
             .then(data => {
                 // console.log("Emergency Info from DB : ", data);

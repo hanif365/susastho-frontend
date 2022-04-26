@@ -7,8 +7,9 @@ const AppointmentList = ({ appointment }) => {
 
     const cancelAppointment = (id) =>{
         // console.log(id)
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
 
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/cancelAppointment/${id}`, {
+        fetch(`${BackendLink}/cancelAppointment/${id}`, {
             method: 'DELETE',
         })
             .then(res => {

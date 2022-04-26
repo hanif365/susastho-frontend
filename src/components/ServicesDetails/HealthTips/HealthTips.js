@@ -7,7 +7,8 @@ const HealthTips = () => {
     const [healthTipsData, setHealthTipsData] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/healthTipsData')
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/healthTipsData`)
             .then(res => res.json())
             .then(data => {
                 // console.log("healthTipsData from DB : ", data);

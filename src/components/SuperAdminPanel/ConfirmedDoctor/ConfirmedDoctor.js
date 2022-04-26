@@ -10,7 +10,8 @@ const ConfirmedDoctor = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/doctorsForConfirmation')
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/doctorsForConfirmation`)
             .then(res => res.json())
             .then(data => {
                 // console.log("Doctors Data from DB : ", data);
@@ -24,7 +25,9 @@ const ConfirmedDoctor = () => {
         const inputStatus = 'Confirmed';
         const status = { inputStatus };
         // console.log("confirmed : ", id);
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/doctorConfirmed/${id}`, {
+
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/doctorConfirmed/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(status)
@@ -39,7 +42,9 @@ const ConfirmedDoctor = () => {
     // const statusOngoing = (id) =>{
     //     const inputStatus = 'Ongoing';
     //     const status = {inputStatus};
-    //     fetch(`https://sleepy-fjord-79948.herokuapp.com/ongoing/${id}`, {
+
+    //     const BackendLink = process.env.REACT_APP_BACKENDLINK;
+    //     fetch(`${BackendLink}/ongoing/${id}`, {
     //         method: 'PATCH',
     //         headers:{'Content-Type': 'application/json'},
     //         body: JSON.stringify(status)
@@ -55,7 +60,9 @@ const ConfirmedDoctor = () => {
         const inputStatus = 'Pending';
         const status = { inputStatus };
         // console.log("pending : ", id);
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/doctorPending/${id}`, {
+
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/doctorPending/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(status)

@@ -8,7 +8,8 @@ const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/doctors')
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/doctors`)
             .then(res => res.json())
             .then(data => {
                 // console.log("Doctors Data from DB : ", data);

@@ -13,7 +13,8 @@ const AddDoctor = () => {
 
     // Check admin super-admin or not
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/isSuperAdmin', {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/isSuperAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -43,7 +44,9 @@ const AddDoctor = () => {
             status: "pending",
         };
 
-        const url = `https://sleepy-fjord-79948.herokuapp.com/addDoctor`
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+
+        const url = `${BackendLink}/addDoctor`
 
         // console.log(doctorData);
 

@@ -43,8 +43,8 @@ const AddAppointment = () => {
             // Serial_Number: Math.random() * 10,
         };
 
-        // const url = `https://polar-bastion-39307.herokuapp.com/addService`
-        const url = `https://sleepy-fjord-79948.herokuapp.com/addAppointment`
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        const url = `${BackendLink}/addAppointment`
         // console.log(data)
 
         // console.log("Patient Data : ", patientData);

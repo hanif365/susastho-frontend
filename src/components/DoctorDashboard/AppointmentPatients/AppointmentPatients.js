@@ -9,7 +9,8 @@ const AppointmentPatients = () => {
     const [appointmentpatients, setAppointmentpatients] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/appointmentpatients?email=' + loggedInUser.email)
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/appointmentpatients?email=` + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
                 console.log("Appointment Patients Data from DB : ", data);

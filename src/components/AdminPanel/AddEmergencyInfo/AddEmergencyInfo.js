@@ -19,8 +19,9 @@ const AddEmergencyInfo = () => {
             EmergencyInfo_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear())
         };
 
-        // const url = `https://polar-bastion-39307.herokuapp.com/addService`
-        const url = `https://sleepy-fjord-79948.herokuapp.com/addemergencyinfo`
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+
+        const url = `${BackendLink}/addemergencyinfo`
         // console.log(data)
 
         // console.log(emergencyInfo);

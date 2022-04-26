@@ -19,7 +19,8 @@ const AddHealthTips = () => {
             Health_Tips_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear())
         };
 
-        const url = `https://sleepy-fjord-79948.herokuapp.com/addhealthtips`
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        const url = `${BackendLink}/addhealthtips`
 
         // console.log(healthTipsData);
 

@@ -6,7 +6,8 @@ const Emergency = () => {
     const [emergencyInfo, setEmergencyInfo] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/emergencyInfo')
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/emergencyInfo`)
             .then(res => res.json())
             .then(data => {
                 // console.log("Emergency Info from DB : ", data);

@@ -23,7 +23,9 @@ const AddBloodBankInfo = () => {
             Blood_Group: data.Blood_Group,
         };
 
-        const url = `https://sleepy-fjord-79948.herokuapp.com/addbloodbankinfo`
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+
+        const url = `${BackendLink}/addbloodbankinfo`
         // console.log(data)
 
         // console.log(bloodBankInfo);

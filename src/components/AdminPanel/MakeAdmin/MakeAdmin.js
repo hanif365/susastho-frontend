@@ -6,13 +6,22 @@ const MakeAdmin = () => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     const onSubmitAdmin = (datalist) => {
+        const AccessTokenForA = process.env.REACT_APP_ACCESSTOKENFORA;
+
+        if (datalist.AccessToken !== AccessTokenForA) {
+            warningMsg();
+            return;
+        }
+
+
         const adminData = {
             Admin_Name: datalist.Admin_Name,
             email: datalist.email,
             Admin_Added_Date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear())
         };
 
-        const adminURL = `https://sleepy-fjord-79948.herokuapp.com/addAdmin`
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        const adminURL = `${BackendLink}/addAdmin`
 
         // console.log(adminData);
 
@@ -38,6 +47,17 @@ const MakeAdmin = () => {
         })
     }
 
+    const warningMsg = () => {
+        const Swal = require('sweetalert2')
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Please make sure your access token!',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
+
     return (
         <section className="">
             <Sidebar></Sidebar>
@@ -51,6 +71,9 @@ const MakeAdmin = () => {
 
                                 <label className='fw-bolder mt-4' htmlFor="email">Add Email Address <span className='text-danger'>*</span></label>
                                 <input name="email" id='email' className="form-control mb-4" placeholder="Add Admin Email" ref={register} required />
+
+                                <label className='fw-bolder mt-4' htmlFor="password">Give Access Token <span className='text-danger'>*</span></label>
+                                <input name="AccessToken" type="password" id='password' className="form-control mb-4" placeholder="Give Access Token" ref={register} required />
                             </div>
                         </div>
                         <input className="btn btn-info px-4" type="submit" />

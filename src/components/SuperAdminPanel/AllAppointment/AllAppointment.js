@@ -9,7 +9,8 @@ const AllAppointment = () => {
     const [allAppointments, setAllAppointments] = useState([]);
 
     useEffect(() => {
-        fetch('https://sleepy-fjord-79948.herokuapp.com/allAppointment')
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+        fetch(`${BackendLink}/allAppointment`)
             .then(res => res.json())
             .then(data => {
                 // console.log("All Appointment Data from DB : ", data);
@@ -34,7 +35,9 @@ const AllAppointment = () => {
     const cancelAppointmentBySuperAdmin = (id) => {
         // console.log(id)
 
-        fetch(`https://sleepy-fjord-79948.herokuapp.com/cancelAppointment/${id}`, {
+        const BackendLink = process.env.REACT_APP_BACKENDLINK;
+
+        fetch(`${BackendLink}/cancelAppointment/${id}`, {
             method: 'DELETE',
         })
             .then(res => {
