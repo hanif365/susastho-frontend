@@ -112,7 +112,7 @@ const ConfirmedDoctor = () => {
                                             {/* <td className='px-4'><span className='text-danger bg-light px-3 py-1 fw-bolder'>{doctorsInfo.OffDay}</span></td> */}
                                             <td className='px-4'><img src={doctorsInfo.doctorImageURL ? doctorsInfo.doctorImageURL : DoctorPhoto} className='doctor-img' alt="" /></td>
 
-                                            <td className='px-4'><img src={doctorsInfo.doctorNidURL} alt="" className='doctor-nid-img' alt="" /></td>
+                                            <td className='px-4'><img src={doctorsInfo.doctorNidURL} alt="" className='doctor-nid-img' /></td>
 
                                             <td className='px-4'><span>{doctorsInfo.Doctor_Added_by}</span><br /><span>{doctorsInfo.Doctor_Added_date}</span></td>
 
