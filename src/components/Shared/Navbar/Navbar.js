@@ -9,7 +9,7 @@ import { faAlignRight, faOilCan, faUserMd } from '@fortawesome/free-solid-svg-ic
 
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    
+
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
