@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
+    const [showBottomToTopIcon, setShowBottomToTopIcon] = useState(false);
+
+    const handleBottomToTopIcon = () => {
+        if (window.scrollY >= 40) {
+            console.log("SHow");
+            setShowBottomToTopIcon(true);
+
+        }
+        else {
+            setShowBottomToTopIcon(false);
+        }
+    }
+
+    window.addEventListener("scroll", handleBottomToTopIcon);
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -16,7 +31,7 @@ const Footer = () => {
                         <a href="https://www.instagram.com/abuhanif.cse3/" className="fa-link me-3" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
                         <a href="https://hanif.netlify.app/" className="fa-link me-3" target="_blank"><FontAwesomeIcon icon={faGlobe} /></a>
                     </ul>
-            
+
                     <div className=" d-flex justify-content-center flex-wrap text-light">
                         <div>
                             &copy; {new Date().getFullYear()} <span className="project-name mx-2"> SUSASTHO </span> - All Rights reserved.
@@ -30,7 +45,7 @@ const Footer = () => {
 
 
                     <div>
-                        <a href="#" className="bottom-to-top"><FontAwesomeIcon icon={faArrowUp} size="2x" /></a>
+                        {showBottomToTopIcon && <a href="#" className="bottom-to-top"><FontAwesomeIcon icon={faArrowUp} size="2x" /></a>}
                     </div>
                 </div>
             </div>
