@@ -79,7 +79,7 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        console.log(loggedInUser);
+        // console.log(loggedInUser);
 
         if (loggedInUser.email) {
             handleFetchCheckSuperAdmin();

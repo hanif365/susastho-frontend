@@ -34,7 +34,7 @@ const Testimonials = () => {
     const [selectedUser, setSelectedUser] = useState();
     const [allTestimonialData, setAllTestimonialData] = useState();
 
-    const [active, setActive] = useState('');
+    const [active, setActive] = useState('user1');
 
 
     // testimonials data fetch from DB
@@ -42,7 +42,7 @@ const Testimonials = () => {
         const BackendLink = process.env.REACT_APP_BACKENDLINK;
         const response = await fetch(`${BackendLink}/testimonials`);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         // use setSelectedUser for first user insert automatically
         setSelectedUser(data[0]);
@@ -55,48 +55,24 @@ const Testimonials = () => {
     }, [])
 
 
-
-    console.log(allTestimonialData);
-
-
-
-
-    // 
+    // console.log(allTestimonialData);
 
     const handleShowcase = (userName) => {
-
-        console.log(userName);
+        // console.log(userName);
         setUserID(userName);
 
-
-
         const selectedUserFilterOut = allTestimonialData.filter((user) => user.userID === userName)
-        console.log(selectedUserFilterOut);
-        console.log(selectedUserFilterOut[0].userID);
+        // console.log(selectedUserFilterOut);
+        // console.log(selectedUserFilterOut[0].userID);
 
         setSelectedUser(selectedUserFilterOut[0]);
 
-        // const selectedUserFilterOut = users.filter((user) => user.id === userName)
-        // console.log(selectedUserFilterOut);
-        // console.log(selectedUserFilterOut[0].id);
-
-        // setSelectedUser(selectedUserFilterOut[0])
-
         setActive(userName);
-
-
-
     }
 
-    console.log(selectedUser);
+    // console.log(selectedUser);
 
-    console.log(active);
-
-
-
-
-
-
+    // console.log(active);
 
     return (
         <div className='Testimonials_container'>
