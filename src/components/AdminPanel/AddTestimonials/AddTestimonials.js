@@ -24,7 +24,7 @@ const AddTestimonials = () => {
 
         const url = `${BackendLink}/addTestimonial`
 
-        console.log(testimonialUserData);
+        // console.log(testimonialUserData);
 
         fetch(url, {
             method: 'POST',
@@ -34,7 +34,7 @@ const AddTestimonials = () => {
             body: JSON.stringify(testimonialUserData)
         })
             .then(res => {
-                console.log('server side response for testimonial', res)
+                // console.log('server side response for testimonial', res);
                 // window.location.reload(false)
             })
 

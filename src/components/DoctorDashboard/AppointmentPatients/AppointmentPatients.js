@@ -13,7 +13,7 @@ const AppointmentPatients = () => {
         fetch(`${BackendLink}/appointmentpatients?email=` + loggedInUser.email)
             .then(res => res.json())
             .then(data => {
-                console.log("Appointment Patients Data from DB : ", data);
+                // console.log("Appointment Patients Data from DB : ", data);
                 // setAppointmentpatients(data);
                 (data.length <= 0) ? showNotificationForAppointmentPatientNone() : setAppointmentpatients(data)
             })

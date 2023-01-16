@@ -32,7 +32,7 @@ const Navbar = () => {
 
     // Check admin or not
     const handleFetchCheckAdmin = async () => {
-        console.log(loggedInUser);
+        // console.log(loggedInUser);
 
         const BackendLink = process.env.REACT_APP_BACKENDLINK;
         const response = await fetch(`${BackendLink}/isAdmin`, {
@@ -41,7 +41,7 @@ const Navbar = () => {
             body: JSON.stringify({ email: loggedInUser.email })
         });
         const data = await response.json();
-        console.log("Admin Status:  ***************", data);
+        // console.log("Admin Status:  ***************", data);
         setIsAdmin(data);
     }
 
@@ -74,7 +74,7 @@ const Navbar = () => {
             body: JSON.stringify({ email: loggedInUser.email })
         });
         const data = await response.json();
-        console.log("Super Admin Status:  ***************", data);
+        // console.log("Super Admin Status:  ***************", data);
         setIsSuperAdmin(data);
     }
 
