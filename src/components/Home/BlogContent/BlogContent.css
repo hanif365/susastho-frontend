@@ -39,7 +39,8 @@
 
 .blog-content-main:hover img {
     transform: scale(1, 1) !important;
-    border-radius: 0px !important;
+    /* border-radius: 0px !important; */
+    border-radius: 14px 14px 0 0;
     padding-bottom: 10px;
 }
 

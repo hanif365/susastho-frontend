@@ -122,6 +122,12 @@ const Sidebar = () => {
                                     <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Health Tips</span>
                                 </Link>
                             </li>
+
+                            <li>
+                                <Link to="/addtestimonials" className="text-white">
+                                    <FontAwesomeIcon icon={faCalendarCheck} /> <span>Add Testimonials</span>
+                                </Link>
+                            </li>
                         </div>
 
 

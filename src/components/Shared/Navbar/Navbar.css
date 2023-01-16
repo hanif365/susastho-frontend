@@ -1,13 +1,15 @@
-.navbar{
+.navbar {
     /* background-color: #000c6bb6; */
     /* background-color: #07f5f575; */
     /* background: transparent; */
     transition: all 500ms;
 }
-.showNavbar{
+
+.showNavbar {
     background-color: #199bf7 !important;
     opacity: 0.9 !important;
 }
+
 .brandicon {
     height: 60px;
     width: 60px;
@@ -19,7 +21,8 @@
     color: #000B49 !important;
     transition: all 600ms;
 }
-.navbar-brand:hover{
+
+.navbar-brand:hover {
     transform: translateX(10px);
 }
 
@@ -29,12 +32,14 @@
     transition: all 600ms;
     color: #000957 !important;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     transform: translateY(-10px);
     color: #4d3f91d3 !important;
     font-weight: 700;
 }
-.txt-danger{
+
+.txt-danger {
     color: #b90b0be1 !important;
 }
 
@@ -42,40 +47,46 @@
     font-size: 40px;
     /* color: #370665; */
 }
-.sign-out-btn{
+
+.sign-out-btn {
     font-size: 20px;
     font-weight: 700 !important;
     background-color: red !important;
     color: #fff;
-    text-decoration:none;
+    text-decoration: none;
     transition: all 500ms;
     margin-left: 10px;
     padding: 10px 30px !important;
 }
-.sign-out-btn:hover{
+
+.sign-out-btn:hover {
     color: red;
     background-color: #fff !important;
     transform: translateY(-10px) !important;
 }
-.user-img{
+
+.user-img {
     border-radius: 50%;
     width: 35px;
     height: 35px;
 }
-.btn-login{
+
+.btn-login {
     background-color: #000b49d5;
     padding: 8px 30px !important;
     color: #fff !important;
 }
-.btn-login:hover{
+
+.btn-login:hover {
     color: green !important;
     background: #000B49;
 }
 
-#admin{
+#admin {
     border: 5px solid green;
 }
-#super-admin{
+
+#super-admin {
     border: 5px solid #781D42;
 }
 

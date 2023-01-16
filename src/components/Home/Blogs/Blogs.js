@@ -6,9 +6,9 @@ import AllBlogsData from '../../../Assets/Data/BlogsData.json'
 const Blogs = () => {
     const BlogData = AllBlogsData.slice(0, 6);
     return (
-        <div id="blogs" className="pt-5">
+        <div id="blogs" className="blogs_container">
             <div id="blogs" className="">
-                <div className="container pt-5 mt-5 " id="">
+                <div className="container pt-5  " id="">
                     <div className="row">
                         <div className="col-12">
                             <h1 className='text-center'>OUR BLOGS</h1>

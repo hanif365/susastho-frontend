@@ -1,6 +1,7 @@
 .contact-form-container{
-    margin-top: 150px;
-    background: #dedfe0bd;
+    /* margin-top: 150px; */
+    /* background: #dedfe0bd; */
+    background-color: rgba(228, 236, 238, 0.151);
 }
 .contact-form-content{
     padding: 30px 20px;

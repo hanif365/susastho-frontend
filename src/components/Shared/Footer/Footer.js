@@ -9,9 +9,7 @@ const Footer = () => {
 
     const handleBottomToTopIcon = () => {
         if (window.scrollY >= 40) {
-            console.log("SHow");
             setShowBottomToTopIcon(true);
-
         }
         else {
             setShowBottomToTopIcon(false);

@@ -29,28 +29,74 @@ const Navbar = () => {
         }
     }, [])
 
-    useEffect(() => {
+
+    // Check admin or not
+    const handleFetchCheckAdmin = async () => {
+        console.log(loggedInUser);
+
         const BackendLink = process.env.REACT_APP_BACKENDLINK;
-        fetch(`${BackendLink}/isAdmin`, {
+        const response = await fetch(`${BackendLink}/isAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
-        })
-            .then(res => res.json())
-            .then(data => setIsAdmin(data));
+        });
+        const data = await response.json();
+        console.log("Admin Status:  ***************", data);
+        setIsAdmin(data);
+    }
+
+    useEffect(() => {
+        if (loggedInUser.email) {
+            handleFetchCheckAdmin();
+        }
     }, [])
 
+    // 
+
+    // useEffect(() => {
+    //     const BackendLink = process.env.REACT_APP_BACKENDLINK;
+    //     fetch(`${BackendLink}/isAdmin`, {
+    //         method: 'POST',
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify({ email: loggedInUser.email })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => setIsAdmin(data));
+    // }, [])
+
+
     // Check admin super-admin or not
-    useEffect(() => {
+    const handleFetchCheckSuperAdmin = async () => {
         const BackendLink = process.env.REACT_APP_BACKENDLINK;
-        fetch(`${BackendLink}/isSuperAdmin`, {
+        const response = await fetch(`${BackendLink}/isSuperAdmin`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
-        })
-            .then(res => res.json())
-            .then(data => setIsSuperAdmin(data));
+        });
+        const data = await response.json();
+        console.log("Super Admin Status:  ***************", data);
+        setIsSuperAdmin(data);
+    }
+
+    useEffect(() => {
+        console.log(loggedInUser);
+
+        if (loggedInUser.email) {
+            handleFetchCheckSuperAdmin();
+        }
     }, [])
+
+
+    // useEffect(() => {
+    //     const BackendLink = process.env.REACT_APP_BACKENDLINK;
+    //     fetch(`${BackendLink}/isSuperAdmin`, {
+    //         method: 'POST',
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify({ email: loggedInUser.email })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => setIsSuperAdmin(data));
+    // }, [])
 
     const showNotification = () => {
         const Swal = require('sweetalert2')

@@ -32,6 +32,7 @@ import ConfirmedDoctor from "./components/SuperAdminPanel/ConfirmedDoctor/Confir
 import MakeSuperAdmin from "./components/SuperAdminPanel/MakeSuperAdmin/MakeSuperAdmin";
 import Vaccination from "./components/ServicesDetails/Vaccination/Vaccination";
 import PatientCare from "./components/ServicesDetails/PatientCare/PatientCare";
+import AddTestimonials from "./components/AdminPanel/AddTestimonials/AddTestimonials";
 
 export const UserContext = createContext();
 export const DoctorContext = createContext();
@@ -120,6 +121,10 @@ function App() {
 
                   <PrivateRoute path="/appointment">
                     <Appointment></Appointment>
+                  </PrivateRoute>
+
+                  <PrivateRoute path="/addtestimonials">
+                    <AddTestimonials></AddTestimonials>
                   </PrivateRoute>
 
                   {/* For Doctor Dashboard */}
