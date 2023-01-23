@@ -13,7 +13,6 @@ const BlogContent = ({ blog }) => {
                         <h3 className="card-title">{title}</h3>
                         <p className="card-text">{description}</p>
                         <p className="text-end">Published : {date}</p>
-                        {/* <a  target="_blank" href={link} className="btn btn-field">Read More</a> */}
                     </div>
                 </div>
             </a>
