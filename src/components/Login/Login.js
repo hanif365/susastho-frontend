@@ -7,7 +7,7 @@ import 'firebase/compat/auth';
 
 import firebaseConfig from './firebase.config';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, FacebookAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import Navbar from '../Shared/Navbar/Navbar';
@@ -66,6 +66,32 @@ const Login = () => {
         const facebookProvider = new FacebookAuthProvider();
 
         signInWithPopup(auth, facebookProvider)
+            .then((res) => {
+                console.log("Inner");
+
+                const { displayName, email, photoURL } = res.user;
+                console.log(res.user);
+                const signedInUser = {
+                    isSignedIn: true,
+                    name: displayName,
+                    email: email,
+                    photo: photoURL
+                }
+                setLoggedInUser(signedInUser);
+                history.replace(from);
+            }).catch((err) => {
+                const errorMessage = err.message;
+                // console.log(errorMessage);
+            });
+
+    }
+
+    const handleGitHubSignIn = () => {
+        console.log("handle GitHub");
+
+        const gitHubProvider = new GithubAuthProvider();
+
+        signInWithPopup(auth, gitHubProvider)
             .then((res) => {
                 console.log("Inner");
 
@@ -197,7 +223,7 @@ const Login = () => {
                             <div className='align-self-center'>
                                 <button onClick={handleGoogleSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faGoogle} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Google" /></button>
                                 <button onClick={handleFacebookSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faFacebook} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Facebook" /></button>
-                                <button onClick={handleGoogleSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faGithub} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with GitHub" /></button>
+                                <button onClick={handleGitHubSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faGithub} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with GitHub" /></button>
                             </div>
 
 
