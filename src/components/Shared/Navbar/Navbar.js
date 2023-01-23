@@ -161,7 +161,7 @@ const Navbar = () => {
                             {/* <Link className="nav-link txt-danger" to="covid-19">COVID-19</Link> */}
 
                             {
-                                loggedInUser.email ? loggedInUser.photo ? <Link onClick={() => showNotificationForIdentification()} className="nav-link photo-link"><img className='user-img' src={loggedInUser.photo} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
+                                loggedInUser.email ? loggedInUser.photo ? <Link onClick={() => showNotificationForIdentification()} className="nav-link photo-link"><img className='user-img' src={loggedInUser.photo} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link onClick={() => showNotificationForIdentification()} className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
 
                             }
 
@@ -175,6 +175,8 @@ const Navbar = () => {
                                 }
                             </div>
                             } */}
+
+                            {loggedInUser.email ? '' : <Link className="nav-link" to="/register">REGISTER</Link>}
 
                         </div>
                     </div>

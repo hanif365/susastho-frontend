@@ -90,9 +90,16 @@
     border: 5px solid #781D42;
 }
 
+#user-name{
+    /* background-color: #199bf73f; */
+    border-radius: 5px;
+    color: #07f5f5 !important;
+}
+
 /* @media (max-width: 991px){
     .navbar{
         background: #07f5f5;
         opacity: 0.6;
+        color: #07f5f5
     }
 } */

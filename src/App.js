@@ -33,6 +33,8 @@ import MakeSuperAdmin from "./components/SuperAdminPanel/MakeSuperAdmin/MakeSupe
 import Vaccination from "./components/ServicesDetails/Vaccination/Vaccination";
 import PatientCare from "./components/ServicesDetails/PatientCare/PatientCare";
 import AddTestimonials from "./components/AdminPanel/AddTestimonials/AddTestimonials";
+import Register from "./components/Register/Register";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 export const UserContext = createContext();
 export const DoctorContext = createContext();
@@ -76,6 +78,14 @@ function App() {
 
                   <Route path="/login">
                     <Login></Login>
+                  </Route>
+
+                  <Route path="/register">
+                    <Register></Register>
+                  </Route>
+
+                  <Route path="/forgot-password">
+                    <ForgotPassword></ForgotPassword>
                   </Route>
 
                   {/* Must be Private Dashborad */}
