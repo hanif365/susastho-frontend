@@ -17,8 +17,6 @@ const ForgotPassword = () => {
 
 
     const handleForgotPassword = (e) => {
-        console.log("Forgot Password call");
-
         e.preventDefault();
         sendPasswordResetEmail(auth, userEmail)
             .then(() => {
@@ -37,8 +35,7 @@ const ForgotPassword = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage);
-
+                // console.log(errorMessage);
             });
 
     }
@@ -64,7 +61,7 @@ const ForgotPassword = () => {
                             </div>
                         </form>
                         <div className=''>
-                        <p className=''><small>Remember your password? <Link to="/login" className='ps-2'>Try Logging in</Link></small></p>
+                            <p className=''><small>Remember your password? <Link to="/login" className='ps-2'>Try Logging in</Link></small></p>
                         </div>
                     </div>
 

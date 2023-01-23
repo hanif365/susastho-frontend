@@ -40,16 +40,16 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         const googleProvider = new GoogleAuthProvider();
-        // const auth = getAuth();
         signInWithPopup(auth, googleProvider)
             .then((res) => {
-                const { displayName, email, photoURL } = res.user;
-                console.log(res.user);
+                const { displayName, email, photoURL, uid } = res.user;
+                // console.log(res.user);
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,
                     email: email,
-                    photo: photoURL
+                    photo: photoURL,
+                    uid: uid
                 }
                 setLoggedInUser(signedInUser);
                 history.replace(from);
@@ -61,21 +61,17 @@ const Login = () => {
     }
 
     const handleFacebookSignIn = () => {
-        console.log("handle Facebook");
-
         const facebookProvider = new FacebookAuthProvider();
-
         signInWithPopup(auth, facebookProvider)
             .then((res) => {
-                console.log("Inner");
-
-                const { displayName, email, photoURL } = res.user;
-                console.log(res.user);
+                const { displayName, email, photoURL, uid } = res.user;
+                // console.log(res.user);
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,
                     email: email,
-                    photo: photoURL
+                    photo: photoURL,
+                    uid: uid
                 }
                 setLoggedInUser(signedInUser);
                 history.replace(from);
@@ -86,22 +82,21 @@ const Login = () => {
 
     }
 
+    // console.log("Logged In User Details: ", { loggedInUser });
+
+
     const handleGitHubSignIn = () => {
-        console.log("handle GitHub");
-
         const gitHubProvider = new GithubAuthProvider();
-
         signInWithPopup(auth, gitHubProvider)
             .then((res) => {
-                console.log("Inner");
-
-                const { displayName, email, photoURL } = res.user;
-                console.log(res.user);
+                const { displayName, email, photoURL, uid } = res.user;
+                // console.log(res.user);
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,
                     email: email,
-                    photo: photoURL
+                    photo: photoURL,
+                    uid: uid
                 }
                 setLoggedInUser(signedInUser);
                 history.replace(from);
@@ -117,9 +112,9 @@ const Login = () => {
 
         signInWithEmailAndPassword(auth, userEmail, userPassword)
             .then((res) => {
-                const { displayName, email, photoURL, emailVerified } = res.user;
-                console.log(emailVerified);
-                console.log(res.user);
+                const { displayName, email, photoURL, emailVerified, uid } = res.user;
+                // console.log(emailVerified);
+                // console.log(res.user);
 
                 if (emailVerified) {
                     setLoginError('null');
@@ -127,7 +122,8 @@ const Login = () => {
                         isSignedIn: true,
                         name: displayName,
                         email: email,
-                        photo: photoURL
+                        photo: photoURL,
+                        uid: uid
                     }
                     setLoggedInUser(signedInUser);
 
@@ -141,7 +137,7 @@ const Login = () => {
             .catch((err) => {
                 const errorCode = err.code;
                 const errorMessage = err.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
                 setLoginError(errorMessage);
 
             });

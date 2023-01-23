@@ -24,10 +24,7 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name);
-        console.log(email);
-        console.log(password);
-
+       
         if (! /(?=.*[A-Z])/.test(password)) {
             setRegistrationError('Please Provide at least One Uppercase letter');
             return;
@@ -52,7 +49,7 @@ const Register = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
+                // console.log(user);
                 setRegistrationError('null');
                 form.reset();
                 emailVerification();
@@ -73,7 +70,7 @@ const Register = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
                 setRegistrationError(errorMessage);
 
             });
@@ -103,10 +100,10 @@ const Register = () => {
             displayName: name,
             // photoURL: ""
         }).then(() => {
-            console.log("User Profile Update Successfully!");
+            // console.log("User Profile Update Successfully!");
 
         }).catch((error) => {
-            console.log(error);
+            // console.log(error);
 
         });
     }

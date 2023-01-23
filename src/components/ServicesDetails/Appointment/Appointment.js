@@ -10,7 +10,8 @@ const Appointment = () => {
 
     useEffect(() => {
         const BackendLink = process.env.REACT_APP_BACKENDLINK;
-        fetch(`${BackendLink}/appointment?email=` + loggedInUser.email)
+        // fetch(`${BackendLink}/appointment?email=` + loggedInUser.email)
+        fetch(`${BackendLink}/appointment?uid=` + loggedInUser.uid)
             .then(res => res.json())
             .then(data => {
                 // console.log("Appointment Data from DB : ", data);

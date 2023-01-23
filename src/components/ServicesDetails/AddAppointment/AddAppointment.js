@@ -26,6 +26,12 @@ const AddAppointment = () => {
 
     let history = useHistory();
 
+    const day = new Date().getDate();
+    const month = new Date().getMonth() + 1;
+    const year = new Date().getFullYear();
+
+    const CurrentDate = `${day} / ${month}  / ${year}`;
+
     const onSubmit = data => {
         const patientData = {
             Patient_Name: data.Patient_Name,
@@ -37,9 +43,10 @@ const AddAppointment = () => {
             Mobile: data.Mobile,
             Selected_Doctor: selectedDoctor.name,
             Doctor_Email: selectedDoctor.email,
-            Appointment_Date: value?.toDate?.().toString(),
+            Appointment_Date: value?.toDate?.().toString() || CurrentDate,
             User_Name: loggedInUser?.name,
             User_Email: loggedInUser?.email,
+            uid: loggedInUser?.uid
             // Serial_Number: Math.random() * 10,
         };
 
