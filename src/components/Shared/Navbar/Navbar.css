@@ -82,6 +82,18 @@
     background: #000B49;
 }
 
+.btn_register {
+    background-color: #0728e6;
+    padding: 8px 30px !important;
+    color: #fff !important;
+    margin: 0 0 0 10px;
+}
+
+.btn_register:hover {
+    color: #000957 !important;
+    background: #0728e6;
+}
+
 #admin {
     border: 5px solid green;
 }
@@ -90,7 +102,7 @@
     border: 5px solid #781D42;
 }
 
-#user-name{
+#user-name {
     /* background-color: #199bf73f; */
     border-radius: 5px;
     color: #07f5f5 !important;

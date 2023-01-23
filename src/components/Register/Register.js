@@ -116,9 +116,11 @@ const Register = () => {
             <Navbar></Navbar>
             <div className="container register_container_inner">
                 <div className="row">
+
                     <div className="col-md-6 register_left_side align-self-center">
                         <img src={LeftBackgroundImg} alt="" className="LeftBackgroundImg img-fluid" />
                     </div>
+
                     <div className="col-md-6 register_right_side">
                         <div className=' pb-3'>
                             <h4 className='text-white'>Hello There,</h4>
@@ -143,7 +145,7 @@ const Register = () => {
                                 {registrationError === 'null' ? <p className='text-success'></p> : <p className='text-danger'>{registrationError}</p>}
                             </div>
 
-                            <div className='text-center py-3 '>
+                            <div className='text-center pb-3 '>
                                 <input type="submit" className="btn register_btn form-control-lg" value="Register" />
                             </div>
 

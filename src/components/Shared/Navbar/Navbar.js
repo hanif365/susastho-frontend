@@ -176,7 +176,7 @@ const Navbar = () => {
                             </div>
                             } */}
 
-                            {loggedInUser.email ? '' : <Link className="nav-link" to="/register">REGISTER</Link>}
+                            {loggedInUser.email ? '' : <Link className="nav-link btn btn_register" to="/register">REGISTER</Link>}
 
                         </div>
                     </div>
