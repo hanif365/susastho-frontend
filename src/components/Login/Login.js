@@ -195,12 +195,12 @@ const Login = () => {
                         <form className='login_form  ' onSubmit={handleLogin}>
                             <div className="pb-3 ">
                                 {/* <label for="exampleInputEmail1" className="form-label">Email address</label> */}
-                                <input type="email" onBlur={(e) => setUserEmail(e.target.value)} className="form-control custom_form-control" placeholder='Email' aria-describedby="emailHelp" required />
+                                <input type="email" onBlur={(e) => setUserEmail(e.target.value)} className="form-control custom_form-control" placeholder='Email' aria-describedby="emailHelp" autoComplete="new-password" required />
 
                             </div>
                             <div className="pb-3 ">
                                 {/* <label for="exampleInputPassword1" className="form-label">Password</label> */}
-                                <input type="password" onBlur={(e) => setUserPassword(e.target.value)} className="form-control custom_form-control" placeholder='Password' required />
+                                <input type="password" onBlur={(e) => setUserPassword(e.target.value)} className="form-control custom_form-control" placeholder='Password' autoComplete="new-password" required />
                             </div>
 
                             {errorCount > 2 && <div>
