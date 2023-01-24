@@ -177,8 +177,6 @@ const Login = () => {
 
     console.log(reCaptcha_Sitekey);
 
-
-
     return (
         <div className="login-container">
             <Navbar></Navbar>
