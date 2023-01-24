@@ -18,9 +18,14 @@ import { faFacebook, faGithub, faGoogle } from '@fortawesome/free-brands-svg-ico
 import Footer from '../Shared/Footer/Footer';
 
 import LeftBackgroundImg from '../../Assets/Images/login_left_side_img.jpg';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 
 const app = initializeApp(firebaseConfig);
+
+const reCaptcha_Sitekey = process.env.REACT_APP_RECAPTCHA_SITEKEY;
+
+
 
 
 const Login = () => {
@@ -29,10 +34,11 @@ const Login = () => {
     const [userEmail, setUserEmail] = useState();
     const [userPassword, setUserPassword] = useState();
     const [loginError, setLoginError] = useState('');
+    const [errorCount, setErrorCount] = useState(0);
+    // const [showReCaptcha, setShowReCaptcha] = useState(false);
 
     const history = useHistory();
     const location = useLocation();
-
 
     const { from } = location.state || { from: { pathname: "/" } };
 
@@ -139,6 +145,7 @@ const Login = () => {
                 const errorMessage = err.message;
                 // console.log(errorMessage);
                 setLoginError(errorMessage);
+                setErrorCount(errorCount + 1);
 
             });
     }
@@ -159,6 +166,18 @@ const Login = () => {
 
             })
     }
+
+    const handleReCaptcha = (value) => {
+        console.log(value);
+
+        if (value) {
+            setErrorCount(1);
+        }
+    }
+
+    console.log(reCaptcha_Sitekey);
+
+
 
     return (
         <div className="login-container">
@@ -185,6 +204,14 @@ const Login = () => {
                                 {/* <label for="exampleInputPassword1" className="form-label">Password</label> */}
                                 <input type="password" onBlur={(e) => setUserPassword(e.target.value)} className="form-control custom_form-control" placeholder='Password' required />
                             </div>
+
+                            {errorCount > 2 && <div>
+                                <ReCAPTCHA
+                                    sitekey={reCaptcha_Sitekey}
+                                    onChange={handleReCaptcha}
+                                />
+                            </div>}
+
                             <div className="form-check d-flex justify-content-between">
                                 <div className='align-self-center'>
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -201,9 +228,9 @@ const Login = () => {
                                 {loginError === 'null' ? <p className='text-success'></p> : loginError === 'Please verify your Email First!' ? <>{loginError} <button onClick={emailVerification} className='btn btn-success'>Resend Verification Email</button></> : <p className='text-danger'>{loginError}</p>}
                             </div>
 
-                            <div className='text-center py-3 '>
+                            <div className='text-center py-3'>
                                 {/* <button type="submit" className="btn btn-success">Submit</button> */}
-                                <input type="submit" className="btn login_btn" value="Log in" />
+                                <input type="submit" className={`${errorCount > 2 ? 'disabled' : ''} btn login_btn `} value="Log in" />
                             </div>
 
                         </form>

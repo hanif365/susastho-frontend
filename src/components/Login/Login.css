@@ -46,3 +46,9 @@
 .btn_sign_in:hover{
     color: #5f6aec;
 }
+
+/* .disableLoginBtn{
+    cursor: not-allowed;
+    pointer-events: none;
+
+} */

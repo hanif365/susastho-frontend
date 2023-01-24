@@ -47,7 +47,6 @@ const ForgotPassword = () => {
             <div className="container">
                 <div className="row">
                     <div className=" ForgotPassword_container_inner">
-                        {userEmail}
                         <form className='ForgotPassword_form  ' onSubmit={handleForgotPassword}>
                             <div className="mb-3">
                                 <label for="exampleInputEmail1" className="form-label">Enter your Email to reset Password</label>
