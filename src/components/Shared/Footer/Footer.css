@@ -27,7 +27,7 @@
 .bottom-to-top {
     position: fixed;
     bottom: 20px;
-    right: 10px;
+    right: 15px;
     /* background: #6E3CBC; */
     background-color: transparent;
     color: #1974b5;
@@ -46,7 +46,7 @@
 .portfolioQR{
     position: fixed;
     bottom: 20px;
-    right: 10px;
+    right: 15px;
 
     width: 50px;
     height: 50px;
