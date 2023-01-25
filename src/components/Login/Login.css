@@ -1,4 +1,9 @@
-.login-container {}
+.login-container {
+    background: url('../../Assets/Images/bg-login.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 .login-container_inner {
     padding: 130px 0 120px 0;
@@ -33,17 +38,25 @@
     background: #5f6aec;
     font-size: 24px;
     font-weight: 700;
+    transition: 400ms;
+}
+
+.login_btn:hover {
+    letter-spacing: 6px;
+    font-weight: 500;
+    color: #fff;
 }
 
 .custom_form-control {
     padding: 16px 22px;
 }
 
-.btn_sign_in{
+.btn_sign_in {
     transition: all 500ms;
 
 }
-.btn_sign_in:hover{
+
+.btn_sign_in:hover {
     color: #5f6aec;
 }
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import './Register.css';
-import LeftBackgroundImg from '../../Assets/Images/register_left_side_img.jpg';
+import LeftBackgroundImg from '../../Assets/Images/register_left_side_img.png';
 
 const Register = () => {
     const [registrationError, setRegistrationError] = useState('');

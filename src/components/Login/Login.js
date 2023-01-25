@@ -17,7 +17,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Footer from '../Shared/Footer/Footer';
 
-import LeftBackgroundImg from '../../Assets/Images/login_left_side_img.jpg';
+import LeftBackgroundImg from '../../Assets/Images/login_left_side_img.png';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 
@@ -168,14 +168,14 @@ const Login = () => {
     }
 
     const handleReCaptcha = (value) => {
-        console.log(value);
+        // console.log(value);
 
         if (value) {
             setErrorCount(1);
         }
     }
 
-    console.log(reCaptcha_Sitekey);
+    // console.log(reCaptcha_Sitekey);
 
     return (
         <div className="login-container">

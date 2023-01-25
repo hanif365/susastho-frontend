@@ -1,4 +1,9 @@
-.register_container {}
+.register_container {
+    background: url('../../Assets/Images/bg-register.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 .register_container_inner {
     padding: 130px 0 120px 0;
@@ -29,4 +34,11 @@
     background: rgb(80, 211, 54);
     font-size: 24px;
     font-weight: 700;
+    transition: 400ms;
+}
+
+.register_btn:hover {
+    letter-spacing: 6px;
+    font-weight: 500;
+    color: #fff;
 }
