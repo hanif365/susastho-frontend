@@ -3,6 +3,7 @@ import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import portfolioQR from '../../../Assets/Images/portfolioQR.png';
 
 const Footer = () => {
     const [showBottomToTopIcon, setShowBottomToTopIcon] = useState(false);
@@ -40,7 +41,9 @@ const Footer = () => {
 
                     </div>
 
-
+                    <div>
+                        {! showBottomToTopIcon && <img src={portfolioQR} alt="" className='img-fluid portfolioQR' />}
+                    </div>
 
                     <div>
                         {showBottomToTopIcon && <a href="#" className="bottom-to-top"><FontAwesomeIcon icon={faArrowUp} size="2x" /></a>}

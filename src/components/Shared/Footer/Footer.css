@@ -14,12 +14,13 @@
 
 .creator-name a {
     text-decoration: none;
-    color: #EC255A;
-    font-weight: 900;
+    color: #000b49d7;
+    font-weight: 700;
+    transition: 400ms;
 }
 
-.creator-name a:hover {                           
-    color: #FF7800;
+.creator-name a:hover {
+    color: #000B49;
 }
 
 /* Bottom to top */
@@ -40,4 +41,13 @@
 .bottom-to-top:hover {
     background: #1974b5;
     color: #fff;
+}
+
+.portfolioQR{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+
+    width: 50px;
+    height: 50px;
 }

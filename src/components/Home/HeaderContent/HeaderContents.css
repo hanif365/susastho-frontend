@@ -131,6 +131,7 @@
 
 
 
+
 @media (max-width: 991px) {
 
     .header-content-inner {
@@ -144,7 +145,8 @@
     .text h3 {
         font-size: 2em;
     }
-    .heartBeat{
+
+    .heartBeat {
         width: 60px;
         height: 40px;
     }
