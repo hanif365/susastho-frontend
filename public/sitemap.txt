@@ -1,0 +1,5 @@
+https://susastho.netlify.app/
+https://susastho.netlify.app/home
+https://susastho.netlify.app/Login
+https://susastho.netlify.app/doctors
+https://susastho.netlify.app/register
