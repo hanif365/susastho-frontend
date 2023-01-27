@@ -24,6 +24,8 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+ 
        
         if (! /(?=.*[A-Z])/.test(password)) {
             setRegistrationError('Please Provide at least One Uppercase letter');
@@ -45,6 +47,11 @@ const Register = () => {
             return;
         }
 
+        if(password !== confirmPassword) {
+            setRegistrationError('Password and Confirmed Password Not Matched');
+            return;
+        }
+
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -54,25 +61,12 @@ const Register = () => {
                 form.reset();
                 emailVerification();
                 updateUser(name);
-                // history.replace(from);
-
-                // // Notification for successfully message send
-                // const Swal = require('sweetalert2')
-                // Swal.fire({
-                //     position: 'center',
-                //     icon: 'success',
-                //     title: 'Congratulations!! Registration Successfully Done!!',
-                //     showConfirmButton: false,
-                //     timer: 2500,
-                //     timerProgressBar: true,
-                // })
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // console.log(errorMessage);
                 setRegistrationError(errorMessage);
-
             });
     }
 
@@ -126,15 +120,20 @@ const Register = () => {
                         <form className='register_form' onSubmit={handleRegister}>
                             <div className="pb-3">
                                 {/* <label for="exampleInputName1" className="form-label">Name</label> */}
-                                <input type="text" name="name" className="form-control form-control-lg" placeholder='Name' required />
+                                <input type="text" name="name" className="form-control form-control-lg" placeholder='Name' autoComplete="new-password" required />
                             </div>
 
                             <div className="pb-3">
-                                <input type="email" name="email" className="form-control form-control-lg" placeholder='Email' aria-describedby="emailHelp" required />
+                                <input type="email" name="email" className="form-control form-control-lg" placeholder='Email' aria-describedby="emailHelp" autoComplete="new-password" required />
                             </div>
 
                             <div className="pb-3">
-                                <input type="password" name="password" className="form-control form-control-lg" placeholder='Password' required />
+                                <input type="password" name="password" className="form-control form-control-lg" placeholder='Password' autoComplete="new-password" required />
+                                {/* <p className='text-secondary pt-2'>Password must contain at least 6 characters including at least one number, one capital letter, one special character</p> */}
+                            </div>
+
+                            <div className="pb-3">
+                                <input type="password" name="confirmPassword" className="form-control form-control-lg" placeholder='Confirm Password' autoComplete="new-password" required />
                                 <p className='text-secondary pt-2'>Password must contain at least 6 characters including at least one number, one capital letter, one special character</p>
                             </div>
 
