@@ -25,8 +25,8 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
- 
-       
+
+
         if (! /(?=.*[A-Z])/.test(password)) {
             setRegistrationError('Please Provide at least One Uppercase letter');
             return;
@@ -47,7 +47,7 @@ const Register = () => {
             return;
         }
 
-        if(password !== confirmPassword) {
+        if (password !== confirmPassword) {
             setRegistrationError('Password and Confirmed Password Not Matched');
             return;
         }
@@ -73,7 +73,7 @@ const Register = () => {
     const emailVerification = () => {
         sendEmailVerification(auth.currentUser)
             .then(() => {
-                // Notification for successfully message send
+                // Notification for Email Verification message send
                 const Swal = require('sweetalert2')
                 Swal.fire({
                     position: 'center',
@@ -117,7 +117,7 @@ const Register = () => {
                             <h4 className='text-white'>Hello There,</h4>
                             <p className='text-white'>Register now to explore more</p>
                         </div>
-                        <form className='register_form' onSubmit={handleRegister}>
+                        <form className='register_form' onSubmit={handleRegister}> 
                             <div className="pb-3">
                                 {/* <label for="exampleInputName1" className="form-label">Name</label> */}
                                 <input type="text" name="name" className="form-control form-control-lg" placeholder='Name' autoComplete="new-password" required />
