@@ -5,9 +5,13 @@ import { faAmbulance, faCalendarCheck, faCheckDouble, faCommentAlt, faHandHoldin
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import Navbar from '../Shared/Navbar/Navbar';
+import { AuthContext } from '../../contexts/UserContext';
 
 const Sidebar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
     const [isDoctor, setIsDoctor] = useState(false);
@@ -56,6 +60,20 @@ const Sidebar = () => {
             timerProgressBar: true,
         })
     }
+
+    // handle log out
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log("Sign Out SuccessFully!");
+
+            })
+            .catch((error) => {
+                console.log(error);
+
+            })
+    }
+    
     return (
         <div className="sidebar-container">
             <Navbar></Navbar>
@@ -161,7 +179,7 @@ const Sidebar = () => {
                     </li> */}
 
                     <li>
-                        <Link to="/" onClick={() => { showNotification(); setLoggedInUser({}) }} className="logout text-danger fw-bold"><FontAwesomeIcon icon={faSignOutAlt} /> <span>LOG OUT</span></Link>
+                        <Link to="/" onClick={() => { showNotification(); handleLogOut() }} className="logout text-danger fw-bold"><FontAwesomeIcon icon={faSignOutAlt} /> <span>LOG OUT</span></Link>
                     </li>
                 </ul>
                 {/* <div>

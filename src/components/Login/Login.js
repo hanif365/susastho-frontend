@@ -19,9 +19,13 @@ import Footer from '../Shared/Footer/Footer';
 
 import LeftBackgroundImg from '../../Assets/Images/login_left_side_img.png';
 import ReCAPTCHA from 'react-google-recaptcha';
+import app from '../../firebase/firebase.config';
+import { AuthContext } from '../../contexts/UserContext';
 
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
 
 const reCaptcha_Sitekey = process.env.REACT_APP_RECAPTCHA_SITEKEY;
 
@@ -29,7 +33,8 @@ const reCaptcha_Sitekey = process.env.REACT_APP_RECAPTCHA_SITEKEY;
 
 
 const Login = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
 
     const [userEmail, setUserEmail] = useState();
     const [userPassword, setUserPassword] = useState();
@@ -42,77 +47,105 @@ const Login = () => {
 
     const { from } = location.state || { from: { pathname: "/" } };
 
-    const auth = getAuth();
+    // const handleGoogleSignIn = () => {
+    //     const googleProvider = new GoogleAuthProvider();
+    //     signInWithPopup(auth, googleProvider)
+    //         .then((res) => {
+    //             const { displayName, email, photoURL, uid } = res.user;
+    //             // console.log(res.user);
+    //             const signedInUser = {
+    //                 isSignedIn: true,
+    //                 name: displayName,
+    //                 email: email,
+    //                 photo: photoURL,
+    //                 uid: uid
+    //             }
+    //             setLoggedInUser(signedInUser);
+    //             history.replace(from);
+    //         }).catch((err) => {
+    //             const errorMessage = err.message;
+    //             // console.log(errorMessage);
+    //         });
 
-    const handleGoogleSignIn = () => {
-        const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
+    // }
+
+    // console.log("Logged In USer", loggedInUser)
+
+    // const handleFacebookSignIn = () => {
+    //     const facebookProvider = new FacebookAuthProvider();
+    //     signInWithPopup(auth, facebookProvider)
+    //         .then((res) => {
+    //             const { displayName, email, photoURL, uid } = res.user;
+    //             // console.log(res.user);
+    //             const signedInUser = {
+    //                 isSignedIn: true,
+    //                 name: displayName,
+    //                 email: email,
+    //                 photo: photoURL,
+    //                 uid: uid
+    //             }
+    //             setLoggedInUser(signedInUser);
+    //             history.replace(from);
+    //         }).catch((err) => {
+    //             const errorMessage = err.message;
+    //             // console.log(errorMessage);
+    //         });
+
+    // }
+
+    // // console.log("Logged In User Details: ", { loggedInUser });
+
+
+    // const handleGitHubSignIn = () => {
+    //     const gitHubProvider = new GithubAuthProvider();
+    //     signInWithPopup(auth, gitHubProvider)
+    //         .then((res) => {
+    //             const { displayName, email, photoURL, uid } = res.user;
+    //             // console.log(res.user);
+    //             const signedInUser = {
+    //                 isSignedIn: true,
+    //                 name: displayName,
+    //                 email: email,
+    //                 photo: photoURL,
+    //                 uid: uid
+    //             }
+    //             setLoggedInUser(signedInUser);
+    //             history.replace(from);
+    //         }).catch((err) => {
+    //             const errorMessage = err.message;
+    //             // console.log(errorMessage);
+    //         });
+
+    // }
+
+
+    // handle Provider Sign in
+    const handleSignIn = (loginWith) => {
+        console.log(loginWith);
+
+        if (loginWith === "google") {
+            var provider = new GoogleAuthProvider();
+        }
+        else if (loginWith === "github") {
+            var provider = new GithubAuthProvider();
+        }
+        else if (loginWith === "facebook") {
+            var provider = new FacebookAuthProvider();
+        }
+
+        providerLogin(provider)
             .then((res) => {
-                const { displayName, email, photoURL, uid } = res.user;
-                // console.log(res.user);
-                const signedInUser = {
-                    isSignedIn: true,
-                    name: displayName,
-                    email: email,
-                    photo: photoURL,
-                    uid: uid
-                }
-                setLoggedInUser(signedInUser);
-                history.replace(from);
-            }).catch((err) => {
-                const errorMessage = err.message;
-                // console.log(errorMessage);
-            });
+                console.log(res);
+                const user = res.user;
+            })
 
+            .catch(error => {
+                console.log(error);
+
+            })
     }
 
-    const handleFacebookSignIn = () => {
-        const facebookProvider = new FacebookAuthProvider();
-        signInWithPopup(auth, facebookProvider)
-            .then((res) => {
-                const { displayName, email, photoURL, uid } = res.user;
-                // console.log(res.user);
-                const signedInUser = {
-                    isSignedIn: true,
-                    name: displayName,
-                    email: email,
-                    photo: photoURL,
-                    uid: uid
-                }
-                setLoggedInUser(signedInUser);
-                history.replace(from);
-            }).catch((err) => {
-                const errorMessage = err.message;
-                // console.log(errorMessage);
-            });
-
-    }
-
-    // console.log("Logged In User Details: ", { loggedInUser });
-
-
-    const handleGitHubSignIn = () => {
-        const gitHubProvider = new GithubAuthProvider();
-        signInWithPopup(auth, gitHubProvider)
-            .then((res) => {
-                const { displayName, email, photoURL, uid } = res.user;
-                // console.log(res.user);
-                const signedInUser = {
-                    isSignedIn: true,
-                    name: displayName,
-                    email: email,
-                    photo: photoURL,
-                    uid: uid
-                }
-                setLoggedInUser(signedInUser);
-                history.replace(from);
-            }).catch((err) => {
-                const errorMessage = err.message;
-                // console.log(errorMessage);
-            });
-
-    }
-
+    // handle login in login form
     const handleLogin = (e) => {
         e.preventDefault();
 
@@ -131,7 +164,7 @@ const Login = () => {
                         photo: photoURL,
                         uid: uid
                     }
-                    setLoggedInUser(signedInUser);
+                    // setLoggedInUser(signedInUser);
 
                     history.replace(from);
                 }
@@ -221,7 +254,7 @@ const Login = () => {
                                 </div>
                             </div>
 
-                            <div className=" pt-3">
+                            <div className="pt-3">
                                 {/* here we also show the success message in first p tag. Now we already using sweetalert2 notification instead it */}
                                 {loginError === 'null' ? <p className='text-success'></p> : loginError === 'Please verify your Email First!' ? <>{loginError} <button onClick={emailVerification} className='btn btn-success'>Resend Verification Email</button></> : <p className='text-danger'>{loginError}</p>}
                             </div>
@@ -242,12 +275,10 @@ const Login = () => {
                             </div>
 
                             <div className='align-self-center'>
-                                <button onClick={handleGoogleSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faGoogle} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Google" /></button>
-                                <button onClick={handleFacebookSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faFacebook} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Facebook" /></button>
-                                <button onClick={handleGitHubSignIn} className="btn btn_sign_in"><FontAwesomeIcon icon={faGithub} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with GitHub" /></button>
+                                <button onClick={() => handleSignIn('google')} className="btn btn_sign_in"><FontAwesomeIcon icon={faGoogle} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Google" /></button>
+                                <button onClick={() => handleSignIn('facebook')} className="btn btn_sign_in"><FontAwesomeIcon icon={faFacebook} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Facebook" /></button>
+                                <button onClick={() => handleSignIn('github')} className="btn btn_sign_in"><FontAwesomeIcon icon={faGithub} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with GitHub" /></button>
                             </div>
-
-
                         </div>
                     </div>
 

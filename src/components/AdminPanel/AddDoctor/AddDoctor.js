@@ -2,10 +2,13 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
+import { AuthContext } from '../../../contexts/UserContext';
 import Sidebar from '../../Sidebar/Sidebar';
 
 const AddDoctor = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
     const { register, handleSubmit, watch, errors } = useForm();
     const [doctorImageURL, setDoctorImageURL] = useState(null);
@@ -39,7 +42,7 @@ const AddDoctor = () => {
             OffDay: data.OffDay,
             Fees: data.Fees,
             Doctor_Description: data.Doctor_Description,
-            Doctor_Added_by: loggedInUser.name,
+            Doctor_Added_by: loggedInUser.displayName,
             Doctor_Added_date: (new Date().getUTCDate()) + "-" + (new Date().getMonth() + 1) + "-" + (new Date().getUTCFullYear()),
             status: "pending",
         };
@@ -66,7 +69,7 @@ const AddDoctor = () => {
         Swal.fire({
             position: 'center',
             icon: 'success',
-            title: isSuperAdmin ? `Congratulations ${loggedInUser.name}!! Please confirm to add doctor information in your Panel, Thank You!!` : `Congratulations ${loggedInUser.name}!! A request is send to the Super Admin to add doctor information to the website!`,
+            title: isSuperAdmin ? `Congratulations ${loggedInUser.displayName}!! Please confirm to add doctor information in your Panel, Thank You!!` : `Congratulations ${loggedInUser.displayName}!! A request is send to the Super Admin to add doctor information to the website!`,
             showConfirmButton: false,
             timer: 4500
         })

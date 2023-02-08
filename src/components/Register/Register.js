@@ -4,6 +4,9 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import './Register.css';
 import LeftBackgroundImg from '../../Assets/Images/register_left_side_img.png';
+import app from '../../firebase/firebase.config';
+
+const auth = getAuth(app);
 
 const Register = () => {
     const [registrationError, setRegistrationError] = useState('');
@@ -14,7 +17,7 @@ const Register = () => {
 
     const { from } = location.state || { from: { pathname: "/login" } };
 
-    var auth = getAuth();
+    // var auth = getAuth();
 
     const handleRegister = (e) => {
         e.preventDefault();

@@ -6,9 +6,12 @@ import { UserContext } from '../../../App';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAlignRight, faOilCan, faUserMd } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from '../../../contexts/UserContext';
 
 const Navbar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
 
     const [isAdmin, setIsAdmin] = useState(false);
     const [isSuperAdmin, setIsSuperAdmin] = useState(false);
@@ -46,7 +49,7 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        if (loggedInUser.email) {
+        if (loggedInUser?.email) {
             handleFetchCheckAdmin();
         }
     }, [])
@@ -81,7 +84,7 @@ const Navbar = () => {
     useEffect(() => {
         // console.log(loggedInUser);
 
-        if (loggedInUser.email) {
+        if (loggedInUser?.email) {
             handleFetchCheckSuperAdmin();
         }
     }, [])
@@ -117,7 +120,7 @@ const Navbar = () => {
             position: 'top',
             // icon: 'success',
             title: isSuperAdmin ? 'Logged In as Super Admin' : isAdmin ? 'Logged In as Admin' : 'Logged In as User',
-            html: 'Name : ' + loggedInUser.name + '<br />' + 'Email : ' + loggedInUser.email,
+            html: 'Name : ' + loggedInUser.displayName + '<br />' + 'Email : ' + loggedInUser.email,
             // text: isSuperAdmin ? 'You are Super Admin' : isAdmin ? 'You are Admin' : 'You are User',
             showConfirmButton: false,
             timer: 2500,
@@ -141,6 +144,19 @@ const Navbar = () => {
 
     window.addEventListener("scroll", changeBackgroundNavbar);
 
+    // handle log out
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log("Sign Out SuccessFully!");
+
+            })
+            .catch((error) => {
+                console.log(error);
+
+            })
+    }
+
     return (
         <div>
             {/* <nav className="navbar navbar-expand-lg fixed-top navbar-dark" className={showNavbar ? 'navbar showNavbar navbar-expand-lg fixed-top navbar-light' : 'navbar navbar-expand-lg fixed-top navbar-light'} style={{ backgroundColor: navBg }}> */}
@@ -162,22 +178,16 @@ const Navbar = () => {
 
                           
                             {
-                                loggedInUser.uid ? loggedInUser.photo ? <Link onClick={() => showNotificationForIdentification()} className="nav-link photo-link"><img className='user-img' src={loggedInUser.photo} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link onClick={() => showNotificationForIdentification()} className="nav-link" id="user-name">{loggedInUser.name}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
+                                loggedInUser?.uid ? loggedInUser?.photoURL ? <Link onClick={() => showNotificationForIdentification()} className="nav-link photo-link"><img className='user-img' src={loggedInUser?.photoURL} id={isSuperAdmin ? "super-admin" : isAdmin ? "admin" : ""} alt="" /></Link> : <Link onClick={() => showNotificationForIdentification()} className="nav-link" id="user-name">{loggedInUser?.displayName}</Link> : <Link to="/login" className="nav-link btn btn-login px-2">LOG IN</Link>
 
                             }
 
                             {
-                                loggedInUser.uid ? <Link className="sign-out-btn btn-lg" onClick={() => { showNotification(); setLoggedInUser({}) }}>LOG OUT</Link> : ''
+                                loggedInUser?.uid ? <Link className="sign-out-btn btn-lg" onClick={() => { showNotification(); handleLogOut() }}>LOG OUT</Link> : ''
                             }
 
-                            {/* {loggedInUser && <div className='identification-show'>
-                                {
-                                    isSuperAdmin ? <p>You are Super Admin</p> : isAdmin ? <p>You are Admin</p> : <p>You are user</p>
-                                }
-                            </div>
-                            } */}
 
-                            {loggedInUser.uid ? '' : <Link className="nav-link btn btn_register" to="/register">REGISTER</Link>}
+                            {loggedInUser?.uid ? '' : <Link className="nav-link btn btn_register" to="/register">REGISTER</Link>}
 
                         </div>
                     </div>

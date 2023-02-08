@@ -8,6 +8,7 @@ import './AddAppointment.css';
 
 import Swal from 'sweetalert2'
 import { useHistory } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/UserContext';
 
 // CommonJS
 
@@ -15,7 +16,9 @@ import { useHistory } from 'react-router-dom';
 
 const AddAppointment = () => {
     const [selectedDoctor, setSelectedDoctor] = useContext(DoctorContext);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
 
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);

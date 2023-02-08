@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
+import { AuthContext } from '../../../contexts/UserContext';
 import Sidebar from '../../Sidebar/Sidebar';
 import AppointmentList from '../AppointmentList/AppointmentList';
 import './Appointment.css'
 
 const Appointment = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {

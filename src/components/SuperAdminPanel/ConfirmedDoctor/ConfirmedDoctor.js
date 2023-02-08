@@ -4,10 +4,13 @@ import './ConfirmedDoctor.css'
 import DoctorPhoto from '../../../Assets/Images/doctor-icon.png'
 import Sidebar from '../../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
+import { AuthContext } from '../../../contexts/UserContext';
 
 const ConfirmedDoctor = () => {
     const [doctors, setDoctors] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
 
     useEffect(() => {
         const BackendLink = process.env.REACT_APP_BACKENDLINK;

@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { DoctorContext } from '../../../App';
+import { AuthContext } from '../../../contexts/UserContext';
 import './DoctorList.css'
 
 const DoctorList = ({ doctor }) => {
     // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+
     const [selectedDoctor, setSelectedDoctor] = useContext(DoctorContext);
     const {_id, Doctor_Name, Doctor_Email, Designation, doctorImageURL, doctorNidURL, Doctor_BMDC_Reg,  Degree, Department, Chamber, Time, Fees, OffDay, Doctor_Description } = doctor;
     // console.log("Doctor Name :", Doctor_Name);

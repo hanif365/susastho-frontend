@@ -3,9 +3,12 @@ import { UserContext } from '../../../App';
 import Sidebar from '../../Sidebar/Sidebar';
 import './AllAppointment.css';
 import PatientPhoto from '../../../Assets/Images/patientPhoto.jpg'
+import { AuthContext } from '../../../contexts/UserContext';
 
 const AllAppointment = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
     const [allAppointments, setAllAppointments] = useState([]);
 
     useEffect(() => {

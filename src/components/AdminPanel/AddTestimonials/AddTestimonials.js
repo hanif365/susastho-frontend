@@ -42,7 +42,7 @@ const AddTestimonials = () => {
         Swal.fire({
             position: 'center',
             icon: 'success',
-            // title: isSuperAdmin ? `Congratulations ${loggedInUser.name}!! Please confirm to add doctor information in your Panel, Thank You!!` : `Congratulations ${loggedInUser.name}!! A request is send to the Super Admin to add doctor information to the website!`,
+            // title: isSuperAdmin ? `Congratulations ${loggedInUser.displayName}!! Please confirm to add doctor information in your Panel, Thank You!!` : `Congratulations ${loggedInUser.displayName}!! A request is send to the Super Admin to add doctor information to the website!`,
             title: 'Congratulations!! User Testimonials added Successfully!',
             showConfirmButton: false,
             timer: 4500
