@@ -176,6 +176,10 @@ const Navbar = () => {
 
   console.log(currentUser && currentUser);
 
+  const fullName = currentUser?.displayName || "";
+  const nameArray = fullName.split(" ");
+  const lastWord = nameArray[nameArray.length - 1];
+
   return (
     <div>
       {/* <nav className="navbar navbar-expand-lg fixed-top navbar-dark" className={showNavbar ? 'navbar showNavbar navbar-expand-lg fixed-top navbar-light' : 'navbar navbar-expand-lg fixed-top navbar-light'} style={{ backgroundColor: navBg }}> */}
@@ -239,7 +243,7 @@ const Navbar = () => {
                     className="nav-link"
                     id="user-name"
                   >
-                    {currentUser?.displayName}
+                    {lastWord}
                   </Link>
                 )
               ) : (
