@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
 
 import { initializeApp } from 'firebase/app';
@@ -7,7 +7,7 @@ import 'firebase/compat/auth';
 
 import firebaseConfig from './firebase.config';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, FacebookAuthProvider, GithubAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, FacebookAuthProvider, GithubAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import Navbar from '../Shared/Navbar/Navbar';
@@ -34,7 +34,7 @@ const reCaptcha_Sitekey = process.env.REACT_APP_RECAPTCHA_SITEKEY;
 
 const Login = () => {
     // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+    const { loggedInUser,setLoggedInUser, providerLogin, formLogin, logOut,isEmailVerified } = useContext(AuthContext);
 
     const [userEmail, setUserEmail] = useState();
     const [userPassword, setUserPassword] = useState();
@@ -120,7 +120,7 @@ const Login = () => {
 
 
     // handle Provider Sign in
-    const handleSignIn = (loginWith) => {
+    const handleProviderSignIn = (loginWith) => {
         console.log(loginWith);
 
         if (loginWith === "google") {
@@ -135,7 +135,7 @@ const Login = () => {
 
         providerLogin(provider)
             .then((res) => {
-                console.log(res);
+                console.log(res?.providerId);
                 const user = res.user;
             })
 
@@ -144,28 +144,41 @@ const Login = () => {
 
             })
     }
+    
+
+    console.log(loggedInUser?.emailVerified);
 
     // handle login in login form
     const handleLogin = (e) => {
         e.preventDefault();
 
-        signInWithEmailAndPassword(auth, userEmail, userPassword)
+        formLogin(userEmail, userPassword)
             .then((res) => {
                 const { displayName, email, photoURL, emailVerified, uid } = res.user;
-                // console.log(emailVerified);
+                console.log(emailVerified);
+
+                // extra for update loggedInUser Info
+                // onAuthStateChanged((auth), currentUser => {
+                //     console.log(currentUser);
+                //     console.log(currentUser?.emailVerified);
+        
+                //     setLoggedInUser(currentUser);
+                // })
+                // 
                 // console.log(res.user);
 
                 if (emailVerified) {
                     setLoginError('null');
-                    const signedInUser = {
-                        isSignedIn: true,
-                        name: displayName,
-                        email: email,
-                        photo: photoURL,
-                        uid: uid
-                    }
+                    // const signedInUser = {
+                    //     isSignedIn: true,
+                    //     name: displayName,
+                    //     email: email,
+                    //     photo: photoURL,
+                    //     uid: uid
+                    // }
                     // setLoggedInUser(signedInUser);
 
+                    console.log("Email Verified!!!");
                     history.replace(from);
                 }
                 else {
@@ -176,7 +189,7 @@ const Login = () => {
             .catch((err) => {
                 const errorCode = err.code;
                 const errorMessage = err.message;
-                // console.log(errorMessage);
+                console.log(errorMessage);
                 setLoginError(errorMessage);
                 setErrorCount(errorCount + 1);
 
@@ -210,6 +223,8 @@ const Login = () => {
 
     // console.log(reCaptcha_Sitekey);
 
+    
+
     return (
         <div className="login-container">
             <Navbar></Navbar>
@@ -228,12 +243,12 @@ const Login = () => {
                         <form className='login_form  ' onSubmit={handleLogin}>
                             <div className="pb-3 ">
                                 {/* <label for="exampleInputEmail1" className="form-label">Email address</label> */}
-                                <input type="email" onBlur={(e) => setUserEmail(e.target.value)} className="form-control custom_form-control" placeholder='Email' aria-describedby="emailHelp" autoComplete="new-password" required />
+                                <input type="email" onBlur={(e) => setUserEmail(e.target.value)} className="form-control custom_form-control" placeholder='Email' aria-describedby="emailHelp" autoComplete="email" required />
 
                             </div>
                             <div className="pb-3 ">
                                 {/* <label for="exampleInputPassword1" className="form-label">Password</label> */}
-                                <input type="password" onBlur={(e) => setUserPassword(e.target.value)} className="form-control custom_form-control" placeholder='Password' autoComplete="new-password" required />
+                                <input type="password" onBlur={(e) => setUserPassword(e.target.value)} className="form-control custom_form-control" placeholder='Password' autoComplete="current-password" required />
                             </div>
 
                             {errorCount > 2 && <div>
@@ -275,9 +290,9 @@ const Login = () => {
                             </div>
 
                             <div className='align-self-center'>
-                                <button onClick={() => handleSignIn('google')} className="btn btn_sign_in"><FontAwesomeIcon icon={faGoogle} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Google" /></button>
-                                <button onClick={() => handleSignIn('facebook')} className="btn btn_sign_in"><FontAwesomeIcon icon={faFacebook} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Facebook" /></button>
-                                <button onClick={() => handleSignIn('github')} className="btn btn_sign_in"><FontAwesomeIcon icon={faGithub} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with GitHub" /></button>
+                                <button onClick={() => handleProviderSignIn('google')} className="btn btn_sign_in"><FontAwesomeIcon icon={faGoogle} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Google" /></button>
+                                <button onClick={() => handleProviderSignIn('facebook')} className="btn btn_sign_in"><FontAwesomeIcon icon={faFacebook} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with Facebook" /></button>
+                                <button onClick={() => handleProviderSignIn('github')} className="btn btn_sign_in"><FontAwesomeIcon icon={faGithub} size='2x' data-bs-toggle="tooltip" data-bs-placement="top" title="Log In with GitHub" /></button>
                             </div>
                         </div>
                     </div>

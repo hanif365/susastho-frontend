@@ -1,14 +1,17 @@
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import './Register.css';
 import LeftBackgroundImg from '../../Assets/Images/register_left_side_img.png';
 import app from '../../firebase/firebase.config';
+import { AuthContext } from '../../contexts/UserContext';
 
 const auth = getAuth(app);
 
 const Register = () => {
+    const { loggedInUser, providerLogin, formRegistration, formLogin, logOut,isEmailVerified } = useContext(AuthContext);
+
     const [registrationError, setRegistrationError] = useState('');
 
     const history = useHistory();
@@ -56,7 +59,7 @@ const Register = () => {
         }
 
 
-        createUserWithEmailAndPassword(auth, email, password)
+        formRegistration(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 // console.log(user);

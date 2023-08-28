@@ -7,6 +7,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+    console.log("Logged In user test: -*****************: ", loggedInUser)
     return (
         <Route
             {...rest}

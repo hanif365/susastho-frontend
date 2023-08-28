@@ -42,7 +42,7 @@ const Testimonials = () => {
         const BackendLink = process.env.REACT_APP_BACKENDLINK;
         const response = await fetch(`${BackendLink}/testimonials`);
         const data = await response.json();
-        // console.log(data);
+        console.log("Testimonials Data: ", data);
 
         // use setSelectedUser for first user insert automatically
         setSelectedUser(data[0]);

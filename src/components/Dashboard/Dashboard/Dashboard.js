@@ -9,6 +9,7 @@ import './Dashboard.css'
 // }
 
 const Dashboard = () => {
+    const [loading, setLoading] = useState(true);
     return (
         <>
             {/* <div style={containerStyle} className="row"> */}
