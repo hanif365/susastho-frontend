@@ -8,6 +8,8 @@ import {
   faCommentAlt,
   faHandHoldingWater,
   faSignOutAlt,
+  faSpinner,
+  faTruckLoading,
   faUserMd,
   faUserPlus,
   faUsersCog,
@@ -19,15 +21,20 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { AuthContext } from "../../contexts/UserContext";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import {
+  faFacebook,
+  faGithub,
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
+import spinner from "../../Assets/Images/loading.gif";
 
 const Sidebar = () => {
   const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isSuperAdmin, setIsSuperAdmin] = useState(false);
   const [isDoctor, setIsDoctor] = useState(false);
-  const [dataFetched, setDataFetched] = useState(false);
 
   const BackendLink = process.env.REACT_APP_BACKENDLINK;
   const auth = getAuth(app);
@@ -58,31 +65,27 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    if (!dataFetched) {
-      //   alert("Hello");
-      const fetchRoles = async () => {
-        try {
-          const [admin, superAdmin, doctor] = await Promise.all([
-            fetchData("isAdmin"),
-            fetchData("isSuperAdmin"),
-            fetchData("isDoctor"),
-          ]);
+    const fetchRoles = async () => {
+      try {
+        const [admin, superAdmin, doctor] = await Promise.all([
+          fetchData("isAdmin"),
+          fetchData("isSuperAdmin"),
+          fetchData("isDoctor"),
+        ]);
 
-          setIsAdmin(admin);
-          setIsSuperAdmin(superAdmin);
-          setIsDoctor(doctor);
-          setLoading(false);
-        } catch (error) {
-          console.log(error);
-        } finally {
-          setLoading(false);
-          setDataFetched(true);
-        }
-      };
+        setIsAdmin(admin);
+        setIsSuperAdmin(superAdmin);
+        setIsDoctor(doctor);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      fetchRoles();
-    }
-  }, [currentUser, dataFetched]);
+    fetchRoles();
+  }, [currentUser]);
 
   console.log("isAdmin", isAdmin);
   console.log("isSuperAdmin", isSuperAdmin);
@@ -116,7 +119,9 @@ const Sidebar = () => {
       <Navbar></Navbar>
       <div className="sidebar d-flex flex-column justify-content-between col-sm-5 col-md-3 col-5">
         {loading ? (
-          <p>Loading...</p>
+          <div className="mx-auto">
+            <img src={spinner} alt="" className="spinner" />
+          </div>
         ) : (
           <ul className="list-unstyled">
             {(isAdmin || isSuperAdmin) && (

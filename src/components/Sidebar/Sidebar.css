@@ -1,84 +1,90 @@
-*{
-    box-sizing: border-box !important;
+* {
+  box-sizing: border-box !important;
 }
-.sidebar{
-    /* background: #46ABF5; */
-    background: #5F6AEC;
-    position: fixed;
-    height: 100vh !important;
-    overflow: auto;
-    padding: 30px 0 100px 20px;
+.sidebar {
+  /* background: #46ABF5; */
+  background: #5f6aec;
+  position: fixed;
+  height: 100vh !important;
+  overflow: auto;
+  padding: 30px 0 100px 20px;
 }
-.sidebar li{
-    margin-bottom: 2em;
-    font-weight: 700;
-    /* font-size: 20px; */
-    text-transform: uppercase;
+.sidebar li {
+  margin-bottom: 2em;
+  font-weight: 700;
+  /* font-size: 20px; */
+  text-transform: uppercase;
 }
-.sidebar li:hover span{
-    display: inline-block;
-    color: #9A0680;
-    transform: translateX(10px) !important;
-    font-weight: 700;
+.sidebar li:hover span {
+  display: inline-block;
+  color: #9a0680;
+  transform: translateX(10px) !important;
+  font-weight: 700;
 }
-.sidebar svg{
-    margin-right: 5px;
+.sidebar svg {
+  margin-right: 5px;
 }
-.sidebar-container{
-    padding-top: 92px;
+.sidebar-container {
+  padding-top: 92px;
 }
-.logout{
-    color: #9A0680 !important;
-}
-
-.super-admin-panel li{
-    padding-left: 50px;
-    /* margin-top: -8px !important; */
-}
-.admin-panel li{
-    padding-left: 50px;
-}
-.super-admin-panel-inner{
-    color: #781D42;
-}
-.admin-panel-inner{
-    color: #06FF00;
+.logout {
+  color: #9a0680 !important;
 }
 
-
-@media(max-width:576px){
-    .super-admin-panel h4, .admin-panel h4{
-        font-size: 14px;
-    }
-    .sidebar li{
-        font-size: 9px;
-    }
+.super-admin-panel li {
+  padding-left: 50px;
+  /* margin-top: -8px !important; */
+}
+.admin-panel li {
+  padding-left: 50px;
+}
+.super-admin-panel-inner {
+  color: #781d42;
+}
+.admin-panel-inner {
+  color: #06ff00;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
 }
 
-
+@media (max-width: 576px) {
+  .super-admin-panel h4,
+  .admin-panel h4 {
+    font-size: 14px;
+  }
+  .sidebar li {
+    font-size: 9px;
+  }
+  .spinner {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 /* Scrollbar design */
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
- 
+
 ::-webkit-scrollbar-track {
-    background-color: #ebebeb;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #495295; 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #495295;
 }
 
-@media(max-width:576px){
-    .super-admin-panel li{
-        padding-left: 0px;
-    }
-    .admin-panel li{
-        padding-left: 0px;
-    }
+@media (max-width: 576px) {
+  .super-admin-panel li {
+    padding-left: 0px;
+  }
+  .admin-panel li {
+    padding-left: 0px;
+  }
 }
