@@ -80,6 +80,9 @@ const Login = () => {
       .then((res) => {
         console.log(res?.providerId);
         const user = res.user;
+        if (user.email || user.uid) {
+          history.replace(from);
+        }
       })
 
       .catch((error) => {
