@@ -45,7 +45,7 @@ const Navbar = () => {
 
   const currentUser = auth.currentUser;
 
-//   we need to change loggedInUser to currentUser
+  //   we need to change loggedInUser to currentUser
 
   useEffect(() => {
     if (
@@ -175,8 +175,6 @@ const Navbar = () => {
   };
 
   console.log(currentUser && currentUser);
-
- 
 
   return (
     <div>
