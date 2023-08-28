@@ -20,8 +20,69 @@ import { AuthContext } from "../../contexts/UserContext";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
-const Sidebar = ({ loading, isAdmin, isSuperAdmin, isDoctor }) => {
+const Sidebar = () => {
   const { loggedInUser, providerLogin, logOut } = useContext(AuthContext);
+
+  const [loading, setLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isSuperAdmin, setIsSuperAdmin] = useState(false);
+  const [isDoctor, setIsDoctor] = useState(false);
+  const [dataFetched, setDataFetched] = useState(false);
+
+  const BackendLink = process.env.REACT_APP_BACKENDLINK;
+  const auth = getAuth(app);
+  const currentUser = auth.currentUser;
+  console.log(
+    "currentUserInDashboard: ***************************:",
+    currentUser
+  );
+
+  const fetchData = async (roleType) => {
+    try {
+      const response = await fetch(`${BackendLink}/${roleType}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email: currentUser.email }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${roleType} data`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(`Error fetching ${roleType} data:`, error);
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    if (!dataFetched) {
+      //   alert("Hello");
+      const fetchRoles = async () => {
+        try {
+          const [admin, superAdmin, doctor] = await Promise.all([
+            fetchData("isAdmin"),
+            fetchData("isSuperAdmin"),
+            fetchData("isDoctor"),
+          ]);
+
+          setIsAdmin(admin);
+          setIsSuperAdmin(superAdmin);
+          setIsDoctor(doctor);
+          setLoading(false);
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setLoading(false);
+          setDataFetched(true);
+        }
+      };
+
+      fetchRoles();
+    }
+  }, [currentUser, dataFetched]);
 
   console.log("isAdmin", isAdmin);
   console.log("isSuperAdmin", isSuperAdmin);
